@@ -1,0 +1,274 @@
+
+<style>
+  .net-wrap {
+    position: relative;
+    width: 100%;
+    height: 480px;
+  }
+  .net-wrap svg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+  }
+  .pill {
+    position: absolute;
+    border-radius: 999px;
+    white-space: nowrap;
+    border: 1.5px solid #1D9E75;
+    color: #1D9E75;
+    background: var(--color-background-primary);
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.25s, transform 0.25s, box-shadow 0.25s;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    user-select: none;
+  }
+  .pill.visible {
+    opacity: var(--pill-opacity);
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .pill:hover { transform: translate(-50%, -50%) scale(1.08) !important; z-index: 10; }
+  .pill.filled { background: #1D9E75; color: #fff; }
+  .pill.active {
+    box-shadow: 0 0 0 3px #1D9E7533;
+    transform: translate(-50%, -50%) scale(1.1) !important;
+    z-index: 11;
+  }
+
+  .info-panel {
+    position: absolute;
+    background: var(--color-background-primary);
+    border: 1px solid #1D9E75;
+    border-radius: 16px;
+    padding: 18px 22px;
+    max-width: 220px;
+    width: 220px;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.88);
+    transition: opacity 0.28s cubic-bezier(.34,1.56,.64,1), transform 0.28s cubic-bezier(.34,1.56,.64,1);
+    z-index: 20;
+  }
+  .info-panel.visible {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .info-panel .tag {
+    font-size: 11px;
+    font-weight: 500;
+    color: #fff;
+    background: #1D9E75;
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+    letter-spacing: 0.03em;
+  }
+  .info-panel .desc {
+    font-size: 12.5px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+  .info-panel .close-hint {
+    font-size: 10px;
+    color: var(--color-text-tertiary);
+    margin-top: 10px;
+    text-align: right;
+  }
+
+  @keyframes drawLine {
+    from { stroke-dashoffset: var(--dash-len); }
+    to   { stroke-dashoffset: 0; }
+  }
+</style>
+
+<div class="net-wrap" id="net">
+  <svg id="lines"></svg>
+  <div class="info-panel" id="panel">
+    <div class="tag" id="panel-tag"></div>
+    <p class="desc" id="panel-desc"></p>
+    <div class="close-hint">clicca di nuovo per chiudere</div>
+  </div>
+</div>
+
+<script>
+const nodes = [
+  { id:'qppv',   label:'EU-QPPV',           x:50, y:20, size:15, opacity:1,    filled:true,
+    desc:'Qualified Person for Pharmacovigilance residente nell\'UE, responsabile del sistema di farmacovigilanza.' },
+  { id:'eudra',  label:'Eudravigilance',     x:18, y:50, size:14, opacity:1,    filled:false,
+    desc:'Registrazione e gestione del sistema europeo per le segnalazioni di sicurezza.' },
+  { id:'icsr',   label:'ICSRs / SAEs',       x:75, y:45, size:14, opacity:1,    filled:false,
+    desc:'Raccolta, valutazione e trasmissione ad Eudravigilance entro i termini normativi.' },
+  { id:'psmf',   label:'PSMF',               x:78, y:18, size:13, opacity:0.7,  filled:false,
+    desc:'Redazione e aggiornamento del Pharmacovigilance System Master File.' },
+  { id:'susar',  label:'SUSARs',             x:38, y:58, size:13, opacity:0.65, filled:false,
+    desc:'Gestione delle Suspected Unexpected Serious Adverse Reactions e trasmissione alle autorità.' },
+  { id:'xevmpd', label:'XEVMPD / Art. 57',  x:55, y:76, size:12, opacity:0.6,  filled:false,
+    desc:'Gestione dei dati sui medicinali nel sistema Extended EudraVigilance.' },
+  { id:'db',     label:'Database sicurezza', x:14, y:26, size:11, opacity:0.4,  filled:false,
+    desc:'Implementazione e gestione di database per la raccolta dei dati di safety.' },
+  { id:'gvp',    label:'GVP',               x:88, y:62, size:11, opacity:0.38, filled:false,
+    desc:'Conformità alle Good Pharmacovigilance Practices secondo le linee guida EMA.' },
+  { id:'ema',    label:'EMA / AIFA',         x:26, y:80, size:11, opacity:0.35, filled:false,
+    desc:'Interfaccia con le autorità regolatorie europee e italiane per tutte le attività di farmacovigilanza.' },
+  { id:'pbrer',  label:'PBRER',             x:72, y:88, size:11, opacity:0.32, filled:false,
+    desc:'Redazione del Periodic Benefit-Risk Evaluation Report per la valutazione del profilo rischio/beneficio.' },
+  { id:'rmp',    label:'RMP',               x:90, y:35, size:11, opacity:0.3,  filled:false,
+    desc:'Supporto alla redazione e aggiornamento del Risk Management Plan.' },
+  { id:'psur',   label:'PSUR',              x:8,  y:68, size:10, opacity:0.28, filled:false,
+    desc:'Gestione dei Periodic Safety Update Reports per le autorità competenti.' },
+  { id:'signal', label:'Signal detection',  x:44, y:91, size:10, opacity:0.28, filled:false,
+    desc:'Analisi e gestione dei segnali di sicurezza emergenti dai dati di farmacovigilanza.' },
+  { id:'aic',    label:'Titolari AIC',      x:62, y:10, size:10, opacity:0.25, filled:false,
+    desc:'Supporto completo ai Titolari di Autorizzazione all\'Immissione in Commercio in Italia ed Europa.' },
+];
+
+const edges = [
+  ['qppv','psmf'],['qppv','eudra'],['qppv','icsr'],['qppv','aic'],['qppv','db'],
+  ['eudra','icsr'],['eudra','susar'],['eudra','xevmpd'],['eudra','psur'],
+  ['icsr','susar'],['icsr','gvp'],['icsr','signal'],
+  ['susar','xevmpd'],['susar','ema'],
+  ['xevmpd','pbrer'],['xevmpd','signal'],
+  ['psmf','rmp'],['psmf','gvp'],
+  ['pbrer','psur'],['pbrer','rmp'],
+  ['gvp','ema'],['signal','pbrer'],
+  ['aic','psmf'],['aic','icsr'],
+  ['db','susar'],['db','ema'],
+];
+
+const wrap  = document.getElementById('net');
+const svg   = document.getElementById('lines');
+const panel = document.getElementById('panel');
+const ptag  = document.getElementById('panel-tag');
+const pdesc = document.getElementById('panel-desc');
+let activeId = null;
+let pillEls  = {};
+
+function pxCoord(node) {
+  const w = wrap.offsetWidth || 600;
+  const h = wrap.offsetHeight || 480;
+  return { x: node.x / 100 * w, y: node.y / 100 * h };
+}
+
+function dist(a, b) {
+  return Math.hypot(a.x - b.x, a.y - b.y);
+}
+
+function drawLines(animate) {
+  const w = wrap.offsetWidth || 600;
+  const h = wrap.offsetHeight || 480;
+  svg.innerHTML = '';
+
+  edges.forEach(([a, b], i) => {
+    const na = nodes.find(n => n.id === a);
+    const nb = nodes.find(n => n.id === b);
+    const pa = pxCoord(na), pb = pxCoord(nb);
+    const isActive = activeId && (na.id === activeId || nb.id === activeId);
+    const avgOp = (na.opacity + nb.opacity) / 2;
+    const len = dist(pa, pb);
+
+    const line = document.createElementNS('http://www.w3.org/2000/svg','line');
+    line.setAttribute('x1', pa.x); line.setAttribute('y1', pa.y);
+    line.setAttribute('x2', pb.x); line.setAttribute('y2', pb.y);
+    line.setAttribute('stroke', '#1D9E75');
+    line.setAttribute('stroke-width', isActive ? '1.5' : '0.8');
+    line.setAttribute('stroke-opacity', isActive ? 0.7 : avgOp * 0.4);
+
+    if (animate) {
+      line.setAttribute('stroke-dasharray', len);
+      line.setAttribute('stroke-dashoffset', len);
+      line.style.setProperty('--dash-len', len);
+      line.style.animation = `drawLine 0.6s ease forwards`;
+      line.style.animationDelay = (0.3 + i * 0.035) + 's';
+    }
+
+    svg.appendChild(line);
+  });
+}
+
+function showPanel(node) {
+  ptag.textContent  = node.label;
+  pdesc.textContent = node.desc;
+  const p = pxCoord(node);
+  const w = wrap.offsetWidth || 600;
+  const h = wrap.offsetHeight || 480;
+  let lx = p.x, ly = p.y;
+  if (lx < 160) lx = Math.max(120, lx + 90);
+  else if (lx > w - 160) lx = Math.min(w - 120, lx - 90);
+  if (ly < 130) ly = Math.min(ly + 110, h - 130);
+  else ly = Math.max(ly - 110, 130);
+  panel.style.left = lx + 'px';
+  panel.style.top  = ly + 'px';
+  requestAnimationFrame(() => panel.classList.add('visible'));
+}
+
+function spawnPills(animate) {
+  Object.values(pillEls).forEach(el => el.remove());
+  pillEls = {};
+
+  nodes.forEach((node, i) => {
+    const p = pxCoord(node);
+    const el = document.createElement('div');
+    el.className = 'pill' + (node.filled ? ' filled' : '') + (node.id === activeId ? ' active' : '');
+    el.textContent = node.label;
+    el.style.left        = p.x + 'px';
+    el.style.top         = p.y + 'px';
+    el.style.fontSize    = node.size + 'px';
+    el.style.padding     = node.size >= 14 ? '8px 20px' : node.size >= 12 ? '6px 16px' : '5px 13px';
+    el.style.borderWidth = node.filled ? '2px' : '1.5px';
+    el.style.setProperty('--pill-opacity', activeId && node.id !== activeId ? Math.min(node.opacity, 0.3) : node.opacity);
+    el.style.transition  = 'opacity 0.25s, transform 0.25s, box-shadow 0.25s';
+
+    if (animate) {
+      el.style.transitionDelay = (0.1 + i * 0.055) + 's';
+    }
+
+    wrap.appendChild(el);
+    pillEls[node.id] = el;
+
+    requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('visible')));
+
+    el.addEventListener('click', () => {
+      if (activeId === node.id) {
+        activeId = null;
+        panel.classList.remove('visible');
+      } else {
+        activeId = node.id;
+        showPanel(node);
+      }
+      updateState();
+    });
+  });
+}
+
+function updateState() {
+  drawLines(false);
+  nodes.forEach(node => {
+    const el = pillEls[node.id];
+    if (!el) return;
+    el.style.setProperty('--pill-opacity', activeId && node.id !== activeId ? Math.min(node.opacity, 0.3) : node.opacity);
+    el.className = 'pill visible' + (node.filled ? ' filled' : '') + (node.id === activeId ? ' active' : '');
+  });
+}
+
+function init() {
+  drawLines(true);
+  spawnPills(true);
+}
+
+init();
+window.addEventListener('resize', () => {
+  drawLines(false);
+  nodes.forEach(node => {
+    const el = pillEls[node.id];
+    if (!el) return;
+    const p = pxCoord(node);
+    el.style.left = p.x + 'px';
+    el.style.top  = p.y + 'px';
+  });
+  if (activeId) showPanel(nodes.find(n => n.id === activeId));
+});
+</script>

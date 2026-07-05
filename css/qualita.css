@@ -1,0 +1,278 @@
+/* ==========================================================================
+   Qualità page — componenti specifici
+   Usa le variabili CSS di style.css (non ridefinisce reset/body/layout base)
+   ========================================================================== */
+
+/* ── Tipografia helpers ──────────────────────────────────────────────────── */
+.section-title {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+  letter-spacing: -.01em;
+}
+.section-intro {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  max-width: 640px;
+  line-height: 1.75;
+  margin-bottom: 3rem;
+}
+
+/* ── 1. PILASTRI ─────────────────────────────────────────────────────────── */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.pillar {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.5rem;
+  background: var(--color-bg);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.pillar:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(47, 118, 162, .1);
+}
+.pillar::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--color-primary);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+.pillar-icon {
+  width: 42px;
+  height: 42px;
+  background: var(--color-primary-light);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+.pillar-icon svg {
+  width: 20px; height: 20px;
+  stroke: var(--color-primary); fill: none;
+  stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
+}
+.pillar h3 {
+  font-size: 1.05rem; font-weight: 700;
+  margin-bottom: .5rem; color: var(--color-text);
+}
+.pillar p { font-size: .88rem; color: var(--color-text-muted); line-height: 1.65; }
+
+/* ── 2. CODICE ETICO ─────────────────────────────────────────────────────── */
+.etica-intro-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: end;
+  margin-bottom: 3rem;
+}
+.etica-tagline {
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  border-left: 3px solid var(--color-primary);
+  padding-left: 1.2rem;
+}
+.etica-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--color-border);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.etica-item {
+  background: var(--color-bg-white);
+  padding: 1.6rem 1.8rem;
+  transition: background var(--transition-fast);
+}
+.etica-item:hover { background: var(--color-primary-light); }
+.etica-item-top {
+  display: flex; align-items: center; gap: .75rem; margin-bottom: .75rem;
+}
+.etica-num {
+  font-size: .68rem; font-weight: 700; letter-spacing: .1em;
+  color: var(--color-primary); background: var(--color-primary-light);
+  padding: .2rem .55rem; border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+.etica-item h3 { font-size: .95rem; font-weight: 600; color: var(--color-text); }
+.etica-item p { font-size: .85rem; color: var(--color-text-muted); line-height: 1.65; }
+
+/* ── 3. KAIZEN ───────────────────────────────────────────────────────────── */
+.kaizen-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.kaizen-visual {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+}
+.kaizen-steps { display: flex; flex-direction: column; gap: 0; position: relative; }
+.kaizen-steps::before {
+  content: '';
+  position: absolute; left: 18px; top: 24px; bottom: 24px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-primary-light) 0%, var(--color-primary) 100%);
+}
+.kaizen-step {
+  display: flex; align-items: flex-start; gap: 1.2rem;
+  padding: 1.1rem 0; position: relative;
+}
+.kaizen-step-dot {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: var(--color-bg-white); border: 2px solid var(--color-primary);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; position: relative; z-index: 1;
+  transition: background var(--transition-base);
+}
+.kaizen-step:hover .kaizen-step-dot { background: var(--color-primary); }
+.kaizen-step:hover .kaizen-step-dot svg { stroke: #fff; }
+.kaizen-step-dot svg {
+  width: 16px; height: 16px;
+  stroke: var(--color-primary); fill: none;
+  stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+  transition: stroke var(--transition-base);
+}
+.kaizen-step-content { padding-top: .45rem; }
+.kaizen-step-content h4 { font-size: .95rem; font-weight: 600; color: var(--color-text); margin-bottom: .2rem; }
+.kaizen-step-content p { font-size: .85rem; color: var(--color-text-muted); line-height: 1.55; }
+.kaizen-kpi-row { display: flex; gap: 1rem; margin-top: 1.5rem; }
+.kaizen-kpi {
+  flex: 1; background: var(--color-bg-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm); padding: 1rem; text-align: center;
+}
+.kaizen-kpi .k-num { font-size: 1.5rem; font-weight: 800; color: var(--color-primary); display: block; }
+.kaizen-kpi .k-lbl {
+  font-size: .72rem; color: var(--color-text-muted);
+  font-weight: 500; text-transform: uppercase; letter-spacing: .07em;
+}
+.kaizen-blog-link {
+  display: inline-flex; align-items: center; gap: .5rem;
+  margin-top: 2rem; font-size: .9rem; font-weight: 600;
+  color: var(--color-primary); text-decoration: none;
+  border: 1.5px solid var(--color-primary); padding: .65rem 1.4rem;
+  border-radius: var(--radius-full); transition: all var(--transition-base);
+}
+.kaizen-blog-link:hover { background: var(--color-primary); color: #fff; }
+.kaizen-blog-link svg {
+  width: 14px; height: 14px; stroke: currentColor; fill: none;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* ── 4. CERTIFICAZIONI ───────────────────────────────────────────────────── */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.cert-card {
+  border: 1.5px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 2rem; text-align: center;
+  opacity: .85; transition: opacity var(--transition-base), border-color var(--transition-base);
+}
+.cert-card:hover { opacity: 1; border-color: var(--color-primary); }
+.cert-icon {
+  width: 48px; height: 48px;
+  background: var(--color-bg-white); border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm); margin: 0 auto 1rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.cert-icon svg {
+  width: 22px; height: 22px; stroke: var(--color-text-muted); fill: none;
+  stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+}
+.cert-card h4 { font-size: .92rem; font-weight: 600; color: var(--color-text); margin-bottom: .3rem; }
+.cert-card > p { font-size: .82rem; color: var(--color-text-muted); }
+.cert-badge {
+  display: inline-block; font-size: .65rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  background: var(--color-accent-light); color: var(--color-accent);
+  padding: .25rem .6rem; border-radius: var(--radius-full); margin-top: .6rem;
+}
+.cert-badge.active { background: #E8F5EE; color: #1E7C45; }
+
+/* ── 5. PRIVACY ──────────────────────────────────────────────────────────── */
+.privacy-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.privacy-points {
+  list-style: none; margin-top: 1.5rem;
+  display: flex; flex-direction: column; gap: 1rem;
+}
+.privacy-points li {
+  display: flex; align-items: flex-start; gap: 1rem;
+  font-size: .9rem; color: var(--color-text-muted); line-height: 1.65;
+}
+.privacy-points .check {
+  width: 22px; height: 22px; border-radius: 6px;
+  background: var(--color-primary-light);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: .15rem;
+}
+.privacy-points .check svg {
+  width: 12px; height: 12px; stroke: var(--color-primary); fill: none;
+  stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+}
+.privacy-docs { display: flex; flex-direction: column; gap: 1rem; }
+.doc-link {
+  background: var(--color-bg); border: 1px solid var(--color-border);
+  border-radius: var(--radius-md); padding: 1.4rem 1.6rem;
+  display: flex; align-items: center; justify-content: space-between;
+  text-decoration: none; color: var(--color-text);
+  transition: all var(--transition-base);
+}
+.doc-link:hover { border-color: var(--color-primary); background: var(--color-primary-light); }
+.doc-link-left { display: flex; align-items: center; gap: 1rem; }
+.doc-link-icon {
+  width: 40px; height: 40px; border-radius: var(--radius-sm);
+  background: var(--color-bg-white); border: 1px solid var(--color-border);
+  display: flex; align-items: center; justify-content: center;
+}
+.doc-link-icon svg {
+  width: 18px; height: 18px; stroke: var(--color-primary); fill: none;
+  stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
+}
+.doc-link h4 { font-size: .9rem; font-weight: 600; color: var(--color-text); margin-bottom: .1rem; }
+.doc-link span { font-size: .78rem; color: var(--color-text-muted); }
+.doc-link-arrow {
+  width: 18px; height: 18px; stroke: var(--color-text-muted); fill: none;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+  .etica-intro-row { grid-template-columns: 1fr; gap: 1.5rem; }
+  .etica-grid { grid-template-columns: repeat(2, 1fr); }
+  .kaizen-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .privacy-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .cert-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .pillars-grid,
+  .etica-grid,
+  .cert-grid { grid-template-columns: 1fr; }
+  .kaizen-kpi-row { flex-direction: column; }
+}

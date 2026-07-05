@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -Command \"Get-ChildItem -Path 'C:\\\\Users\\\\matte\\\\OneDrive\\\\00_PC_TEO\\\\PERSONALE\\\\0_Software\\\\mac-website' -Filter '*.html' -Recurse | ForEach-Object { \\(Get-Content $_.FullName -Raw\\) -replace '<title>[^<]*</title>', '<title>Medical Affairs Consulting</title>' | Set-Content $_.FullName -NoNewline }\")",
+      "Bash(sed -i 's|family=Inter:wght@400;500;600;700;800|family=Archivo:wght@600;700;800\\\\&family=Libre+Franklin:wght@400;500;600;700;800|g; s|Medical Affairs Consulting S\\\\.r\\\\.l\\\\.|Medical Affairs Consulting Srl|g' *.html en/*.html)",
+      "Bash(grep -rl \"family=Inter\" *.html en/*.html)",
+      "Bash(grep -c \"Libre+Franklin\" *.html en/*.html)",
+      "Bash(sed -i 's|<li><a href=\"\"chi-siamo.html\"\">Chi siamo</a></li>||; s|<a href=\"\"chi-siamo.html\"\">Chi siamo</a>||g' servizi.html)",
+      "Bash(sed -i 's|<li><a href=\"\"about.html\"\">About us</a></li>||; s|<a href=\"\"about.html\"\">About us</a>||g' en/careers.html en/contact.html en/faq.html en/index.html en/blog.html en/quality.html en/services.html en/events.html)"
+    ]
+  }
+}

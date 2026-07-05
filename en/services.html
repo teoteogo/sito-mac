@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — Medical Affairs Consulting</title>
+  <meta name="description" content="Pharmacovigilance, EU-QPPV, PSUR/PBRER, medical information, quality assurance and Kaizen consulting. Discover all MAC services for pharmaceutical companies.">
+  <link rel="icon" type="image/x-icon" href="../img/icona_MAC.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Libre+Franklin:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="alternate" hreflang="it" href="https://www.med-af-consulting.com/servizi.html">
+  <link rel="alternate" hreflang="en" href="https://www.med-af-consulting.com/en/services.html">
+  <style>
+    /* ---- Credentials bar ---- */
+    .credentials-bar {
+      display: flex;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 2.5rem;
+      background: rgba(255,255,255,.05);
+    }
+    .cred-item {
+      flex: 1;
+      padding: 1.25rem 1.5rem;
+      border-right: 1px solid rgba(255,255,255,.12);
+      text-align: center;
+    }
+    .cred-item:last-child { border-right: none; }
+    .cred-value { font-size: 2rem; font-weight: 800; color: #fff; line-height: 1; margin-bottom: .3rem; }
+    .cred-label { font-size: .75rem; color: rgba(255,255,255,.65); text-transform: uppercase; letter-spacing: .06em; }
+    @media (max-width: 640px) {
+      .credentials-bar { flex-direction: column; }
+      .cred-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.12); }
+    }
+
+    /* ---- Services grid ---- */
+    .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    @media (max-width: 1024px) { .svc-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px)  { .svc-grid { grid-template-columns: 1fr; } }
+
+    .svc-card { display: flex; flex-direction: column; scroll-margin-top: calc(var(--navbar-height) + 1rem); }
+    .svc-card .card__text { margin-bottom: var(--space-4); }
+    .svc-points { list-style: none; padding: 0; margin: 0 0 var(--space-4); flex: 1; }
+    .svc-points li {
+      display: flex; gap: .6rem; align-items: flex-start;
+      font-size: var(--text-sm); color: var(--color-text); line-height: 1.5;
+      padding: .35rem 0;
+    }
+    .svc-points li svg { width: 16px; height: 16px; stroke: var(--color-primary); fill: none; stroke-width: 2; flex-shrink: 0; margin-top: 3px; }
+
+    /* Optional technical details (native accordion) */
+    .svc-details { border-top: 1px solid var(--color-border); padding-top: var(--space-3); margin-top: auto; }
+    .svc-details summary {
+      cursor: pointer; list-style: none;
+      font-size: var(--text-sm); font-weight: 600; color: var(--color-primary);
+      display: flex; align-items: center; gap: .4rem;
+    }
+    .svc-details summary::-webkit-details-marker { display: none; }
+    .svc-details summary svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2.5; transition: transform var(--transition-base); }
+    .svc-details[open] summary svg { transform: rotate(180deg); }
+    .svc-details ul { list-style: none; padding: .75rem 0 0; margin: 0; }
+    .svc-details li { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.55; padding: .3rem 0; }
+    .svc-details li strong { color: var(--color-text); }
+
+    /* ---- Expertise section ---- */
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    @media (max-width: 768px) { .expertise-grid { grid-template-columns: 1fr; } }
+    .expertise-card { display: flex; flex-direction: column; }
+    .expertise-card .card__text { margin-bottom: 0; flex: 1; }
+    .expertise-card .card__link { margin-top: var(--space-4); }
+  </style>
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"></div>
+<header>
+  <nav class="navbar" role="navigation">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo"><img src="../img/mac-logo.png" alt="MAC — Medical Affairs Consulting" width="180" height="44"></a>
+      <ul class="navbar__menu" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="quality.html">Quality</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <div class="lang-switcher"><a href="../servizi.html">IT</a><span>|</span><a href="services.html" class="active">EN</a></div>
+        <a href="contact.html" class="btn btn--primary">Contact us</a>
+      </div>
+      <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="navbar__mobile">
+    <a href="index.html">Home</a><a href="services.html" class="active">Services</a><a href="quality.html">Quality</a><a href="events.html">Events</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a><a href="faq.html">FAQ</a>
+    <div class="lang-switcher mt-4"><a href="../servizi.html">IT</a><span>|</span><a href="services.html" class="active">EN</a></div>
+    <a href="contact.html" class="btn btn--primary">Contact us</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============================================================
+       SECTION 1 — Hero with credentials
+       ============================================================ -->
+  <section class="page-header">
+    <div class="container">
+      <span class="section-label section-label--primary reveal">What we do</span>
+      <h1 class="reveal reveal-delay-1">Our services</h1>
+      <p class="reveal reveal-delay-2">Specialised, tailored support for MAH holders, sponsors and pharmaceutical companies, throughout the drug lifecycle. A single partner, from pharmacovigilance to Kaizen consulting.</p>
+      <div class="credentials-bar reveal reveal-delay-3">
+        <div class="cred-item">
+          <div class="cred-value">15,000+</div>
+          <div class="cred-label">ICSRs handled every year</div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-value">99.998%</div>
+          <div class="cred-label">ICSR compliance on EudraVigilance</div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-value">50+</div>
+          <div class="cred-label">PSURs/PBRERs delivered every year</div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-value">ArisGlobal</div>
+          <div class="cred-label">Safety Database</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 2 — Services grid
+       ============================================================ -->
+  <section class="section section--bg" aria-labelledby="services-title">
+    <div class="container">
+      <span class="section-label section-label--primary reveal">The services</span>
+      <h2 id="services-title" class="reveal reveal-delay-1">Complete support, from safety to quality</h2>
+      <p class="reveal reveal-delay-2">Six areas of intervention, one partner. The essentials for each service are below; technical details open on request.</p>
+
+      <div class="svc-grid">
+
+        <!-- Pharmacovigilance -->
+        <article class="card svc-card reveal" id="pharmacovigilance">
+          <div class="card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="card__title">Pharmacovigilance</h3>
+          <p class="card__text">Complete management of the pharmacovigilance system for MAH holders in the European Union, from EU-QPPV appointment to ICSR submission to EudraVigilance.</p>
+          <ul class="svc-points">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>EU-QPPV and Deputy QPPV</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>ICSRs / SAEs / SUSARs, from triage to submission</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>PSMF and EudraVigilance</li>
+          </ul>
+          <details class="svc-details">
+            <summary>Technical details <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+            <ul>
+              <li><strong>ICSRs / SAEs / SUSARs</strong> — collection, data entry, MedDRA coding and medical review on the ArisGlobal LifeSphere platform</li>
+              <li><strong>PSMF</strong> — drafting, structuring and maintenance of the Pharmacovigilance System Master File</li>
+              <li><strong>EudraVigilance</strong> — registration and management of the European safety reporting system</li>
+              <li><strong>XEVMPD / Art. 57</strong> — management of medicinal product data in the Extended EudraVigilance dictionary</li>
+            </ul>
+          </details>
+        </article>
+
+        <!-- Periodic reports -->
+        <article class="card svc-card reveal reveal-delay-1" id="periodic-reports">
+          <div class="card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h3 class="card__title">Periodic reports</h3>
+          <p class="card__text">Drafting of periodic safety reports and management of submissions to EMA and AIFA, in full compliance with regulatory deadlines.</p>
+          <ul class="svc-points">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>PSUR / PBRER and DSUR</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Signal detection and management</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Risk Management Plan</li>
+          </ul>
+          <details class="svc-details">
+            <summary>Technical details <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+            <ul>
+              <li><strong>PSUR / PBRER</strong> — complete drafting with literature analysis and benefit-risk evaluation</li>
+              <li><strong>DSUR</strong> — Development Safety Update Reports for medicines in clinical development</li>
+              <li><strong>Signal detection</strong> — detection of safety signals per GVP Module IX</li>
+              <li><strong>RMP</strong> — drafting, implementation and updates in line with EMA requirements</li>
+              <li><strong>EMA / AIFA submissions</strong> — managed within the regulatory calendar deadlines</li>
+            </ul>
+          </details>
+        </article>
+
+        <!-- Medical Information -->
+        <article class="card svc-card reveal reveal-delay-2" id="medical-information">
+          <div class="card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3 class="card__title">Medical Information</h3>
+          <p class="card__text">A complete medical information service pursuant to Italian Legislative Decree 219/2006 art. 126: from responses to HCP enquiries to management of the MI database.</p>
+          <ul class="svc-points">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Scientific Service Officer</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Enquiry management and standard response letters</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Literature searches</li>
+          </ul>
+          <details class="svc-details">
+            <summary>Technical details <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+            <ul>
+              <li><strong>Scientific Service Officer</strong> — coverage of the mandatory role under Legislative Decree 219/2006 art. 126</li>
+              <li><strong>MI enquiries</strong> — accurate responses to HCPs, pharmacists and patients, with full traceability</li>
+              <li><strong>Standard Response Letters</strong> — standardised letters for frequently asked questions</li>
+              <li><strong>MI database</strong> — implementation and management for enquiry registration and traceability</li>
+            </ul>
+          </details>
+        </article>
+
+        <!-- Quality & Compliance -->
+        <article class="card svc-card reveal" id="quality">
+          <div class="card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          </div>
+          <h3 class="card__title">Quality &amp; Compliance</h3>
+          <p class="card__text">Support for a documented, audit-ready pharmacovigilance system: procedures, gap analysis and assistance during GVP audits and inspections.</p>
+          <ul class="svc-points">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>SOP drafting and review</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Gap analysis and inspection readiness</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>GVP staff training</li>
+          </ul>
+          <details class="svc-details">
+            <summary>Technical details <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+            <ul>
+              <li><strong>SOPs</strong> — drafting, review and updates aligned with the GVP Modules and EU Reg. 2025/1466</li>
+              <li><strong>Gap analysis</strong> — PV system assessment, identification of non-conformities and remediation plan</li>
+              <li><strong>GVP audits and inspections</strong> — document preparation, internal simulations, assistance during AIFA/EMA inspections and post-audit CAPAs</li>
+              <li><strong>PV contracts</strong> — review of subcontractor agreements per EU Reg. 2025/1466 clauses</li>
+            </ul>
+          </details>
+        </article>
+
+        <!-- Materials & Training -->
+        <article class="card svc-card reveal reveal-delay-1" id="materials">
+          <div class="card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </div>
+          <h3 class="card__title">Materials &amp; Training</h3>
+          <p class="card__text">Scientific review and regulatory compliance of promotional materials, with dedicated training programmes for pharmaceutical sales representatives.</p>
+          <ul class="svc-points">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Sales rep training on PV and regulations</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Scientific review of materials</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>AIFA certification support</li>
+          </ul>
+          <details class="svc-details">
+            <summary>Technical details <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+            <ul>
+              <li><strong>Sales rep training</strong> — programmes on pharmacovigilance, ADR reporting and AIFA regulations, tailored per company</li>
+              <li><strong>Materials review</strong> — verification of scientific accuracy before distribution to HCPs</li>
+              <li><strong>Advertising compliance</strong> — verification pursuant to Legislative Decree 219/06 art. 113 ff.</li>
+              <li><strong>Digital materials</strong> — review of digital content, websites and apps for healthcare professionals</li>
+            </ul>
+          </details>
+        </article>
+
+        <!-- Kaizen Consulting -->
+        <article class="card svc-card reveal reveal-delay-2" id="kaizen">
+          <div class="card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <h3 class="card__title">Kaizen Consulting</h3>
+          <p class="card__text">Lean Thinking applied to pharmacovigilance processes and regulatory activities: less waste, shorter lead times and a system that scales with business growth.</p>
+          <ul class="svc-points">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Value Stream Mapping of PV processes</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Kaizen Events and workshops</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Pharmacovigilance KPIs</li>
+          </ul>
+          <details class="svc-details">
+            <summary>Technical details <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+            <ul>
+              <li><strong>Value Stream Mapping</strong> — mapping the PV workflow to identify bottlenecks and automation opportunities</li>
+              <li><strong>Kaizen Events</strong> — intensive workshops (2–5 days) to implement rapid process improvements</li>
+              <li><strong>KPIs</strong> — compliance rate, ICSR lead time, signal backlog, cost per case</li>
+              <li><strong>Continuous improvement culture</strong> — training and coaching to make improvement a self-sustaining process</li>
+            </ul>
+          </details>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 3 — Expertise
+       ============================================================ -->
+  <section class="section" id="expertise" aria-labelledby="expertise-title">
+    <div class="container">
+      <span class="section-label section-label--primary reveal">Our expertise</span>
+      <h2 id="expertise-title" class="reveal reveal-delay-1">Four souls, one team</h2>
+      <p class="reveal reveal-delay-2">The quality of our services stems from the combination of diverse, complementary areas of expertise working together every day.</p>
+
+      <div class="expertise-grid">
+
+        <!-- 1. Medical-scientific -->
+        <article class="card expertise-card reveal">
+          <div class="card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h3 class="card__title">Medical-scientific expertise</h3>
+          <p class="card__text">Physicians, pharmacists and biologists with proven experience in pharmacovigilance and medical affairs. They manage safety databases, literature searches, signal detection and PSUR writing, ensuring scientific rigour in every assessment.</p>
+        </article>
+
+        <!-- 2. Engineering / lean -->
+        <article class="card expertise-card reveal reveal-delay-1">
+          <div class="card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
+          <h3 class="card__title">Engineering expertise and lean methodology</h3>
+          <p class="card__text">Lean and Kaizen fundamentals applied to business processes are our methodological foundation. Continuous improvement, waste reduction and measurable processes run through every area of activity, from pharmacovigilance workflows to internal organisation.</p>
+          <a href="#kaizen" class="card__link">Learn more
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </article>
+
+        <!-- 3. Quality -->
+        <article class="card expertise-card reveal reveal-delay-2">
+          <div class="card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <h3 class="card__title">Quality expertise</h3>
+          <p class="card__text">SOP drafting, document management and staff training underpin the compliance of our processes and those of our clients, in line with regulatory requirements and recognised standards such as ISO 9001.</p>
+        </article>
+
+        <!-- 4. IT -->
+        <article class="card expertise-card reveal reveal-delay-3">
+          <div class="card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3 class="card__title">IT expertise</h3>
+          <p class="card__text">Microsoft 365, SharePoint and digital tools supporting our processes. A reliable infrastructure and solutions designed to make everyday work more efficient, traceable and secure, in environments compliant with pharmaceutical industry requirements.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner" aria-labelledby="services-cta-en">
+    <div class="container"><div class="cta-banner__inner">
+      <h2 class="reveal" id="services-cta-en">Every company has different needs. We design the right solution for you.</h2>
+      <p class="reveal reveal-delay-1">Contact us for a free consultation. We will assess your needs and propose a tailored plan.</p>
+      <div class="cta-banner__actions reveal reveal-delay-2">
+        <a href="contact.html" class="btn btn--white btn--lg">Request a consultation</a>
+        <a href="faq.html" class="btn btn--outline-white btn--lg">Read FAQs</a>
+      </div>
+    </div></div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand"><a href="index.html"><img src="../img/mac-logo.png" alt="MAC" width="160" height="38" style="filter:brightness(0) invert(1)"></a><p>Your trusted partner for pharmacovigilance, medical information and Kaizen consulting. Since 2001.</p><div class="footer__social"><a href="https://www.linkedin.com/company/med-af-consulting" target="_blank" rel="noopener" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a><a href="https://www.instagram.com/medafconsulting/" target="_blank" rel="noopener" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a></div></div>
+      <div class="footer__col"><h5>Services</h5><nav class="footer__links"><a href="services.html#pharmacovigilance">Pharmacovigilance</a><a href="services.html#periodic-reports">Periodic reports</a><a href="services.html#medical-information">Medical Information</a><a href="services.html#quality">Quality &amp; Compliance</a><a href="services.html#kaizen">Kaizen Consulting</a></nav></div>
+      <div class="footer__col"><h5>Company</h5><nav class="footer__links"><a href="services.html#expertise">Our expertise</a><a href="events.html">Events</a><a href="blog.html">Blog</a><a href="careers.html">Careers</a><a href="faq.html">FAQ</a></nav></div>
+      <div class="footer__col"><h5>Contact</h5><address style="font-style:normal;"><div class="footer__contact-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><a href="mailto:contactus@med-af-consulting.it">contactus@med-af-consulting.it</a></div><div class="footer__contact-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg><span>Corso Italia, 39 – Saronno (VA) Italy</span></div></address></div>
+    </div>
+    <div class="footer__bottom"><p>© 2026 Medical Affairs Consulting Srl — All rights reserved</p><nav class="footer__bottom-links"><a href="../privacy.html">Privacy Policy</a><a href="../cookie.html">Cookie Policy</a><a href="../servizi.html" lang="it">Italiano</a></nav></div>
+  </div>
+</footer>
+<div class="cookie-banner" role="dialog"><p>We use technically necessary cookies. <a href="../cookie.html">Cookie Policy</a>.</p><div class="cookie-banner__actions"><button class="btn btn--outline-white btn--sm" data-cookie-decline>Decline</button><button class="btn btn--white btn--sm" data-cookie-accept>Accept</button></div></div>
+<script src="../js/main.js"></script>
+</body>
+</html>

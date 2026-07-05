@@ -1,0 +1,276 @@
+/* ==========================================================================
+   MEDICAL AFFAIRS CONSULTING — Animazioni e Transizioni
+   IntersectionObserver fade-up, contatori, hover effects
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. FADE-UP — Animazione scroll (IntersectionObserver)
+   Gli elementi con classe .reveal partono invisibili e scivolano su
+   -------------------------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Varianti delay per animazioni a cascata */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+.reveal-delay-6 { transition-delay: 0.6s; }
+
+/* Variante fade-in senza traslazione */
+.reveal-fade {
+  opacity: 0;
+  transition: opacity 0.7s ease-out;
+}
+
+.reveal-fade.visible {
+  opacity: 1;
+}
+
+/* Variante fade da sinistra */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Variante fade da destra */
+.reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Variante zoom-in leggero */
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* --------------------------------------------------------------------------
+   2. HERO TITLE — Animazione entrata del titolo
+   -------------------------------------------------------------------------- */
+.hero__title {
+  animation: heroTitleIn 0.8s ease-out both;
+}
+
+.hero__subtitle {
+  animation: heroSubIn 0.8s 0.2s ease-out both;
+}
+
+.hero__cta {
+  animation: heroSubIn 0.8s 0.35s ease-out both;
+}
+
+.hero__eyebrow {
+  animation: heroSubIn 0.6s 0s ease-out both;
+}
+
+@keyframes heroTitleIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroSubIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. COUNTER — Contatore numerico animato (attivato da JS)
+   -------------------------------------------------------------------------- */
+.counter-number {
+  display: inline-block;
+  transition: none;
+}
+
+/* --------------------------------------------------------------------------
+   4. NAVBAR — Transizione colore su scroll (gestita da JS + CSS)
+   -------------------------------------------------------------------------- */
+.navbar {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* --------------------------------------------------------------------------
+   5. PILL IMAGE HERO — Espansione inline (definita in style.css)
+   Ridefinita qui per chiarezza
+   -------------------------------------------------------------------------- */
+@keyframes pillExpand {
+  0%   { width: 0; opacity: 0; }
+  60%  { opacity: 1; }
+  100% { width: clamp(4rem, 10vw, 9rem); opacity: 1; }
+}
+
+/* --------------------------------------------------------------------------
+   6. LOADING SPINNER (per caricamento dati JSON)
+   -------------------------------------------------------------------------- */
+.spinner {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 4rem 2rem;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+/* --------------------------------------------------------------------------
+   7. PULSANTE HOVER — Effetto onda (ripple)
+   -------------------------------------------------------------------------- */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.15);
+  opacity: 0;
+  transition: opacity 0.2s;
+  border-radius: inherit;
+}
+
+.btn:active::after {
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   8. CARD HOVER — elevazione con ombra
+   Già definito in style.css, qui aggiungiamo sfumatura colore bordo
+   -------------------------------------------------------------------------- */
+.card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card:hover {
+  border-color: rgba(38, 112, 158, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   9. ACCORDION — Smooth height
+   -------------------------------------------------------------------------- */
+.accordion__body {
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              padding 0.3s ease;
+}
+
+/* --------------------------------------------------------------------------
+   10. FORM INPUT — Focus animato
+   -------------------------------------------------------------------------- */
+.form-input,
+.form-textarea,
+.form-select {
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+
+/* --------------------------------------------------------------------------
+   12. SCROLL PROGRESS BAR (opzionale, attivata da JS)
+   -------------------------------------------------------------------------- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--color-primary);
+  z-index: 9999;
+  transition: width 0.1s linear;
+  transform-origin: left;
+}
+
+/* --------------------------------------------------------------------------
+   13. PAGE TRANSITION
+   -------------------------------------------------------------------------- */
+.page-enter {
+  animation: pageEnter 0.4s ease-out both;
+}
+
+@keyframes pageEnter {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --------------------------------------------------------------------------
+   14. ACCESSIBILITÀ — Rispetta le preferenze del sistema
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .reveal,
+  .reveal-fade,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero__title,
+  .hero__subtitle,
+  .hero__cta,
+  .hero__eyebrow {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

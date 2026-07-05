@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Affairs Consulting</title>
+  <meta name="description" content="Contact the MAC team for pharmacovigilance, medical information and Kaizen consulting. Corso Italia 39, Saronno (VA), Italy.">
+  <link rel="icon" type="image/x-icon" href="../img/icona_MAC.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Libre+Franklin:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="alternate" hreflang="it" href="https://www.med-af-consulting.com/contatti.html">
+  <link rel="alternate" hreflang="en" href="https://www.med-af-consulting.com/en/contact.html">
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"></div>
+<header>
+  <nav class="navbar" role="navigation">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo"><img src="../img/mac-logo.png" alt="MAC — Medical Affairs Consulting" width="180" height="44"></a>
+      <ul class="navbar__menu" role="list">
+        <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="quality.html">Quality</a></li><li><a href="events.html">Events</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <div class="lang-switcher"><a href="../contatti.html">IT</a><span>|</span><a href="contact.html" class="active">EN</a></div>
+        <a href="contact.html" class="btn btn--primary">Contact us</a>
+      </div>
+      <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="navbar__mobile">
+    <a href="index.html">Home</a><a href="services.html">Services</a><a href="quality.html">Quality</a><a href="events.html">Events</a><a href="blog.html">Blog</a><a href="contact.html" class="active">Contact</a><a href="faq.html">FAQ</a>
+    <div class="lang-switcher mt-4"><a href="../contatti.html">IT</a><span>|</span><a href="contact.html" class="active">EN</a></div>
+    <a href="contact.html" class="btn btn--primary">Contact us</a>
+  </div>
+</header>
+
+<main>
+  <section class="page-header">
+    <div class="container">
+      <span class="section-label section-label--primary reveal">Get in touch</span>
+      <h1 class="reveal reveal-delay-1">Contact</h1>
+      <p class="reveal reveal-delay-2">We are at your disposal for any enquiry. Fill in the form that best suits your profile and we will reply within 24–48 working hours.</p>
+    </div>
+  </section>
+
+  <section class="section section--bg">
+    <div class="container">
+      <div class="grid-2" style="gap:4rem;align-items:start;">
+
+        <!-- Forms -->
+        <div>
+          <span class="section-label section-label--primary reveal">Contact forms</span>
+          <h2 class="reveal reveal-delay-1" style="margin-bottom:1.5rem;">Write to us</h2>
+
+          <div class="contact-tabs reveal reveal-delay-2" role="tablist">
+            <button class="contact-tab active" data-tab="en-clients" role="tab" aria-selected="true">Clients</button>
+            <button class="contact-tab" data-tab="en-partners" role="tab" aria-selected="false">Partners</button>
+            <button class="contact-tab" data-tab="en-general" role="tab" aria-selected="false">General</button>
+          </div>
+
+          <!-- CLIENTS FORM -->
+          <div id="en-clients" class="contact-form-panel active reveal reveal-delay-3">
+            <p style="font-size:.875rem;color:var(--color-text-muted);margin-bottom:1.5rem;max-width:100%;">For pharmacovigilance, medical information or Kaizen consulting enquiries.</p>
+            <form name="contact-clients-en" method="POST" data-netlify="true" action="/en/contact.html?success=true">
+              <input type="hidden" name="form-name" value="contact-clients-en">
+              <div class="form-grid-2">
+                <div class="form-group"><label class="form-label" for="ec-company">Company <span>*</span></label><input type="text" id="ec-company" name="company" class="form-input" placeholder="Company name" required></div>
+                <div class="form-group"><label class="form-label" for="ec-name">Full name <span>*</span></label><input type="text" id="ec-name" name="name" class="form-input" placeholder="John Smith" required></div>
+              </div>
+              <div class="form-grid-2">
+                <div class="form-group"><label class="form-label" for="ec-role">Role</label><input type="text" id="ec-role" name="role" class="form-input" placeholder="e.g. Regulatory Affairs Manager"></div>
+                <div class="form-group"><label class="form-label" for="ec-email">Email <span>*</span></label><input type="email" id="ec-email" name="email" class="form-input" placeholder="john.smith@company.com" required></div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="ec-service">Service of interest <span>*</span></label>
+                <select id="ec-service" name="service" class="form-select" required>
+                  <option value="" disabled selected>Select a service</option>
+                  <option value="pharmacovigilance">Pharmacovigilance (EU-QPPV, PSMF, ICSRs)</option>
+                  <option value="periodic-reports">Periodic reports (PSUR/PBRER, RMP)</option>
+                  <option value="medical-information">Medical Information</option>
+                  <option value="quality">Quality &amp; Compliance (SOPs, Audit)</option>
+                  <option value="promotional">Promotional Materials</option>
+                  <option value="kaizen">Kaizen Consulting</option>
+                  <option value="other">Other / Not sure yet</option>
+                </select>
+              </div>
+              <div class="form-group"><label class="form-label" for="ec-message">Message <span>*</span></label><textarea id="ec-message" name="message" class="form-textarea" placeholder="Briefly describe your needs..." required rows="5"></textarea></div>
+              <div class="form-group">
+                <label style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;color:var(--color-text-muted);cursor:pointer;">
+                  <input type="checkbox" name="privacy" required style="width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:var(--color-primary)">
+                  <span>I have read and accept the <a href="../privacy.html" style="color:var(--color-primary);text-decoration:underline">Privacy Policy</a>. <span style="color:var(--color-accent)">*</span></span>
+                </label>
+              </div>
+              <button type="submit" class="btn btn--primary btn--lg" style="width:100%;">Send enquiry</button>
+            </form>
+            <div class="form-success"><strong>Thank you for contacting us!</strong> Your message has been received. We will reply within 24–48 working hours.</div>
+          </div>
+
+          <!-- PARTNERS FORM -->
+          <div id="en-partners" class="contact-form-panel">
+            <p style="font-size:.875rem;color:var(--color-text-muted);margin-bottom:1.5rem;max-width:100%;">For collaboration proposals, partnerships and business opportunities.</p>
+            <form name="contact-partners-en" method="POST" data-netlify="true" action="/en/contact.html?success=true">
+              <input type="hidden" name="form-name" value="contact-partners-en">
+              <div class="form-grid-2">
+                <div class="form-group"><label class="form-label" for="ep-name">Full name <span>*</span></label><input type="text" id="ep-name" name="name" class="form-input" placeholder="John Smith" required></div>
+                <div class="form-group"><label class="form-label" for="ep-company">Company</label><input type="text" id="ep-company" name="company" class="form-input" placeholder="Company name (optional)"></div>
+              </div>
+              <div class="form-group"><label class="form-label" for="ep-email">Email <span>*</span></label><input type="email" id="ep-email" name="email" class="form-input" placeholder="john.smith@email.com" required></div>
+              <div class="form-group">
+                <label class="form-label" for="ep-type">Type of collaboration <span>*</span></label>
+                <select id="ep-type" name="collaboration-type" class="form-select" required>
+                  <option value="" disabled selected>Select type</option>
+                  <option value="training">Training and courses</option>
+                  <option value="promotional">Promotional materials</option>
+                  <option value="lean-kaizen">Lean / Kaizen</option>
+                  <option value="software">Software and IT</option>
+                  <option value="consulting">Specialist consulting</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group"><label class="form-label" for="ep-message">Description <span>*</span></label><textarea id="ep-message" name="message" class="form-textarea" placeholder="Describe your collaboration proposal..." required rows="5"></textarea></div>
+              <div class="form-group"><label style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;color:var(--color-text-muted);cursor:pointer;"><input type="checkbox" name="privacy" required style="width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:var(--color-primary)"><span>I accept the <a href="../privacy.html" style="color:var(--color-primary);text-decoration:underline">Privacy Policy</a>. <span style="color:var(--color-accent)">*</span></span></label></div>
+              <button type="submit" class="btn btn--primary btn--lg" style="width:100%;">Send proposal</button>
+            </form>
+            <div class="form-success"><strong>Proposal received!</strong> We will review it with interest and get back to you soon.</div>
+          </div>
+
+          <!-- GENERAL FORM -->
+          <div id="en-general" class="contact-form-panel">
+            <p style="font-size:.875rem;color:var(--color-text-muted);margin-bottom:1.5rem;max-width:100%;">For any other information or general enquiry.</p>
+            <form name="contact-general-en" method="POST" data-netlify="true" action="/en/contact.html?success=true">
+              <input type="hidden" name="form-name" value="contact-general-en">
+              <div class="form-group"><label class="form-label" for="eg-name">Full name <span>*</span></label><input type="text" id="eg-name" name="name" class="form-input" placeholder="John Smith" required></div>
+              <div class="form-group"><label class="form-label" for="eg-email">Email <span>*</span></label><input type="email" id="eg-email" name="email" class="form-input" placeholder="john.smith@email.com" required></div>
+              <div class="form-group"><label class="form-label" for="eg-message">Message <span>*</span></label><textarea id="eg-message" name="message" class="form-textarea" placeholder="Write your message..." required rows="6"></textarea></div>
+              <div class="form-group"><label style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;color:var(--color-text-muted);cursor:pointer;"><input type="checkbox" name="privacy" required style="width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:var(--color-primary)"><span>I accept the <a href="../privacy.html" style="color:var(--color-primary);text-decoration:underline">Privacy Policy</a>. <span style="color:var(--color-accent)">*</span></span></label></div>
+              <button type="submit" class="btn btn--primary btn--lg" style="width:100%;">Send message</button>
+            </form>
+            <div class="form-success"><strong>Message received!</strong> We will reply as soon as possible.</div>
+          </div>
+        </div>
+
+        <!-- Contact info -->
+        <div>
+          <span class="section-label section-label--primary reveal">Where to find us</span>
+          <h2 class="reveal reveal-delay-1" style="margin-bottom:1.5rem;">Contact information</h2>
+          <div style="display:flex;flex-direction:column;gap:1.5rem;margin-top:1rem;">
+            <div class="card reveal reveal-delay-2" style="padding:1.5rem;"><div style="display:flex;align-items:flex-start;gap:1rem;"><div style="width:40px;height:40px;border-radius:50%;background:var(--color-primary-light);display:flex;align-items:center;justify-content:center;color:var(--color-primary);flex-shrink:0;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div><div><h4 style="font-size:1rem;margin-bottom:.5rem;">Email</h4><p style="margin:0;max-width:100%;"><a href="mailto:contactus@med-af-consulting.it" style="color:var(--color-primary)">contactus@med-af-consulting.it</a><br><a href="mailto:info@med-af-consulting.it" style="color:var(--color-primary)">info@med-af-consulting.it</a></p></div></div></div>
+            <div class="card reveal reveal-delay-3" style="padding:1.5rem;"><div style="display:flex;align-items:flex-start;gap:1rem;"><div style="width:40px;height:40px;border-radius:50%;background:var(--color-primary-light);display:flex;align-items:center;justify-content:center;color:var(--color-primary);flex-shrink:0;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div><div><h4 style="font-size:1rem;margin-bottom:.5rem;">Address</h4><address style="font-style:normal;font-size:.9375rem;color:var(--color-text-muted);">Corso Italia, 39<br>21047 Saronno (VA)<br>Italy</address></div></div></div>
+            <div class="card reveal reveal-delay-4" style="padding:1.5rem;"><div style="display:flex;align-items:flex-start;gap:1rem;"><div style="width:40px;height:40px;border-radius:50%;background:var(--color-primary-light);display:flex;align-items:center;justify-content:center;color:var(--color-primary);flex-shrink:0;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div><div><h4 style="font-size:1rem;margin-bottom:.5rem;">Working hours</h4><p style="margin:0;max-width:100%;font-size:.9375rem;">Monday – Friday: 9:00 – 18:00 CET<br><span style="font-size:.875rem;color:var(--color-text-muted);">Email replies within 24–48 working hours</span></p></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand"><a href="index.html"><img src="../img/mac-logo.png" alt="MAC" width="160" height="38" style="filter:brightness(0) invert(1)"></a><p>Your trusted partner for pharmacovigilance, medical information and Kaizen consulting. Since 2001.</p><div class="footer__social"><a href="https://www.linkedin.com/company/med-af-consulting" target="_blank" rel="noopener" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a><a href="https://www.instagram.com/medafconsulting/" target="_blank" rel="noopener" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a></div></div>
+      <div class="footer__col"><h5>Services</h5><nav class="footer__links"><a href="services.html#pharmacovigilance">Pharmacovigilance</a><a href="services.html#periodic-reports">Periodic reports</a><a href="services.html#medical-information">Medical Information</a><a href="services.html#quality">Quality &amp; Compliance</a><a href="services.html#kaizen">Kaizen Consulting</a></nav></div>
+      <div class="footer__col"><h5>Company</h5><nav class="footer__links"><a href="events.html">Events</a><a href="blog.html">Blog</a><a href="careers.html">Careers</a><a href="faq.html">FAQ</a></nav></div>
+      <div class="footer__col"><h5>Contact</h5><address style="font-style:normal;"><div class="footer__contact-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><a href="mailto:contactus@med-af-consulting.it">contactus@med-af-consulting.it</a></div><div class="footer__contact-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg><span>Corso Italia, 39 – Saronno (VA) Italy</span></div></address></div>
+    </div>
+    <div class="footer__bottom"><p>© 2026 Medical Affairs Consulting Srl — All rights reserved</p><nav class="footer__bottom-links"><a href="../privacy.html">Privacy Policy</a><a href="../cookie.html">Cookie Policy</a><a href="../contatti.html" lang="it">Italiano</a></nav></div>
+  </div>
+</footer>
+<div class="cookie-banner" role="dialog"><p>We use technically necessary cookies. <a href="../cookie.html">Cookie Policy</a>.</p><div class="cookie-banner__actions"><button class="btn btn--outline-white btn--sm" data-cookie-decline>Decline</button><button class="btn btn--white btn--sm" data-cookie-accept>Accept</button></div></div>
+<script src="../js/main.js"></script>
+</body>
+</html>

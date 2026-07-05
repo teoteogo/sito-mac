@@ -1,0 +1,80 @@
+[
+  {
+    "id": "001",
+    "titolo": "Webinar EMA — Aggiornamenti Farmacovigilanza 2026",
+    "titolo_en": "EMA Webinar — Pharmacovigilance Updates 2026",
+    "data": "2026-04-10",
+    "ora": "14:00",
+    "organizzatore": "EMA",
+    "tipo": "webinar",
+    "descrizione": "Aggiornamenti normativi sulla farmacovigilanza europea: nuove linee guida GVP e modifiche al processo PSUR. Sessione aperta a tutti i professionisti del settore farmaceutico.",
+    "descrizione_en": "Regulatory updates on European pharmacovigilance: new GVP guidelines and changes to the PSUR process. Open session for all pharmaceutical professionals.",
+    "link": "https://www.ema.europa.eu",
+    "gratuito": true
+  },
+  {
+    "id": "002",
+    "titolo": "Corso AIFA — Eudravigilance e ICSRs: dalla teoria alla pratica",
+    "titolo_en": "AIFA Course — Eudravigilance and ICSRs: from theory to practice",
+    "data": "2026-05-15",
+    "ora": "09:00",
+    "organizzatore": "AIFA",
+    "tipo": "corso",
+    "descrizione": "Corso intensivo sulla gestione dei casi di sicurezza (ICSRs) attraverso il sistema Eudravigilance. Inclusi esercitazioni pratiche e casi studio reali.",
+    "descrizione_en": "Intensive course on safety case management (ICSRs) through the Eudravigilance system. Includes practical exercises and real case studies.",
+    "link": "https://www.aifa.gov.it",
+    "gratuito": false
+  },
+  {
+    "id": "003",
+    "titolo": "Congresso Nazionale AIOM — Oncologia e Farmacovigilanza",
+    "titolo_en": "AIOM National Congress — Oncology and Pharmacovigilance",
+    "data": "2026-06-20",
+    "ora": "08:30",
+    "organizzatore": "AIOM",
+    "tipo": "congresso",
+    "descrizione": "Il congresso annuale dedicato all'oncologia medica con focus specifico sulla farmacovigilanza in ambito oncologico e le nuove sfide regolatorie.",
+    "descrizione_en": "Annual congress dedicated to medical oncology with specific focus on pharmacovigilance in oncology and new regulatory challenges.",
+    "link": "https://www.aiom.it",
+    "gratuito": false
+  },
+  {
+    "id": "004",
+    "titolo": "Webinar Kaizen in Farmacia — Miglioramento continuo dei processi",
+    "titolo_en": "Kaizen in Pharmacy Webinar — Continuous process improvement",
+    "data": "2026-04-25",
+    "ora": "15:00",
+    "organizzatore": "Medical Affairs Consulting",
+    "tipo": "webinar",
+    "descrizione": "Come applicare la metodologia Kaizen nel contesto farmaceutico per ottimizzare i processi di farmacovigilanza e informazione medica.",
+    "descrizione_en": "How to apply Kaizen methodology in the pharmaceutical context to optimize pharmacovigilance and medical information processes.",
+    "link": "contatti.html",
+    "gratuito": true
+  },
+  {
+    "id": "005",
+    "titolo": "Convegno — RMP e Analisi del Segnale: novità 2026",
+    "titolo_en": "Convention — RMP and Signal Analysis: 2026 Updates",
+    "data": "2026-07-08",
+    "ora": "10:00",
+    "organizzatore": "Farmindustria",
+    "tipo": "convegno",
+    "descrizione": "Sessione dedicata alle novità sui Risk Management Plan (RMP) e sui processi di analisi del segnale di farmacovigilanza secondo le ultime direttive EMA.",
+    "descrizione_en": "Session dedicated to updates on Risk Management Plans (RMP) and pharmacovigilance signal analysis processes according to the latest EMA directives.",
+    "link": "https://www.farmindustria.it",
+    "gratuito": false
+  },
+  {
+    "id": "006",
+    "titolo": "Corso Avanzato — EU-QPPV: Responsabilità e Procedure",
+    "titolo_en": "Advanced Course — EU-QPPV: Responsibilities and Procedures",
+    "data": "2026-09-17",
+    "ora": "09:30",
+    "organizzatore": "ISPE Italia",
+    "tipo": "corso",
+    "descrizione": "Corso avanzato per professionisti che ricoprono o aspirano al ruolo di EU-QPPV. Copertura completa delle responsabilità legali e operative.",
+    "descrizione_en": "Advanced course for professionals who hold or aspire to the EU-QPPV role. Complete coverage of legal and operational responsibilities.",
+    "link": "https://www.ispe.org",
+    "gratuito": false
+  }
+]

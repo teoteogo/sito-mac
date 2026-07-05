@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sezioni Qualità — Medical Affairs Consulting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal:        #1A7A6A;
+    --teal-light:  #E6F3F0;
+    --teal-mid:    #2D9E89;
+    --orange:      #D6562D;
+    --orange-light:#FBF0EC;
+    --green:       #1E7C45;
+    --green-light: #E8F5EE;
+    --text:        #1C2B2A;
+    --text-mid:    #4A5A58;
+    --text-muted:  #7A8E8C;
+    --bg:          #F7F8F6;
+    --white:       #FFFFFF;
+    --border:      #E0E8E6;
+    --serif:       'DM Serif Display', Georgia, serif;
+    --sans:        'DM Sans', system-ui, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--sans); color: var(--text); background: var(--bg); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+  section { padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 8vw, 8rem); }
+  .section-label { font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); margin-bottom: .8rem; display: block; }
+  .section-title { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.18; letter-spacing: -.015em; color: var(--text); margin-bottom: 1rem; }
+  .section-intro { font-size: 1rem; color: var(--text-mid); max-width: 640px; line-height: 1.75; margin-bottom: 3rem; }
+
+  /* ── 1. PILLARS ──────────────────────────────────────── */
+  .pillars-section { background: var(--white); }
+  .pillars-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  .pillar {
+    border: 1px solid var(--border); border-radius: 16px;
+    padding: 2rem 1.5rem; background: var(--bg);
+    position: relative; overflow: hidden;
+    transition: transform .25s, box-shadow .25s;
+  }
+  .pillar:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,122,106,.08); }
+  .pillar::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--teal); border-radius: 16px 16px 0 0;
+  }
+  .pillar-icon { width: 42px; height: 42px; background: var(--teal-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.2rem; }
+  .pillar-icon svg { width: 20px; height: 20px; stroke: var(--teal); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  .pillar h3 { font-family: var(--serif); font-size: 1.15rem; margin-bottom: .6rem; color: var(--text); }
+  .pillar p { font-size: .88rem; color: var(--text-mid); line-height: 1.65; }
+
+  /* ── 2. CODICE ETICO (snello) ────────────────────────── */
+  .etica-section { background: var(--bg); }
+  .etica-intro-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+    align-items: end; margin-bottom: 3rem;
+  }
+  .etica-tagline {
+    font-family: var(--serif);
+    font-size: clamp(1rem, 1.4vw, 1.15rem);
+    color: var(--text-mid);
+    line-height: 1.6;
+    border-left: 3px solid var(--teal);
+    padding-left: 1.2rem;
+  }
+  .etica-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .etica-item {
+    background: var(--white);
+    padding: 1.6rem 1.8rem;
+    transition: background .2s;
+  }
+  .etica-item:hover { background: var(--teal-light); }
+  .etica-item-top {
+    display: flex; align-items: center; gap: .75rem; margin-bottom: .75rem;
+  }
+  .etica-num {
+    font-size: .68rem; font-weight: 700; letter-spacing: .1em;
+    color: var(--teal); background: var(--teal-light);
+    padding: .2rem .55rem; border-radius: 50px;
+    flex-shrink: 0;
+  }
+  .etica-item h3 { font-size: .95rem; font-weight: 600; color: var(--text); }
+  .etica-item p { font-size: .82rem; color: var(--text-mid); line-height: 1.65; }
+
+  /* ── 3. KAIZEN ───────────────────────────────────────── */
+  .kaizen-section { background: var(--white); }
+  .kaizen-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: center; }
+  .kaizen-visual { background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem 2rem; }
+  .kaizen-steps { display: flex; flex-direction: column; gap: 0; position: relative; }
+  .kaizen-steps::before {
+    content: ''; position: absolute; left: 18px; top: 24px; bottom: 24px;
+    width: 2px; background: linear-gradient(to bottom, var(--teal-light) 0%, var(--teal) 100%);
+  }
+  .kaizen-step { display: flex; align-items: flex-start; gap: 1.2rem; padding: 1.1rem 0; position: relative; }
+  .kaizen-step-dot {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: var(--white); border: 2px solid var(--teal);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; position: relative; z-index: 1;
+    transition: background .3s;
+  }
+  .kaizen-step:hover .kaizen-step-dot { background: var(--teal); }
+  .kaizen-step:hover .kaizen-step-dot svg { stroke: #fff; }
+  .kaizen-step-dot svg { width: 16px; height: 16px; stroke: var(--teal); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: stroke .3s; }
+  .kaizen-step-content { padding-top: .45rem; }
+  .kaizen-step-content h4 { font-size: .95rem; font-weight: 600; color: var(--text); margin-bottom: .2rem; }
+  .kaizen-step-content p { font-size: .82rem; color: var(--text-mid); line-height: 1.55; }
+  .kaizen-kpi-row { display: flex; gap: 1rem; margin-top: 1.5rem; }
+  .kaizen-kpi { flex: 1; background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1rem; text-align: center; }
+  .kaizen-kpi .k-num { font-family: var(--serif); font-size: 1.5rem; color: var(--teal); display: block; }
+  .kaizen-kpi .k-lbl { font-size: .72rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: .07em; }
+  .blog-link {
+    display: inline-flex; align-items: center; gap: .5rem;
+    margin-top: 2rem; font-size: .88rem; font-weight: 600;
+    color: var(--teal); text-decoration: none;
+    border: 1.5px solid var(--teal); padding: .6rem 1.2rem;
+    border-radius: 50px; transition: all .2s;
+  }
+  .blog-link:hover { background: var(--teal); color: #fff; }
+  .blog-link svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* ── 4. CERTIFICAZIONI ───────────────────────────────── */
+  .cert-section { background: var(--bg); }
+  .cert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: .5rem; }
+  .cert-card {
+    border: 1.5px dashed var(--border); border-radius: 16px;
+    padding: 2rem; text-align: center;
+    opacity: .7; transition: opacity .2s, border-color .2s;
+  }
+  .cert-card:hover { opacity: 1; border-color: var(--teal); }
+  .cert-card .cert-icon { width: 48px; height: 48px; background: var(--white); border: 1px solid var(--border); border-radius: 12px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; }
+  .cert-card .cert-icon svg { width: 22px; height: 22px; stroke: var(--text-muted); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .cert-card h4 { font-size: .92rem; font-weight: 600; color: var(--text); margin-bottom: .3rem; }
+  .cert-card p { font-size: .8rem; color: var(--text-muted); }
+  /* badge "In arrivo" — arancio */
+  .cert-badge {
+    display: inline-block; font-size: .65rem; font-weight: 700;
+    letter-spacing: .1em; text-transform: uppercase;
+    background: var(--orange-light); color: var(--orange);
+    padding: .25rem .6rem; border-radius: 50px; margin-top: .6rem;
+  }
+  /* badge "Operativo" — verde */
+  .cert-badge.active {
+    background: var(--green-light); color: var(--green);
+  }
+
+  /* ── 5. PRIVACY ──────────────────────────────────────── */
+  .privacy-section { background: var(--white); }
+  .privacy-layout { display: grid; grid-template-columns: 1.5fr 1fr; gap: 5rem; align-items: center; }
+  .privacy-points { list-style: none; margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
+  .privacy-points li { display: flex; align-items: flex-start; gap: 1rem; font-size: .9rem; color: var(--text-mid); line-height: 1.65; }
+  .privacy-points .check { width: 22px; height: 22px; border-radius: 6px; background: var(--teal-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: .15rem; }
+  .privacy-points .check svg { width: 12px; height: 12px; stroke: var(--teal); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+  .privacy-docs { display: flex; flex-direction: column; gap: 1rem; }
+  .doc-link { background: var(--bg); border: 1px solid var(--border); border-radius: 14px; padding: 1.4rem 1.6rem; display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: var(--text); transition: all .2s; }
+  .doc-link:hover { border-color: var(--teal); background: var(--teal-light); }
+  .doc-link-left { display: flex; align-items: center; gap: 1rem; }
+  .doc-link-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--white); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; }
+  .doc-link-icon svg { width: 18px; height: 18px; stroke: var(--teal); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  .doc-link h4 { font-size: .9rem; font-weight: 600; color: var(--text); margin-bottom: .1rem; }
+  .doc-link span { font-size: .78rem; color: var(--text-muted); }
+  .doc-link-arrow { width: 18px; height: 18px; stroke: var(--text-muted); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* ── RESPONSIVE ──────────────────────────────────────── */
+  @media (max-width: 1024px) {
+    .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+    .etica-intro-row { grid-template-columns: 1fr; gap: 1.5rem; }
+    .etica-grid { grid-template-columns: repeat(2, 1fr); }
+    .kaizen-layout { grid-template-columns: 1fr; }
+    .privacy-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .cert-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .pillars-grid, .etica-grid, .cert-grid { grid-template-columns: 1fr; }
+    .kaizen-kpi-row { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════
+     1. QUALITÀ IN QUATTRO DIMENSIONI
+════════════════════════════════════════════════════ -->
+<section class="pillars-section">
+  <span class="section-label">I principi fondamentali</span>
+  <h2 class="section-title">Qualità in quattro dimensioni</h2>
+  <div class="pillars-grid">
+
+    <div class="pillar">
+      <div class="pillar-icon">
+        <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+      </div>
+      <h3>Qualità</h3>
+      <p>Rigore metodologico, competenza tecnica e attenzione al valore reale per il cliente in ogni attività di consulenza.</p>
+    </div>
+
+    <div class="pillar">
+      <div class="pillar-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      </div>
+      <h3>Accuratezza</h3>
+      <p>Analisi, valutazioni e raccomandazioni basate esclusivamente su dati affidabili e verificabili.</p>
+    </div>
+
+    <div class="pillar">
+      <div class="pillar-icon">
+        <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 000 4h6a2 2 0 000-4M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+      </div>
+      <h3>Tracciabilità</h3>
+      <p>Processi e documentazione chiari, ricostruibili e controllabili. Ogni decisione è motivata e documentata.</p>
+    </div>
+
+    <div class="pillar">
+      <div class="pillar-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      </div>
+      <h3>Responsabilità</h3>
+      <p>Piena consapevolezza dell'impatto delle nostre attività sui clienti e sul settore farmaceutico.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════
+     2. CODICE ETICO — versione snella
+════════════════════════════════════════════════════ -->
+<section class="etica-section" id="codice-etico">
+  <div class="etica-intro-row">
+    <div>
+      <span class="section-label">Codice Etico</span>
+      <h2 class="section-title">I principi che guidano il nostro lavoro</h2>
+    </div>
+    <p class="etica-tagline">Un codice etico non è un documento: è il modo in cui operiamo ogni giorno, in ogni rapporto professionale, con clienti, partner e istituzioni.</p>
+  </div>
+
+  <div class="etica-grid">
+
+    <div class="etica-item">
+      <div class="etica-item-top">
+        <span class="etica-num">01</span>
+        <h3>Conformità normativa</h3>
+      </div>
+      <p>Rispettiamo e promuoviamo le Good Practices (GxP) e le normative nazionali e internazionali del settore, supportando i clienti nel rispetto di tutti gli obblighi regolatori.</p>
+    </div>
+
+    <div class="etica-item">
+      <div class="etica-item-top">
+        <span class="etica-num">02</span>
+        <h3>Integrità e anticorruzione</h3>
+      </div>
+      <p>Ogni rapporto è gestito in modo etico, documentato e conforme. Non tolleriamo conflitti di interesse, favoritismi o qualsiasi pratica che comprometta la nostra credibilità.</p>
+    </div>
+
+    <div class="etica-item">
+      <div class="etica-item-top">
+        <span class="etica-num">03</span>
+        <h3>Indipendenza professionale</h3>
+      </div>
+      <p>Operiamo in modo indipendente dai nostri clienti, garantendo sempre l'obiettività delle nostre analisi e raccomandazioni. L'indipendenza è il valore della nostra consulenza.</p>
+    </div>
+
+    <div class="etica-item">
+      <div class="etica-item-top">
+        <span class="etica-num">04</span>
+        <h3>Rapporti con i clienti</h3>
+      </div>
+      <p>Collaborazione, affidabilità e responsabilità reciproca: siamo partner professionali. L'implementazione delle raccomandazioni e il rispetto delle normative restano in capo al cliente.</p>
+    </div>
+
+    <div class="etica-item">
+      <div class="etica-item-top">
+        <span class="etica-num">05</span>
+        <h3>Riservatezza e GDPR</h3>
+      </div>
+      <p>Proteggiamo le informazioni tecniche, scientifiche e commerciali dei clienti con la massima riservatezza, nel pieno rispetto del Regolamento Europeo GDPR.</p>
+    </div>
+
+    <div class="etica-item">
+      <div class="etica-item-top">
+        <span class="etica-num">06</span>
+        <h3>Partner e fornitori</h3>
+      </div>
+      <p>Costruiamo collaborazioni su legalità, qualità e rispetto reciproco, con l'obiettivo di creare una rete che condivida elevati standard professionali ed etici nel settore farmaceutico.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════
+     3. METODO KAIZEN
+════════════════════════════════════════════════════ -->
+<section class="kaizen-section" id="kaizen">
+  <div class="kaizen-layout">
+
+    <div class="kaizen-text">
+      <span class="section-label">Cultura del miglioramento</span>
+      <h2 class="section-title">Il metodo Kaizen: crescere ogni giorno</h2>
+      <p class="section-intro">In MAC il miglioramento continuo non è un obiettivo: è un processo quotidiano. Ogni membro del team contribuisce attivamente all'evoluzione dei metodi, degli strumenti e della cultura aziendale.</p>
+      <p style="font-size:.9rem;color:var(--text-mid);line-height:1.75">Pubblichiamo costantemente aggiornamenti e riflessioni sulla nostra applicazione del Lean Thinking nel contesto farmaceutico. Questi contenuti raccontano i valori concreti che guidano le nostre scelte operative ogni giorno.</p>
+      <a class="blog-link" href="/blog.html">
+        Leggi i nostri aggiornamenti Kaizen
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="kaizen-visual">
+      <div class="kaizen-steps">
+
+        <div class="kaizen-step">
+          <div class="kaizen-step-dot">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
+          </div>
+          <div class="kaizen-step-content">
+            <h4>Osservare</h4>
+            <p>Analisi del processo attuale senza pregiudizi, con occhio critico e aperto.</p>
+          </div>
+        </div>
+
+        <div class="kaizen-step">
+          <div class="kaizen-step-dot">
+            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div class="kaizen-step-content">
+            <h4>Misurare</h4>
+            <p>Raccogliere dati concreti per capire dove e quanto il processo può migliorare.</p>
+          </div>
+        </div>
+
+        <div class="kaizen-step">
+          <div class="kaizen-step-dot">
+            <svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          </div>
+          <div class="kaizen-step-content">
+            <h4>Proporre</h4>
+            <p>Generare idee di miglioramento condivise, piccole e immediatamente implementabili.</p>
+          </div>
+        </div>
+
+        <div class="kaizen-step">
+          <div class="kaizen-step-dot">
+            <svg viewBox="0 0 24 24"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+          </div>
+          <div class="kaizen-step-content">
+            <h4>Standardizzare e ripetere</h4>
+            <p>Consolidare ciò che funziona, renderlo norma e ripartire: il ciclo non ha fine.</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="kaizen-kpi-row">
+        <div class="kaizen-kpi">
+          <span class="k-num">+300</span>
+          <span class="k-lbl">Idee / anno</span>
+        </div>
+        <div class="kaizen-kpi">
+          <span class="k-num">Dal 2001</span>
+          <span class="k-lbl">In continua crescita</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════
+     4. RICONOSCIMENTI E COMPLIANCE
+════════════════════════════════════════════════════ -->
+<section class="cert-section" id="certificazioni">
+  <span class="section-label">Certificazioni</span>
+  <h2 class="section-title">Riconoscimenti e compliance</h2>
+  <p class="section-intro">Stiamo lavorando all'ottenimento di certificazioni formali che attestino i nostri standard operativi. Nel frattempo, la nostra compliance è garantita dal rispetto rigoroso delle normative di settore.</p>
+  <div class="cert-grid">
+
+    <div class="cert-card">
+      <div class="cert-icon">
+        <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+      </div>
+      <h4>ISO 9001</h4>
+      <p>Sistema di gestione per la qualità</p>
+      <span class="cert-badge">In arrivo</span>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+      </div>
+      <h4>GDPR Compliance</h4>
+      <p>Protezione dati personali EU</p>
+      <span class="cert-badge active">Operativo</span>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-icon">
+        <svg viewBox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+      </div>
+      <h4>GVP Compliance</h4>
+      <p>Good Pharmacovigilance Practices</p>
+      <span class="cert-badge active">Operativo</span>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════
+     5. PRIVACY
+════════════════════════════════════════════════════ -->
+<section class="privacy-section" id="privacy">
+  <div class="privacy-layout">
+    <div>
+      <span class="section-label">Privacy & GDPR</span>
+      <h2 class="section-title">I tuoi dati, protetti con cura</h2>
+      <p class="section-intro" style="margin-bottom:1rem">Trattiamo i dati personali e aziendali con la massima riservatezza, nel pieno rispetto del Regolamento Europeo GDPR e delle normative vigenti.</p>
+      <ul class="privacy-points">
+        <li>
+          <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          Misure tecniche e organizzative adeguate per sicurezza e integrità dei dati
+        </li>
+        <li>
+          <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          Informazioni tecniche, scientifiche e commerciali dei clienti protette da riservatezza contrattuale
+        </li>
+        <li>
+          <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          Nessuna condivisione di dati con terze parti non autorizzate
+        </li>
+        <li>
+          <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          Diritto di accesso, rettifica e cancellazione garantito a ogni interessato
+        </li>
+      </ul>
+    </div>
+    <div class="privacy-docs">
+      <a class="doc-link" href="/privacy-policy.html">
+        <div class="doc-link-left">
+          <div class="doc-link-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <div>
+            <h4>Informativa sulla Privacy</h4>
+            <span>Come trattiamo i tuoi dati</span>
+          </div>
+        </div>
+        <svg class="doc-link-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a class="doc-link" href="/cookie-policy.html">
+        <div class="doc-link-left">
+          <div class="doc-link-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0 0v-8m0 0l-3-3m3 3l3-3"/></svg>
+          </div>
+          <div>
+            <h4>Cookie Policy</h4>
+            <span>Informazioni sull'uso dei cookie</span>
+          </div>
+        </div>
+        <svg class="doc-link-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
