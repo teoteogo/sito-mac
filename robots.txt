@@ -1,4 +1,2 @@
 User-agent: *
-Allow: /
-
-Sitemap: https://www.med-af-consulting.com/sitemap.xml
+Disallow: /
