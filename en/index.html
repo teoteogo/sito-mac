@@ -4,41 +4,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Medical Affairs Consulting</title>
-  <meta name="description" content="MAC is your trusted partner for pharmacovigilance, medical information and Kaizen consulting. Serving pharmaceutical companies across Europe since 2001.">
-  <meta name="keywords" content="pharmacovigilance, EU-QPPV, PSUR, PBRER, medical affairs, medical information, Kaizen, AIFA, EMA, drug safety">
-  <meta property="og:title" content="Medical Affairs Consulting — Pharmacovigilance & Medical Affairs">
-  <meta property="og:description" content="Your trusted partner for pharmacovigilance, medical information and Kaizen consulting since 2001.">
+  <meta name="description" content="MAC is the reference partner for pharmacovigilance and medical affairs. Serving Italian and European pharmaceutical companies since 2001.">
+  <meta name="keywords" content="pharmacovigilance, EU-QPPV, PSUR, PBRER, medical affairs, medical information, Kaizen, AIFA, EMA">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Medical Affairs Consulting — Pharmacovigilance and Medical Affairs">
+  <meta property="og:description" content="Your reference partner for pharmacovigilance and medical affairs, since 2001.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.med-af-consulting.com/en/">
+  <meta property="og:image" content="../img/og-image.jpg">
+
+  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="../img/icona_MAC.ico">
   <link rel="manifest" href="../manifest.json">
+
+  <!-- Preload font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Libre+Franklin:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/animations.css">
+  <style>
+    main p { text-align: justify; }
+  </style>
+
+  <!-- Hreflang -->
   <link rel="alternate" hreflang="it" href="https://www.med-af-consulting.com/">
   <link rel="alternate" hreflang="en" href="https://www.med-af-consulting.com/en/">
+  <!-- AVACY Cookie Consent (Paste your AVACY script tag here) -->
+  <!-- <script src="https://cdn.avacy.it/consent-banner/..." defer></script> -->
 </head>
 <body>
 
+<!-- Scroll progress bar -->
 <div class="scroll-progress" aria-hidden="true"></div>
 
-<!-- NAVBAR -->
+<!-- ============================================================
+     NAVBAR
+     ============================================================ -->
 <header>
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="navbar__inner">
-      <a href="index.html" class="navbar__logo" aria-label="MAC — Home">
+      <!-- Logo -->
+      <a href="index.html" class="navbar__logo" aria-label="Medical Affairs Consulting — Home">
         <img src="../img/mac-logo.png" alt="MAC — Medical Affairs Consulting" width="180" height="44">
       </a>
+
+      <!-- Desktop menu -->
       <ul class="navbar__menu" role="list">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="quality.html">Quality</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="blog.html">Blog</a></li>
+        <li><a href="careers.html">Careers</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+
+      <!-- Right actions -->
       <div class="navbar__actions">
         <div class="lang-switcher" aria-label="Select language">
           <a href="../index.html" lang="it">IT</a>
@@ -47,92 +70,102 @@
         </div>
         <a href="contact.html" class="btn btn--primary">Contact us</a>
       </div>
+
+      <!-- Mobile hamburger -->
       <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
+
+  <!-- Mobile menu -->
   <div class="navbar__mobile" role="dialog" aria-label="Mobile menu">
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
     <a href="quality.html">Quality</a>
-    <a href="events.html">Events</a>
-    <a href="blog.html">Blog</a>
+    <a href="careers.html">Careers</a>
     <a href="contact.html">Contact</a>
-    <a href="faq.html">FAQ</a>
-    <div class="lang-switcher mt-4"><a href="../index.html">IT</a><span>|</span><a href="index.html" class="active">EN</a></div>
+    <div class="lang-switcher mt-4">
+      <a href="../index.html">IT</a>
+      <span>|</span>
+      <a href="index.html" class="active">EN</a>
+    </div>
     <a href="contact.html" class="btn btn--primary">Contact us</a>
   </div>
 </header>
 
 <main>
 
-  <!-- HERO -->
+  <!-- ============================================================
+       1. HERO
+       ============================================================ -->
   <section class="hero" aria-labelledby="hero-title">
-    <div class="hero__bg"></div>
-    <div class="hero__bg-image" aria-hidden="true"></div>
-    <div class="bg-shape bg-shape--1" aria-hidden="true"></div>
-    <div class="bg-shape bg-shape--2" aria-hidden="true"></div>
 
-    <div class="hero__content">
-      <p class="hero__eyebrow">Since 2001 — Pharmacovigilance &amp; Medical Affairs</p>
+    <div class="hero__right" aria-hidden="true"></div>
 
-      <h1 class="hero__title" id="hero-title">
-        Your partner
-        <span class="pill-wrap" aria-hidden="true">
-          <img src="../img/hero/pill-capsule.jpg" alt="" width="144" height="64" loading="eager">
-        </span>
-        in Pharmacovigilance
-        <span class="text-highlight"> and Medical Affairs</span>
-      </h1>
+    <div class="hero__inner">
+      <div class="hero__content">
+        <p class="hero__eyebrow">Since 2001 — Pharmacovigilance &amp; Medical Affairs</p>
 
-      <p class="hero__subtitle">
-        We support MAH holders, sponsors and pharmaceutical companies with specialised pharmacovigilance, medical information and Kaizen consulting services throughout the drug lifecycle.
-      </p>
+        <h1 class="hero__title" id="hero-title">
+          Your partner in<br>
+          Pharmacovigilance<br>
+          and <span class="text-highlight">Medical</span> <span style="color: var(--color-accent);">Affairs</span>
+        </h1>
 
-      <div class="hero__cta">
-        <a href="contact.html" class="btn btn--primary btn--lg">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-          Contact us today
-        </a>
-        <a href="services.html" class="btn btn--outline btn--lg">
-          Explore services
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-        </a>
+        <p class="hero__subtitle">
+          Managing complex pharmacovigilance workflows demands time, precision and consistent alignment with continuously evolving GVP standards.
+        </p>
+
+        <p class="hero__subtitle hero__subtitle--solution">
+          <span class="hero__solution-label"></span>
+          For 25 years, we have supported pharmaceutical companies in turning this complexity into streamlined, reliable processes. A multidisciplinary team, rigorous quality standards and a field-tested methodology ensure submission timeliness, data integrity and operational continuity.
+        </p>
+
+        <div class="hero__cta">
+          <a href="services.html" class="btn btn--primary btn--lg">
+            Explore our services
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
       </div>
     </div>
 
-    <div class="hero__badge" aria-hidden="true">
-      <div class="hero__badge-number">25+</div>
-      <div class="hero__badge-label">years of experience</div>
-    </div>
   </section>
 
-  <!-- STATS BAR -->
+  <!-- ============================================================
+       2. STATS BAR
+       ============================================================ -->
   <section class="stats-bar" aria-label="Key figures">
     <div class="container">
       <div class="stats-bar__grid">
         <div class="stats-bar__item reveal">
-          <span class="stats-bar__number" data-count="10" data-prefix="+" data-suffix="k">+10k</span>
-          <p class="stats-bar__label">ICSRs processed in 2023</p>
+          <span class="stats-bar__label stats-bar__label--title">Trust</span>
+          <span class="stats-bar__number" data-count="10" data-prefix="+">+10</span>
+          <p class="stats-bar__label">Years of continuous partnership with our key clients</p>
         </div>
         <div class="stats-bar__item reveal reveal-delay-1">
-          <span class="stats-bar__number accent" data-count="25" data-suffix="+">25+</span>
-          <p class="stats-bar__label">years of industry experience</p>
+          <span class="stats-bar__label stats-bar__label--title">Areas of expertise</span>
+          <span class="stats-bar__number accent" data-count="10" data-prefix="+">+10</span>
+          <p class="stats-bar__label">Multidisciplinary areas of expertise within the team</p>
         </div>
         <div class="stats-bar__item reveal reveal-delay-2">
-          <span class="stats-bar__number" data-count="0">0</span>
-          <p class="stats-bar__label">PSUSA issues flagged by EMA</p>
+          <span class="stats-bar__label stats-bar__label--title">Experience</span>
+          <span class="stats-bar__number" data-count="25" data-prefix="+">+25</span>
+          <p class="stats-bar__label">Years of experience in the pharmaceutical industry</p>
         </div>
         <div class="stats-bar__item reveal reveal-delay-3">
+          <span class="stats-bar__label stats-bar__label--title">Kaizen</span>
           <span class="stats-bar__number accent" data-count="300" data-prefix="+">+300</span>
-          <p class="stats-bar__label">Kaizen ideas implemented yearly</p>
+          <p class="stats-bar__label">Process-improvement ideas generated every year</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT US (PREVIEW) -->
+  <!-- ============================================================
+       3. ABOUT US (PREVIEW)
+       ============================================================ -->
   <section class="section" id="about-preview" aria-labelledby="about-preview-title">
     <div class="container">
       <div class="why-section__inner">
@@ -143,7 +176,7 @@
           <h2 class="reveal reveal-delay-1" id="about-preview-title">Alongside pharmaceutical companies since 2001</h2>
           <div class="section-divider reveal reveal-delay-2"></div>
           <p class="reveal reveal-delay-2">
-            Medical Affairs Consulting (MAC) was founded in 2001 by Dr. Stefano Franchini, a medical doctor with a post-graduate degree in Sport Medicine and former physician at IRCCS Don Gnocchi, Milan. Building on a solid career as Medical Advisor, Drug Safety Unit Manager at Zambon Group SpA and Medical &amp; Regulatory Affairs Manager for the Italian affiliate of a US biotechnology company, Dr. Franchini brought to MAC a deep understanding of industrial and regulatory dynamics.
+            Medical Affairs Consulting (MAC) was founded in 2001 by Dr. Stefano Franchini, a physician and surgeon specialised in Sports Medicine and formerly on staff at the IRCCS Don Gnocchi Institute in Milan. Drawing on an established career as Medical Advisor and Drug Safety Unit Manager at Zambon Group SpA, Dr. Franchini brought to MAC an in-depth understanding of industry dynamics and regulatory practice.
           </p>
           <a href="services.html#expertise" class="btn btn--outline mt-8 reveal reveal-delay-4">Discover our expertise</a>
         </div>
@@ -152,15 +185,15 @@
         <div class="why-section__right">
           <div class="chi-siamo__panel chi-siamo__panel--blue reveal-right">
             <p>
-              Created to meet the needs of pharmaceutical companies with scientific rigour, MAC has grown over time thanks to the trust of the market.
+              Founded to address the needs of pharmaceutical companies with scientific rigour, MAC has grown steadily on the strength of the market's trust.
             </p>
             <p style="margin-top:1rem;">
-              Today the company counts a multidisciplinary team of more than 25 specialists, offering pharmaceutical companies a scalable structure, vertical expertise and the same dedication to excellence that has guided us since day one.
+              Today the company comprises a multidisciplinary team of more than 25 specialists, offering pharmaceutical companies a scalable structure, deep vertical expertise and the same commitment to excellence that has guided us since day one.
             </p>
           </div>
           <div class="chi-siamo__panel reveal-right">
             <p>
-              Physicians, pharmacists, biologists, engineers, IT specialists, quality managers and other professionals work side by side every day, with distinct roles and a common goal. It is precisely this blend of skills, backgrounds and personal passions that allows us to effectively tackle the complexity of the pharmaceutical sector — and to react promptly to every regulatory, operational or market change.
+              Physicians, pharmacists, biologists, engineers, IT specialists, quality managers and other professionals work side by side every day, each with a distinct role but a shared objective. It is precisely this convergence of skills, backgrounds and individual expertise that allows us to address the complexity of the pharmaceutical sector effectively — and to respond promptly to every regulatory, operational or market change.
             </p>
           </div>
         </div>
@@ -169,302 +202,615 @@
     </div>
   </section>
 
-  <!-- WHY CHOOSE US -->
+  <!-- ============================================================
+       4. WHY CHOOSE US
+       ============================================================ -->
   <section class="why-section section--bg" id="why-us" aria-labelledby="why-title">
     <div class="container">
-      <div class="why-section__inner">
-        <div class="why-section__left">
-          <span class="section-label section-label--primary reveal">Why choose us</span>
-          <h2 class="reveal reveal-delay-1" id="why-title">Excellence and reliability for your company</h2>
-          <div class="section-divider reveal reveal-delay-2"></div>
-          <p class="reveal reveal-delay-2">Since 2001 we have supported pharmaceutical companies with a tailored approach combining regulatory expertise, operational efficiency and a culture of continuous improvement.</p>
-          <p class="reveal reveal-delay-3">Our multidisciplinary team ensures continuity, quality and compliance at every stage of the drug lifecycle.</p>
-          <a href="services.html#expertise" class="btn btn--outline mt-8 reveal reveal-delay-4">Discover our expertise</a>
+
+      <div class="why-section__header">
+        <span class="section-label section-label--primary reveal">Why choose us</span>
+        <h2 class="reveal reveal-delay-1" id="why-title">Zero-Distance Outsourcing</h2>
+        <div class="section-divider reveal reveal-delay-2"></div>
+        <p class="reveal reveal-delay-2">
+          We believe in a zero-distance outsourcing model, built on transparency as a core operating principle.
+        </p>
+      </div>
+
+      <div class="why-cards">
+        <div class="why-card reveal">
+          <div class="why-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          </div>
+          <h4 class="why-card__title">Direct Channel, Immediate Answers</h4>
+          <p class="why-card__text">We foster a corporate culture centred on continuous evolution and close collaboration. No filters, no intermediaries: you engage directly with the specialist team managing your processes, ensuring rapid responses and timely decisions whenever you need them.</p>
         </div>
-        <div class="why-section__right">
-          <ul class="why-list" role="list">
-            <li class="why-list__item reveal">
-              <div class="why-list__line"></div>
-              <div class="why-list__content">
-                <h4>Decades of experience</h4>
-                <p>Active since 2001 in pharmacovigilance and medical affairs, with deep knowledge of the European and Italian regulatory landscape.</p>
-              </div>
-            </li>
-            <li class="why-list__item reveal reveal-delay-1">
-              <div class="why-list__line why-list__line--accent"></div>
-              <div class="why-list__content">
-                <h4>Tailored approach</h4>
-                <p>Every client has unique needs. We design customised, scalable solutions based on the size and requirements of your company.</p>
-              </div>
-            </li>
-            <li class="why-list__item reveal reveal-delay-2">
-              <div class="why-list__line"></div>
-              <div class="why-list__content">
-                <h4>Multidisciplinary team</h4>
-                <p>Physicians, pharmacists, biologists, Kaizen engineers and IT consultants work in synergy to provide comprehensive integrated support.</p>
-              </div>
-            </li>
-            <li class="why-list__item reveal reveal-delay-3">
-              <div class="why-list__line why-list__line--accent"></div>
-              <div class="why-list__content">
-                <h4>Kaizen culture</h4>
-                <p>Continuous improvement is not a slogan — it is our daily working method, with over 300 Kaizen ideas implemented every year.</p>
-              </div>
-            </li>
-            <li class="why-list__item reveal reveal-delay-4">
-              <div class="why-list__line"></div>
-              <div class="why-list__content">
-                <h4>Zero EMA issues</h4>
-                <p>No critical findings in PSUSA reviews by EMA — a testament to the quality and precision of our work.</p>
-              </div>
-            </li>
-          </ul>
+        <div class="why-card reveal reveal-delay-1">
+          <div class="why-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <h4 class="why-card__title">Digitalisation and Data Security</h4>
+          <p class="why-card__text">Continuous training, modern technology platforms and advanced IT infrastructure, safeguarded by stringent cybersecurity standards (VPN, MFA), ensure secure and compliant data management.</p>
+        </div>
+        <div class="why-card reveal reveal-delay-2">
+          <div class="why-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"></path></svg>
+          </div>
+          <h4 class="why-card__title">Proven Expertise and Reliability</h4>
+          <p class="why-card__text">Pharmacovigilance demands vertical expertise and uncompromising rigour. We meet this complexity with the reliability of an established organisation, the continuous professional development of our experts, and a track record that safeguards the continuity of your business.</p>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- SERVICES PREVIEW -->
-  <section class="section" id="services-preview" aria-labelledby="services-title">
+  <!-- ============================================================
+       4. SERVICES (PREVIEW)
+       ============================================================ -->
+  <section class="section section--primary" id="services-preview" aria-labelledby="services-title">
     <div class="container">
       <div class="text-center mb-8">
         <span class="section-label section-label--primary reveal">Our services</span>
-        <h2 class="reveal reveal-delay-1" id="services-title">Complete support throughout the drug lifecycle</h2>
-        <p class="reveal reveal-delay-2" style="margin:0 auto;">From pharmacovigilance management to medical information, quality assurance and Kaizen promotion: we offer integrated, specialist support.</p>
+        <h2 class="reveal reveal-delay-1" id="services-title">Comprehensive support across the drug lifecycle</h2>
+        <div class="section-divider section-divider--center reveal reveal-delay-2"></div>
+        <p class="reveal reveal-delay-2" style="margin: 0 auto;">
+          From pharmacovigilance management to medical information activities: we deliver integrated, specialist support.
+        </p>
       </div>
-      <div class="grid-3" style="margin-top:3rem;">
-        <article class="card reveal">
-          <div class="card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+
+      <div class="grid-2 service-cards" style="margin-top: 3rem;">
+
+        <!-- Pharmacovigilance card -->
+        <article class="card card--service reveal">
+          <div class="card__header">
+            <div class="card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+            </div>
+            <h3 class="card__title">Pharmacovigilance</h3>
           </div>
-          <h3 class="card__title">Pharmacovigilance</h3>
-          <p class="card__text">EU-QPPV, PSMF, safety database management, ICSRs/SAEs/SUSARs, Eudravigilance, XEVMPD (Art. 57), periodic safety reports.</p>
-          <a href="services.html#pharmacovigilance" class="card__link">Learn more <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+          <p class="card__text">We manage every aspect of drug safety across the full product lifecycle, with an approach centred on quality and regulatory compliance.</p>
+          <ul class="card__list">
+            <li>EU-QPPV and PSMF — full regulatory oversight</li>
+            <li>ICSRs, SAEs, SUSARs and Eudravigilance</li>
+            <li>Periodic safety reports — PSUR / PBRER</li>
+            <li>Signal detection and benefit-risk profile analysis</li>
+            <li>Internal audits and gap assessments of PV processes</li>
+          </ul>
         </article>
-        <article class="card reveal reveal-delay-1">
-          <div class="card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+
+        <!-- Medical Affairs card -->
+        <article class="card card--service reveal reveal-delay-1">
+          <div class="card__header">
+            <div class="card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+            </div>
+            <h3 class="card__title">Medical Affairs</h3>
           </div>
-          <h3 class="card__title">Medical Information</h3>
-          <p class="card__text">Scientific Service Officer support, medical information request management in compliance with applicable EU regulations.</p>
-          <a href="services.html#medical-information" class="card__link">Learn more <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+          <p class="card__text">We support the company's medical-scientific activities through a structured, traceable operating model geared towards performance improvement.</p>
+          <ul class="card__list">
+            <li>Medical Information — Legislative Decree 219/2006, Art. 126</li>
+            <li>Support to the Scientific Service Officer</li>
+            <li>Management and analysis of medical enquiries</li>
+            <li>Scientific exchange and KOL engagement</li>
+            <li>Review of scientific materials and medical team training</li>
+          </ul>
         </article>
-        <article class="card reveal reveal-delay-2">
-          <div class="card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
-          </div>
-          <h3 class="card__title">Kaizen Consulting</h3>
-          <p class="card__text">Lean Thinking and Kaizen methodology applied to pharmaceutical processes for continuous improvement, waste reduction and performance optimisation.</p>
-          <a href="services.html#kaizen" class="card__link">Learn more <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
-        </article>
+
       </div>
+
       <div class="text-center mt-8 reveal">
         <a href="services.html" class="btn btn--outline">View all services</a>
       </div>
     </div>
   </section>
 
-  <!-- MAC METHOD -->
+  <!-- ============================================================
+       TECH TICKER
+       ============================================================ -->
+  <div class="tech-ticker" aria-hidden="true">
+    <div class="tech-ticker__track">
+      <span class="tech-ticker__item">EudraVigilance</span>
+      <span class="tech-ticker__sep">·</span>
+      <span class="tech-ticker__item">VigiBase</span>
+      <span class="tech-ticker__sep">·</span>
+      <span class="tech-ticker__item">ARISg</span>
+      <span class="tech-ticker__sep">·</span>
+      <span class="tech-ticker__item">Oracle Argus</span>
+      <span class="tech-ticker__sep">·</span>
+      <span class="tech-ticker__item">Microsoft SharePoint</span>
+      <span class="tech-ticker__sep">·</span>
+      <span class="tech-ticker__item">Microsoft Office 365</span>
+      <span class="tech-ticker__sep">·</span>
+      <span class="tech-ticker__item">PubMed</span>
+      <span class="tech-ticker__sep">·</span>
+      <span class="tech-ticker__item">Embase</span>
+      <span class="tech-ticker__sep">·</span>
+      <span class="tech-ticker__item">WHO Drug Dictionary</span>
+      <span class="tech-ticker__sep">·</span>
+      <span class="tech-ticker__item">MedDRA</span>
+      <span class="tech-ticker__sep">·</span>
+      <span class="tech-ticker__item">EVWEB</span>
+      <span class="tech-ticker__sep">·</span>
+      <span class="tech-ticker__item">XEVMPD</span>
+      <span class="tech-ticker__sep">·</span>
+      <span class="tech-ticker__item">SafetyDrugs</span>
+      <span class="tech-ticker__sep">·</span>
+      <span class="tech-ticker__item">EudraVigilance</span>
+      <span class="tech-ticker__sep">·</span>
+      <span class="tech-ticker__item">VigiBase</span>
+      <span class="tech-ticker__sep">·</span>
+      <span class="tech-ticker__item">ARISg</span>
+      <span class="tech-ticker__sep">·</span>
+      <span class="tech-ticker__item">Oracle Argus</span>
+      <span class="tech-ticker__sep">·</span>
+      <span class="tech-ticker__item">Microsoft SharePoint</span>
+      <span class="tech-ticker__sep">·</span>
+      <span class="tech-ticker__item">Microsoft Office 365</span>
+      <span class="tech-ticker__sep">·</span>
+      <span class="tech-ticker__item">PubMed</span>
+      <span class="tech-ticker__sep">·</span>
+      <span class="tech-ticker__item">Embase</span>
+      <span class="tech-ticker__sep">·</span>
+      <span class="tech-ticker__item">WHO Drug Dictionary</span>
+      <span class="tech-ticker__sep">·</span>
+      <span class="tech-ticker__item">MedDRA</span>
+      <span class="tech-ticker__sep">·</span>
+      <span class="tech-ticker__item">EVWEB</span>
+      <span class="tech-ticker__sep">·</span>
+      <span class="tech-ticker__item">XEVMPD</span>
+      <span class="tech-ticker__sep">·</span>
+      <span class="tech-ticker__item">SafetyDrugs</span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       5. THE M.A.C. METHOD
+       ============================================================ -->
   <section class="method-section" id="method" aria-labelledby="method-title">
     <div class="container">
-      <div class="method-section__inner">
-        <div class="method-section__content">
-          <span class="section-label section-label--primary reveal">The MAC method</span>
-          <h2 class="reveal reveal-delay-1" id="method-title">People, processes and <span class="text-highlight">continuous improvement</span></h2>
-          <div class="section-divider reveal reveal-delay-2"></div>
-          <p class="reveal reveal-delay-2"><strong>Our mission:</strong> to ensure excellence in Pharmacovigilance and Medical Information, and to promote a culture of continuous Change through Kaizen throughout the drug lifecycle.</p>
-          <p class="reveal reveal-delay-3"><strong>Our values:</strong> we value people as our most important asset. Their curiosity and energy are the intangible capital that drives innovation and sustainable growth.</p>
-          <div class="method-section__values" style="margin-top:2rem;">
-            <div class="method-value reveal reveal-delay-3">
-              <div class="method-value__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg></div>
-              <div class="method-value__text"><h4>People first</h4><p>The team is our most valuable asset. We invest in continuous training and professional wellbeing.</p></div>
-            </div>
-            <div class="method-value reveal reveal-delay-4">
-              <div class="method-value__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg></div>
-              <div class="method-value__text"><h4>Continuous improvement</h4><p>Every process can be optimised. The Kaizen philosophy guides us in finding more effective solutions every day.</p></div>
-            </div>
-            <div class="method-value reveal reveal-delay-5">
-              <div class="method-value__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
-              <div class="method-value__text"><h4>Quality &amp; compliance</h4><p>Every activity meets the highest quality standards and current EMA/AIFA regulations.</p></div>
-            </div>
-          </div>
-        </div>
-        <div class="method-graphic reveal-scale" aria-hidden="true">
-          <div class="method-circle">
-            <div class="method-circle__outer"></div>
-            <div class="method-circle__mid"></div>
-            <div class="method-circle__center">M.A.C.<br>since 2001</div>
-            <div class="method-circle__dot" style="top:2%;left:48%;"></div>
-            <div class="method-circle__dot" style="top:48%;right:2%;background:var(--color-accent)"></div>
-            <div class="method-circle__dot" style="bottom:2%;left:48%;background:var(--color-primary-dark)"></div>
-            <div class="method-circle__dot" style="top:48%;left:2%;"></div>
-          </div>
-        </div>
+      <div class="method-section__header text-center">
+        <span class="section-label section-label--primary reveal">THE M.A.C. METHOD</span>
+        <h2 class="reveal reveal-delay-1" id="method-title">
+          Quality is not by chance.<br>It is a method.
+        </h2>
+        <div class="section-divider reveal reveal-delay-2"></div>
+        <p class="method-section__intro reveal reveal-delay-2">
+          Every result we deliver for our clients stems from a structured, replicable and continuously evolving approach. <br>Discover the three pillars that guide our daily work, and the practical examples that show how we translate this value into practice.
+        </p>
       </div>
+
+      <ol class="method-manifesto">
+        <li class="method-manifesto__item reveal reveal-delay-3">
+          <span class="method-manifesto__number">01</span>
+          <div class="method-manifesto__body">
+            <h3 class="method-manifesto__title">People at the Centre</h3>
+            <p class="method-manifesto__text">We cultivate high-calibre professionals, integrating their talent into a shared method and creating the conditions for them to realise their full potential. We believe excellence is not a starting point, but a value we build together, every day, as a team.</p>
+            <blockquote class="method-manifesto__practice">Our day begins with the Asaichi, a daily alignment ritual that enables us to promptly resolve the complexities carried over from the previous day, putting every professional in the best position to perform at their highest level.</blockquote>
+          </div>
+        </li>
+        <li class="method-manifesto__item reveal reveal-delay-4">
+          <span class="method-manifesto__number">02</span>
+          <div class="method-manifesto__body">
+            <h3 class="method-manifesto__title">Rigorous Processes</h3>
+            <p class="method-manifesto__text">We operate according to documented standards and industry best practice. Every activity is traceable, and every decision is underpinned by a clear process — because our clients require certainty.</p>
+            <blockquote class="method-manifesto__practice">In practice, we have translated this rigour into a visual management system built on digital dashboards, displaying the priorities and timelines of every submission in real time. This allows us to distribute workloads efficiently and in a balanced manner, instantly aligning every stakeholder involved so that no deadline is ever left to chance.</blockquote>
+          </div>
+        </li>
+        <li class="method-manifesto__item reveal reveal-delay-5">
+          <span class="method-manifesto__number">03</span>
+          <div class="method-manifesto__body">
+            <h3 class="method-manifesto__title">Continuous Improvement</h3>
+            <p class="method-manifesto__text">Every process is a starting point. We continuously analyse, measure and optimise — because in pharmacovigilance, yesterday's best is never enough for tomorrow.</p>
+            <blockquote class="method-manifesto__practice">In practice, we sustain an ongoing process that gathers improvement ideas from the team on a daily basis. This enables us to implement more than 300 Kaizen optimisations every year, continuously raising the quality standards of our processes.</blockquote>
+          </div>
+        </li>
+      </ol>
     </div>
   </section>
 
-  <!-- KEY FIGURES -->
+  <!-- ============================================================
+       6. KEY FIGURES
+       ============================================================ -->
   <section class="section section--bg" aria-labelledby="figures-title">
     <div class="container">
-      <div class="text-center mb-8">
-        <span class="section-label section-label--primary reveal">Our results</span>
-        <h2 class="reveal reveal-delay-1" id="figures-title">Numbers that speak for themselves</h2>
+
+      <div class="why-section__header">
+        <span class="section-label section-label--primary reveal">Performance</span>
+        <h2 class="reveal reveal-delay-1" id="figures-title">Annual results</h2>
+        <div class="section-divider reveal reveal-delay-2"></div>
       </div>
-      <div class="grid-3" style="margin-top:2rem;">
-        <div class="card text-center reveal">
-          <div class="stats-bar__number text-primary" data-count="20" data-prefix="+" data-suffix="%" style="font-size:clamp(2rem,4vw,3.5rem);margin-bottom:.5rem">+20%</div>
-          <h4 style="font-size:1rem;margin-bottom:.5rem">Team growth</h4>
-          <p style="font-size:.875rem;max-width:100%">Over the past 3 years our team has grown by 20% to meet market demand.</p>
+
+      <div class="why-cards">
+        <div class="why-card text-center reveal">
+          <div class="stats-bar__number text-primary" data-count="20" data-prefix="+" data-suffix="%">+20%</div>
+          <h4 class="why-card__title" style="margin-top:.5rem">Team growth</h4>
+          <p class="why-card__text">Over the past year, our team has grown by 20% to meet increasing market demand.</p>
         </div>
-        <div class="card text-center reveal reveal-delay-1">
-          <div class="stats-bar__number text-primary" data-count="15000" data-prefix="+" style="font-size:clamp(2rem,4vw,3.5rem);margin-bottom:.5rem">+15k</div>
-          <h4 style="font-size:1rem;margin-bottom:.5rem">ICSRs managed</h4>
-          <p style="font-size:.875rem;max-width:100%">Over 15,000 Individual Case Safety Reports processed accurately and within regulatory timelines.</p>
+        <div class="why-card text-center reveal reveal-delay-1">
+          <div class="stats-bar__number text-primary" data-count="15000" data-prefix="+">+15k</div>
+          <h4 class="why-card__title" style="margin-top:.5rem">ICSRs managed</h4>
+          <p class="why-card__text">More than 15,000 Individual Case Safety Reports processed with accuracy and within regulatory timelines.</p>
         </div>
-        <div class="card text-center reveal reveal-delay-2">
-          <div class="stats-bar__number text-primary" data-count="50" data-prefix="+" style="font-size:clamp(2rem,4vw,3.5rem);margin-bottom:.5rem">+50</div>
-          <h4 style="font-size:1rem;margin-bottom:.5rem">Aggregate reports</h4>
-          <p style="font-size:.875rem;max-width:100%">PSURs, PBRERs and RMPs submitted to regulatory authorities with zero critical findings.</p>
+        <div class="why-card text-center reveal reveal-delay-2">
+          <div class="stats-bar__number text-primary" data-count="50" data-prefix="+">+50</div>
+          <h4 class="why-card__title" style="margin-top:.5rem">Aggregate reports</h4>
+          <p class="why-card__text">PSURs, PBRERs and RMPs drafted and submitted to competent authorities with zero critical findings.</p>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- CTA BANNER -->
-  <section class="cta-banner" aria-labelledby="cta-en-title">
+  <!-- ============================================================
+       7. CTA BANNER #1
+       ============================================================ -->
+  <section class="cta-banner" aria-labelledby="cta1-title">
     <div class="container">
       <div class="cta-banner__inner">
-        <span class="section-label reveal">Let's work together</span>
-        <h2 class="reveal reveal-delay-1" id="cta-en-title">Ready to support your company</h2>
-        <p class="reveal reveal-delay-2">Contact our team today for a personalised consultation. We will evaluate your needs together and design the best solution.</p>
+        <span class="section-label reveal">Let's start working together</span>
+        <h2 class="reveal reveal-delay-1" id="cta1-title">Ready to support your company</h2>
+        <p class="reveal reveal-delay-2">Contact our team today for a tailored consultation. We will assess your needs together and design the solution best suited to your organisation.</p>
         <div class="cta-banner__actions reveal reveal-delay-3">
-          <a href="contact.html" class="btn btn--white btn--lg">Contact us today</a>
-          <a href="services.html" class="btn btn--outline-white btn--lg">View services</a>
+          <a href="careers.html" class="btn btn--white btn--lg">Contact us today</a>
+          <a href="services.html" class="btn btn--outline-white btn--lg">View our services</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BLOG PREVIEW -->
-  <section class="section" aria-labelledby="blog-en-title">
-    <div class="container">
-      <div class="text-center mb-8">
-        <span class="section-label section-label--primary reveal">Blog &amp; Insights</span>
-        <h2 class="reveal reveal-delay-1" id="blog-en-title">Insights from the pharmacovigilance world</h2>
-        <p class="reveal reveal-delay-2" style="margin:0 auto 1rem;">Follow us on Instagram and LinkedIn for regulatory updates, practical guides and industry insights.</p>
-      </div>
-      <div id="blog-preview" class="grid-3" style="margin-top:2rem;">
-        <div class="blog-card" aria-hidden="true" style="min-height:300px;background:var(--color-border);border-radius:16px;opacity:.3"></div>
-        <div class="blog-card" aria-hidden="true" style="min-height:300px;background:var(--color-border);border-radius:16px;opacity:.2"></div>
-        <div class="blog-card" aria-hidden="true" style="min-height:300px;background:var(--color-border);border-radius:16px;opacity:.1"></div>
-      </div>
-      <div class="text-center mt-8 reveal">
-        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;align-items:center;">
-          <a href="blog.html" class="btn btn--outline">View all posts</a>
-          <a href="https://www.linkedin.com/company/med-af-consulting" target="_blank" rel="noopener" class="btn btn--outline" style="gap:.5rem">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-            LinkedIn
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- FAQ PREVIEW -->
-  <section class="faq-section section--bg" aria-labelledby="faq-en-title">
-    <div class="container">
-      <div class="faq-section__header">
-        <span class="section-label section-label--primary reveal">FAQ</span>
-        <h2 class="reveal reveal-delay-1" id="faq-en-title">Frequently asked questions</h2>
-        <p class="reveal reveal-delay-2">Answers to the most common questions about our services and how to work with us.</p>
-      </div>
-      <div class="accordion">
-        <div class="accordion__item">
-          <button class="accordion__trigger" aria-expanded="false">
-            What is pharmacovigilance and why is it mandatory?
-            <svg class="accordion__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-          </button>
-          <div class="accordion__body"><div class="accordion__content">
-            <p>Pharmacovigilance is the science and activities relating to the detection, assessment, understanding and prevention of adverse effects of medicines. It is mandatory for all Marketing Authorisation Holders (MAHs) under Regulation (EU) No 726/2004 and Directive 2001/83/EC, as amended by Regulation (EU) No 1235/2010.</p>
-          </div></div>
-        </div>
-        <div class="accordion__item">
-          <button class="accordion__trigger" aria-expanded="false">
-            What does an EU-QPPV do and who needs one?
-            <svg class="accordion__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-          </button>
-          <div class="accordion__body"><div class="accordion__content">
-            <p>The EU Qualified Person for Pharmacovigilance (EU-QPPV) is responsible for implementing and maintaining the pharmacovigilance system on behalf of the MAH. It is mandatory for all EU MAH holders and the person must reside within the EU. MAC provides an outsourced EU-QPPV service for companies of any size.</p>
-          </div></div>
-        </div>
-        <div class="accordion__item">
-          <button class="accordion__trigger" aria-expanded="false">
-            How can I start working with Medical Affairs Consulting?
-            <svg class="accordion__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-          </button>
-          <div class="accordion__body"><div class="accordion__content">
-            <p>Simply fill in the contact form in the Clients section indicating the services you are interested in. Our team will contact you within 24–48 working hours for a free initial consultation. We will assess your needs together and propose a tailored solution for your company.</p>
-          </div></div>
-        </div>
-      </div>
-      <div class="text-center mt-8 reveal">
-        <a href="faq.html" class="btn btn--outline">View all FAQs</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRE-FOOTER CTA -->
-  <section class="cta-banner" style="background:var(--color-primary-dark);" aria-labelledby="cta2-en-title">
-    <div class="container">
-      <div class="cta-banner__inner">
-        <h2 class="reveal" id="cta2-en-title">Working together for patient safety</h2>
-        <p class="reveal reveal-delay-1">
-          <a href="mailto:contactus@med-af-consulting.it" style="color:#fff;text-decoration:underline">contactus@med-af-consulting.it</a>
-          &nbsp;·&nbsp;
-          <a href="mailto:info@med-af-consulting.it" style="color:#fff;text-decoration:underline">info@med-af-consulting.it</a>
-        </p>
-        <div class="cta-banner__actions reveal reveal-delay-2">
-          <a href="contact.html" class="btn btn--white btn--lg">Write to us</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
 </main>
 
-<!-- FOOTER -->
-<footer class="footer">
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer" aria-labelledby="footer-heading">
+  <h2 id="footer-heading" class="sr-only">Footer</h2>
   <div class="container">
     <div class="footer__top">
+      <!-- Brand -->
       <div class="footer__brand">
-        <a href="index.html"><img src="../img/mac-logo.png" alt="MAC" width="160" height="38" style="filter:brightness(0) invert(1)"></a>
-        <p>Your trusted partner for pharmacovigilance, medical information and Kaizen consulting. Since 2001.</p>
-        <div class="footer__social">
-          <a href="https://www.linkedin.com/company/med-af-consulting" target="_blank" rel="noopener" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
-          <a href="https://www.instagram.com/medafconsulting/" target="_blank" rel="noopener" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+        <a href="index.html" aria-label="Medical Affairs Consulting — Home">
+          <img src="../img/mac-logo.png" alt="MAC — Medical Affairs Consulting" width="160" height="38" style="filter:brightness(0) invert(1)">
+        </a>
+        <p>Your reference partner for Pharmacovigilance and Medical Affairs. Since 2001.</p>
+        <div class="footer__social" aria-label="Social media">
+          <a href="https://www.linkedin.com/company/med-af-consulting" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+          <a href="https://www.instagram.com/medafconsulting/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
         </div>
       </div>
-      <div class="footer__col"><h5>Services</h5><nav class="footer__links"><a href="services.html#pharmacovigilance">Pharmacovigilance</a><a href="services.html#periodic-reports">Periodic reports</a><a href="services.html#medical-information">Medical Information</a><a href="services.html#quality">Quality &amp; Compliance</a><a href="services.html#kaizen">Kaizen Consulting</a></nav></div>
-      <div class="footer__col"><h5>Company</h5><nav class="footer__links"><a href="events.html">Events</a><a href="blog.html">Blog</a><a href="careers.html">Careers</a><a href="faq.html">FAQ</a></nav></div>
-      <div class="footer__col"><h5>Contact</h5><address style="font-style:normal;"><div class="footer__contact-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><a href="mailto:contactus@med-af-consulting.it">contactus@med-af-consulting.it</a></div><div class="footer__contact-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg><span>Corso Italia, 39 – Saronno (VA) Italy</span></div></address></div>
+
+      <!-- Services -->
+      <div class="footer__col">
+        <h5>Services</h5>
+        <nav class="footer__links" aria-label="Service links">
+          <a href="services.html#pharmacovigilance">Pharmacovigilance</a>
+          <a href="services.html#periodic-reports">Periodic reports</a>
+          <a href="services.html#medical-information">Medical Information</a>
+          <a href="services.html#quality">Quality and Compliance</a>
+          <a href="services.html#kaizen">Kaizen Consulting</a>
+        </nav>
+      </div>
+
+      <!-- Company -->
+      <div class="footer__col">
+        <h5>Company</h5>
+        <nav class="footer__links" aria-label="Company links">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="quality.html">Quality</a>
+          <a href="careers.html">Careers</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer__col">
+        <h5>Contact</h5>
+        <address style="font-style:normal;">
+          <div class="footer__contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <a href="mailto:contactus@med-af-consulting.it">contactus@med-af-consulting.it</a>
+          </div>
+          <div class="footer__contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <a href="mailto:info@med-af-consulting.it">info@med-af-consulting.it</a>
+          </div>
+          <div class="footer__contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Corso Italia, 39 – Saronno (VA), Italy</span>
+          </div>
+        </address>
+      </div>
     </div>
+
     <div class="footer__bottom">
-      <p>© 2026 Medical Affairs Consulting Srl — All rights reserved</p>
-      <nav class="footer__bottom-links"><a href="../privacy.html">Privacy Policy</a><a href="../cookie.html">Cookie Policy</a><a href="../index.html" lang="it">Italiano</a></nav>
+      <p>© 2026 Medical Affairs Consulting Srl — VAT No. [pending] — All rights reserved</p>
+      <nav class="footer__bottom-links" aria-label="Legal links">
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../cookie.html">Cookie Policy</a>
+        <a href="../index.html" lang="it">Italiano</a>
+      </nav>
     </div>
   </div>
 </footer>
 
-<div class="cookie-banner" role="dialog" aria-label="Cookie consent">
-  <p>We use technically necessary cookies. See our <a href="../cookie.html">Cookie Policy</a>.</p>
-  <div class="cookie-banner__actions">
-    <button class="btn btn--outline-white btn--sm" data-cookie-decline>Decline</button>
-    <button class="btn btn--white btn--sm" data-cookie-accept>Accept</button>
+<!-- ============================================================
+     COOKIE BANNER
+     ============================================================ -->
+
+<!-- JavaScript -->
+<script src="../js/main.js"></script>
+<script src="../js/blog.js"></script>
+
+<!-- 25TH ANNIVERSARY DOODLE OVERLAY -->
+<div id="doodle-overlay">
+  <div id="doodle-card">
+    <div id="doodle-confetti-container"></div>
+
+    <div id="doodle-badge">
+      <span id="doodle-number">25</span>
+      <div id="doodle-text-wrap">
+        <span id="doodle-anni">YEARS</span>
+        <span id="doodle-subtitle">in business</span>
+        <span id="doodle-years">2001 – 2026</span>
+      </div>
+    </div>
+
+    <p id="doodle-tagline">Thank you for 25 years of trust</p>
+
+    <button id="doodle-close" aria-label="Close">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M2 2L14 14M14 2L2 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+    </button>
   </div>
 </div>
 
-<script src="../js/main.js"></script>
-<script src="../js/blog.js"></script>
+<style>
+/* ---------- OVERLAY ---------- */
+#doodle-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 30, 60, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: doodle-overlay-in 0.5s ease forwards;
+}
+
+#doodle-overlay.doodle-exit {
+  animation: doodle-overlay-out 0.6s ease forwards;
+}
+
+@keyframes doodle-overlay-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes doodle-overlay-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* ---------- CARD ---------- */
+#doodle-card {
+  position: relative;
+  background: #fff;
+  border-radius: 24px;
+  padding: 44px 52px 36px;
+  max-width: 440px;
+  width: 90vw;
+  text-align: center;
+  box-shadow:
+    0 24px 80px rgba(26, 79, 138, 0.22),
+    0 4px 20px rgba(0,0,0,0.12);
+  overflow: hidden;
+  animation: doodle-card-in 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s both;
+}
+
+@keyframes doodle-card-in {
+  from { transform: scale(0.6) translateY(30px); opacity: 0; }
+  to   { transform: scale(1)   translateY(0);    opacity: 1; }
+}
+
+#doodle-card.doodle-card-exit {
+  animation: doodle-card-out 0.45s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+}
+@keyframes doodle-card-out {
+  from { transform: scale(1)   translateY(0);    opacity: 1; }
+  to   { transform: scale(0.75) translateY(20px); opacity: 0; }
+}
+
+/* top color strip */
+#doodle-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #1a4f8a 0%, #4a9fd4 40%, #e8a020 70%, #d94f3d 100%);
+}
+
+/* ---------- NUMBER BADGE ---------- */
+#doodle-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  border: 2.5px solid #d94f3d;
+  border-radius: 60px;
+  padding: 10px 26px 10px 18px;
+  margin: 20px auto 18px;
+  animation: doodle-badge-pulse 2.8s ease-in-out 1s infinite;
+}
+
+@keyframes doodle-badge-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(217, 79, 61, 0.35); }
+  50%       { box-shadow: 0 0 0 10px rgba(217, 79, 61, 0);  }
+}
+
+#doodle-number {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 62px;
+  font-weight: 700;
+  line-height: 1;
+  color: #d94f3d;
+  letter-spacing: -2px;
+  animation: doodle-num-drop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.7s both;
+}
+@keyframes doodle-num-drop {
+  from { transform: translateY(-20px) scale(1.3); opacity: 0; }
+  to   { transform: translateY(0)     scale(1);   opacity: 1; }
+}
+
+#doodle-text-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
+#doodle-anni {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a4f8a;
+  letter-spacing: 1px;
+}
+#doodle-subtitle {
+  font-size: 12px;
+  color: #888;
+  letter-spacing: 0.5px;
+}
+#doodle-years {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a4f8a;
+  letter-spacing: 0.5px;
+}
+
+/* ---------- TAGLINE ---------- */
+#doodle-tagline {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 8px;
+  letter-spacing: 0.3px;
+}
+
+/* ---------- CLOSE BUTTON ---------- */
+#doodle-close {
+  position: absolute;
+  top: 14px; right: 14px;
+  background: #f0f4f8;
+  border: none;
+  border-radius: 50%;
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  color: #555;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+#doodle-close:hover {
+  background: #d94f3d;
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+/* ---------- CONFETTI ---------- */
+#doodle-confetti-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.doodle-confetto {
+  position: absolute;
+  top: -10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  animation: doodle-fall linear forwards;
+}
+@keyframes doodle-fall {
+  to { transform: translateY(420px) rotate(720deg); opacity: 0; }
+}
+</style>
+
+<script>
+(function() {
+  var overlay = document.getElementById('doodle-overlay');
+  var card    = document.getElementById('doodle-card');
+  var closeBtn = document.getElementById('doodle-close');
+  var confettiContainer = document.getElementById('doodle-confetti-container');
+
+  /* show only on first visit */
+  if (localStorage.getItem('mac_doodle_seen')) {
+    overlay.remove();
+    return;
+  }
+  localStorage.setItem('mac_doodle_seen', '1');
+
+  /* --- confetti burst --- */
+  var colors = ['#1a4f8a','#4a9fd4','#e8a020','#d94f3d','#f5c842','#7ec8e3'];
+  function spawnConfetti() {
+    for (var i = 0; i < 36; i++) {
+      (function(i) {
+        setTimeout(function() {
+          var el = document.createElement('div');
+          el.className = 'doodle-confetto';
+          el.style.left = (Math.random() * 100) + '%';
+          el.style.background = colors[Math.floor(Math.random() * colors.length)];
+          var dur = (1.2 + Math.random() * 1.4).toFixed(2);
+          el.style.animationDuration = dur + 's';
+          el.style.animationDelay = (Math.random() * 0.3).toFixed(2) + 's';
+          el.style.width  = (6 + Math.random() * 6) + 'px';
+          el.style.height = el.style.width;
+          el.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+          confettiContainer.appendChild(el);
+          setTimeout(function() { el.remove(); }, (parseFloat(dur) + 0.5) * 1000);
+        }, i * 40);
+      })(i);
+    }
+  }
+
+  /* --- count-up animation on the number --- */
+  function countUp(el, target, duration) {
+    var start = 0, step = duration / target;
+    var timer = setInterval(function() {
+      start++;
+      el.textContent = start;
+      if (start >= target) clearInterval(timer);
+    }, step);
+  }
+
+  /* --- start --- */
+  setTimeout(function() {
+    spawnConfetti();
+    var numEl = document.getElementById('doodle-number');
+    numEl.textContent = '0';
+    setTimeout(function() { countUp(numEl, 25, 900); }, 700);
+  }, 600);
+
+  /* --- close --- */
+  function closeOverlay() {
+    card.classList.add('doodle-card-exit');
+    setTimeout(function() {
+      overlay.classList.add('doodle-exit');
+      setTimeout(function() { overlay.remove(); }, 600);
+    }, 400);
+  }
+
+  closeBtn.addEventListener('click', closeOverlay);
+
+  /* auto-close after 5 seconds */
+  setTimeout(closeOverlay, 5000);
+})();
+</script>
 </body>
 </html>

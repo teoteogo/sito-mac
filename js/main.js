@@ -247,26 +247,6 @@
 
 
 /* ============================================================
-   7. FORM NETLIFY — Feedback di invio
-   ============================================================ */
-(function initForms() {
-  document.querySelectorAll('form[data-netlify]').forEach(form => {
-    form.addEventListener('submit', function (e) {
-      // Non preveniamo il submit — Netlify gestisce il tutto lato server
-      // Ma mostriamo un messaggio di successo dopo il reindirizzamento
-      // Se la pagina ha un parametro ?success=true, mostra il messaggio
-    });
-  });
-
-  // Mostra messaggio di successo se siamo tornati dalla redirect Netlify
-  if (window.location.search.includes('success=true')) {
-    const msg = document.querySelector('.form-success');
-    if (msg) msg.classList.add('visible');
-  }
-})();
-
-
-/* ============================================================
    8. SMOOTH SCROLL — per link interni (#anchor)
    ============================================================ */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

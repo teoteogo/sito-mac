@@ -8,21 +8,21 @@
    -------------------------------------------------------------------------- */
 :root {
   /* Colori principali */
-  --color-primary: #26709E;
-  --color-primary-dark: #1A5074;
-  --color-primary-light: #EBF4FA;
-  --color-accent: #D6562D;
-  --color-accent-light: #FAF0EB;
-  --color-muted: #B4B4B4;
+  --color-primary: #2F76A2;       /* Blu logo */
+  --color-primary-dark: #1E5070;  /* Blu scuro per hover e titoli */
+  --color-primary-light: #E3EEF5; /* Azzurro corporate pulito e professionale */
+  --color-accent: #D6562D;        /* Arancione logo */
+  --color-accent-light: #FDF3F0;  /* Arancione chiarissimo */
+  --color-muted: #B4B4B4;         /* Grigio logo */
 
   /* Sfondi */
-  --color-bg: #F7F7F5;
+  --color-bg: #F4F7F9;            /* Grigio-azzurro corporate chiaro, pulito e moderno */
   --color-bg-white: #FFFFFF;
 
   /* Testi */
   --color-text: #1A1A1A;
   --color-text-muted: #6B6B6B;
-  --color-border: #E5E5E0;
+  --color-border: #E2E8F0;        /* Bordo grigio freddo coordinato con lo sfondo */
 
   /* Tipografia */
   --font-main: 'Libre Franklin', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -893,16 +893,21 @@ p {
    8. STATS BAR
    -------------------------------------------------------------------------- */
 .stats-bar {
-  background: var(--color-bg-white);
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-  padding: var(--space-16) 0;
+  position: relative;
+  z-index: 5;
+  margin-top: -60px;
+  padding: 0;
 }
 
 .stats-bar__grid {
   display: flex;
   justify-content: center;
   gap: 0;
+  background: var(--color-bg-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border);
+  padding: var(--space-8) 0;
 }
 
 .stats-bar__item {
@@ -949,8 +954,13 @@ p {
 }
 
 @media (max-width: 768px) {
+  .stats-bar {
+    margin-top: 0;
+    padding: var(--space-8) 0;
+  }
   .stats-bar__grid {
     flex-wrap: wrap;
+    border-radius: var(--radius-md);
   }
   .stats-bar__item {
     flex: 0 0 50%;
@@ -1219,13 +1229,21 @@ p {
 }
 
 .chi-siamo__panel {
-  background: var(--color-accent);
+  background: linear-gradient(135deg, var(--color-accent) 0%, #B0411B 100%);
   color: #fff;
   padding: var(--space-10) var(--space-10);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.chi-siamo__panel:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
 .chi-siamo__panel--blue {
-  background: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   margin-bottom: var(--space-6);
 }
 
@@ -1326,9 +1344,20 @@ p {
 }
 
 .why-card {
-  border-top: 3px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--color-primary);
   padding: var(--space-8) var(--space-6);
   background: var(--color-bg-white);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base), border-top-color var(--transition-base);
+}
+
+.why-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary-light);
+  border-top-color: var(--color-accent);
 }
 
 .why-card__icon {
@@ -1552,6 +1581,59 @@ p {
   .method-manifesto__item {
     gap: var(--space-5);
   }
+}
+
+/* --------------------------------------------------------------------------
+   12b. METHOD VALUE CARDS
+   -------------------------------------------------------------------------- */
+.method-value {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  background: var(--color-bg-white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.method-value:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(47, 118, 162, 0.2);
+}
+
+.method-value__icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.method-value__icon svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+}
+
+.method-value__text h4 {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 var(--space-1);
+}
+
+.method-value__text p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.5;
 }
 
 /* --------------------------------------------------------------------------
@@ -2451,3 +2533,86 @@ p {
   .navbar, .cookie-banner, .cta-banner { display: none; }
   body { font-size: 12pt; }
 }
+
+/* --------------------------------------------------------------------------
+   26. PV NETWORK ANIMATION (HERO)
+   -------------------------------------------------------------------------- */
+.net-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 550px;
+}
+.net-wrap svg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+}
+.pill {
+  position: absolute;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  border: 1.5px solid var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-bg-white);
+  font-weight: 600;
+  font-family: var(--font-heading);
+  cursor: pointer;
+  transition: opacity 0.25s, transform 0.25s, box-shadow 0.25s, background-color 0.25s, color 0.25s;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  user-select: none;
+  box-shadow: var(--shadow-sm);
+  z-index: 2;
+}
+.pill.visible {
+  opacity: var(--pill-opacity);
+  transform: translate(-50%, -50%) scale(1);
+}
+.pill:hover { 
+  transform: translate(-50%, -50%) scale(1.08) !important; 
+  z-index: 10; 
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+.pill.filled { 
+  background: var(--color-primary); 
+  color: #fff; 
+  border-color: var(--color-primary);
+}
+.pill.filled:hover {
+  background: var(--color-accent);
+  color: #fff;
+  border-color: var(--color-accent);
+}
+.pill.active {
+  box-shadow: 0 0 0 4px rgba(47, 118, 162, 0.2);
+  transform: translate(-50%, -50%) scale(1.1) !important;
+  z-index: 11;
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+.pill.filled.active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+}
+
+@keyframes drawLine {
+  from { stroke-dashoffset: var(--dash-len); }
+  to   { stroke-dashoffset: 0; }
+}
+
+/* --------------------------------------------------------------------------
+   27. AUDIT CALENDAR CARDS
+   -------------------------------------------------------------------------- */
+.audit-card {
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base) !important;
+}
+.audit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md) !important;
+}
+

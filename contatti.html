@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="css/animations.css">
   <link rel="alternate" hreflang="it" href="https://www.med-af-consulting.com/contatti.html">
   <link rel="alternate" hreflang="en" href="https://www.med-af-consulting.com/en/contact.html">
+  <!-- AVACY Cookie Consent (Paste your AVACY script tag here) -->
+  <!-- <script src="https://cdn.avacy.it/consent-banner/..." defer></script> -->
 </head>
 <body>
 
@@ -60,7 +62,6 @@
     <a href="qualita.html">Qualità</a>
     <a href="lavora-con-noi.html">Lavora con noi</a>
     <a href="contatti.html" class="active">Contatti</a>
-    <a href="faq.html">FAQ</a>
     <div class="lang-switcher mt-4">
       <a href="contatti.html" class="active">IT</a>
       <span>|</span>
@@ -76,7 +77,7 @@
     <div class="container">
       <span class="section-label section-label--primary reveal">Scriveteci</span>
       <h1 class="reveal reveal-delay-1">Contatti</h1>
-      <p class="reveal reveal-delay-2">Siamo a vostra disposizione per qualsiasi richiesta. Compilate il modulo e vi risponderemo entro 1 giorno lavorativo.</p>
+      <p class="reveal reveal-delay-2">Siamo a vostra disposizione per qualsiasi richiesta. Scriveteci in email e vi risponderemo entro 1 giorno lavorativo.</p>
     </div>
   </section>
 
@@ -87,54 +88,20 @@
     <div class="container">
       <div class="contact-layout">
 
-        <!-- Colonna sinistra — Form unificato -->
+        <!-- Colonna sinistra — Contatto via email -->
         <div class="contact-form-col">
           <span class="section-label section-label--primary reveal">Modulo di contatto</span>
           <h2 class="reveal reveal-delay-1">Come possiamo aiutarvi?</h2>
+          <p class="reveal reveal-delay-2">Scriveteci direttamente in email, indicando due o tre opzioni di giorno e orario per una prima call conoscitiva.</p>
 
-          <form class="contact-form-unified" name="contatto" method="POST" data-netlify="true" action="/contatti.html?success=true" aria-label="Modulo di contatto">
-            <input type="hidden" name="form-name" value="contatto">
-
-            <div class="form-grid-2">
-              <div class="form-group">
-                <label class="form-label" for="nome">Nome e Cognome <span>*</span></label>
-                <input type="text" id="nome" name="nome" class="form-input" placeholder="Mario Rossi" required>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="azienda">Azienda</label>
-                <input type="text" id="azienda" name="azienda" class="form-input" placeholder="Nome azienda (opzionale)">
-              </div>
-            </div>
-
-            <div class="form-grid-2">
-              <div class="form-group">
-                <label class="form-label" for="email">Email <span>*</span></label>
-                <input type="email" id="email" name="email" class="form-input" placeholder="mario.rossi@azienda.it" required>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="telefono">Telefono</label>
-                <input type="tel" id="telefono" name="telefono" class="form-input" placeholder="+39 02 1234567">
-              </div>
-            </div>
-
-
-            <div class="form-group">
-              <label class="form-label" for="messaggio">Messaggio <span>*</span></label>
-              <textarea id="messaggio" name="messaggio" class="form-textarea" placeholder="Descrivete brevemente le vostre esigenze, indicando due o tre opzioni di giorno e orario per una prima call conoscitiva..." required rows="6"></textarea>
-            </div>
-
-            <div class="form-group">
-              <label style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;color:var(--color-text-muted);cursor:pointer;">
-                <input type="checkbox" name="privacy" required style="width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:var(--color-primary)">
-                <span>Dichiaro di aver letto e accetto la <a href="privacy.html" style="color:var(--color-primary);text-decoration:underline">Privacy Policy</a> di Medical Affairs Consulting Srl. <span style="color:var(--color-accent)">*</span></span>
-              </label>
-            </div>
-
-            <button type="submit" class="btn btn--primary btn--lg" style="width:100%;">Invia messaggio</button>
-          </form>
-
-          <div class="form-success">
-            <strong>Grazie per averci contattato!</strong> Il vostro messaggio è stato ricevuto. Vi risponderemo entro 1 giorno lavorative.
+          <div class="reveal reveal-delay-2" style="margin-top:1.5rem;">
+            <p style="font-size:.875rem;color:var(--color-text-muted);margin-bottom:2rem;">
+              Prima di scriverci, prendi visione dell'<a href="privacy-clienti-fornitori.html" style="color:var(--color-primary);text-decoration:underline;">informativa privacy</a> di Medical Affairs Consulting Srl.
+            </p>
+            <a href="mailto:contactus@med-af-consulting.it" class="btn btn--primary btn--lg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              contactus@med-af-consulting.it
+            </a>
           </div>
         </div>
 
@@ -142,15 +109,6 @@
         <div class="contact-info-col">
           <span class="section-label section-label--primary reveal">Dove siamo</span>
           <h2 class="reveal reveal-delay-1">Informazioni</h2>
-
-          <hr class="contact-info-divider">
-
-          <div class="contact-info-item reveal reveal-delay-2">
-            <span class="contact-info-label">Email</span>
-            <span class="contact-info-detail">
-              <a href="mailto:contactus@med-af-consulting.it" style="color:var(--color-primary)">contactus@med-af-consulting.it</a>
-            </span>
-          </div>
 
           <hr class="contact-info-divider">
 
@@ -201,7 +159,7 @@
     <div class="footer__top">
       <div class="footer__brand"><a href="index.html"><img src="img/mac-logo.png" alt="MAC" width="160" height="38" style="filter:brightness(0) invert(1)"></a><p>Il vostro partner di riferimento per farmacovigilanza, informazione medica e consulenza Kaizen. Dal 2001.</p><div class="footer__social"><a href="https://www.linkedin.com/company/med-af-consulting" target="_blank" rel="noopener" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a><a href="https://www.instagram.com/medafconsulting/" target="_blank" rel="noopener" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a></div></div>
       <div class="footer__col"><h5>Servizi</h5><nav class="footer__links"><a href="servizi.html#farmacovigilanza">Farmacovigilanza</a><a href="servizi.html#rapporti-periodici">Rapporti periodici</a><a href="servizi.html#informazione-medica">Informazione Medica</a><a href="servizi.html#qualita">Qualità e Compliance</a><a href="servizi.html#kaizen">Consulenza Kaizen</a></nav></div>
-      <div class="footer__col"><h5>Azienda</h5><nav class="footer__links"><a href="calendario.html">Calendario eventi</a><a href="blog.html">Blog</a><a href="lavora-con-noi.html">Lavora con noi</a><a href="faq.html">FAQ</a></nav></div>
+      <div class="footer__col"><h5>Azienda</h5><nav class="footer__links"><a href="index.html">Home</a><a href="servizi.html">Servizi</a><a href="qualita.html">Qualità</a><a href="lavora-con-noi.html">Lavora con noi</a><a href="contatti.html">Contatti</a></nav></div>
       <div class="footer__col"><h5>Contatti</h5><address style="font-style:normal;"><div class="footer__contact-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><a href="mailto:contactus@med-af-consulting.it">contactus@med-af-consulting.it</a></div><div class="footer__contact-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg><span>Corso Italia, 39 – Saronno (VA)</span></div></address></div>
     </div>
     <div class="footer__bottom">
@@ -211,10 +169,6 @@
   </div>
 </footer>
 
-<div class="cookie-banner" role="dialog" aria-label="Consenso cookie">
-  <p>Utilizziamo cookie tecnici necessari al funzionamento del sito. <a href="cookie.html">Cookie Policy</a>.</p>
-  <div class="cookie-banner__actions"><button class="btn btn--outline-white btn--sm" data-cookie-decline>Rifiuta</button><button class="btn btn--white btn--sm" data-cookie-accept>Accetta</button></div>
-</div>
 
 <script src="js/main.js"></script>
 </body>

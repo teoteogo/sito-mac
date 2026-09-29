@@ -34,17 +34,130 @@
     .section h2 { margin-bottom: var(--space-5); }
     .page-header h1 { margin-bottom: var(--space-5); }
 
-    /* ---- Griglia servizi ---- */
-    .svc-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 2.5rem;
-    }
-    @media (max-width: 1024px) { .svc-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 640px)  { .svc-grid { grid-template-columns: 1fr; } }
+    /* ---- Tab servizi ---- */
+    .svc-tabs { margin-top: 2.5rem; scroll-margin-top: calc(var(--navbar-height) + 1rem); }
 
-    .svc-card { scroll-margin-top: calc(var(--navbar-height) + 1rem); }
+    .svc-tabs__nav {
+      display: flex;
+      overflow-x: auto;
+      border-bottom: 2px solid var(--color-border);
+      scrollbar-width: none;
+      gap: 0;
+    }
+    .svc-tabs__nav::-webkit-scrollbar { display: none; }
+
+    .svc-tabs__btn {
+      display: flex;
+      align-items: center;
+      gap: .45rem;
+      padding: 1rem 1.5rem;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+      border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    }
+    .svc-tabs__btn svg {
+      width: 1rem; height: 1rem;
+      stroke: currentColor; fill: none; stroke-width: 1.5;
+      flex-shrink: 0;
+    }
+    .svc-tabs__btn:hover { color: var(--color-primary); background: var(--color-primary-light); }
+    .svc-tabs__btn[aria-selected="true"] {
+      color: var(--color-primary-dark);
+      border-bottom-color: var(--color-accent);
+      background: var(--color-bg-white);
+      font-weight: 700;
+    }
+
+    .svc-tabs__panel {
+      display: none;
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-border);
+      border-top: none;
+      border-radius: 0 0 var(--radius-md) var(--radius-md);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-md);
+    }
+    .svc-tabs__panel.is-active { display: block; }
+
+    .svc-panel__header {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .svc-panel__icon {
+      flex-shrink: 0;
+      width: 3.5rem; height: 3.5rem;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, var(--color-primary-light) 0%, rgba(47, 118, 162, 0.1) 100%);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .svc-panel__icon svg { width: 1.5rem; height: 1.5rem; stroke: var(--color-primary); fill: none; stroke-width: 1.5; }
+    .svc-panel__title { font-family: var(--font-heading); font-weight: 700; font-size: var(--text-2xl); color: var(--color-primary-dark); margin: 0; }
+
+    .svc-panel__text { font-size: var(--text-base); color: var(--color-text); line-height: 1.7; margin-bottom: 1.5rem; max-width: 100%; }
+
+    .svc-panel__list {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 1.25rem 2.5rem;
+      margin: 0;
+      padding: 0;
+    }
+    .svc-panel__list dt {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: var(--text-sm);
+      color: var(--color-primary-dark);
+      position: relative;
+      padding-left: 1.25rem;
+      line-height: 1.5;
+    }
+    .svc-panel__list dt::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.45rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-accent);
+    }
+    .svc-panel__list dd {
+      margin: 0;
+      font-size: var(--text-sm);
+      color: var(--color-text);
+      line-height: 1.6;
+    }
+    @media (max-width: 768px) {
+      .svc-panel__list {
+        grid-template-columns: 1fr;
+        gap: 0.5rem 0;
+      }
+      .svc-panel__list dd {
+        margin-bottom: 1rem;
+        padding-left: 1.25rem;
+      }
+      .svc-panel__list dt::before {
+        top: 0.4rem;
+      }
+    }
+    @media (max-width: 640px) {
+      .svc-tabs__btn { padding: .75rem .875rem; font-size: .78rem; }
+      .svc-tabs__panel { padding: 1.5rem; }
+    }
 
     /* ---- Come lavoriamo ---- */
     .how-steps {
@@ -119,7 +232,96 @@
     .exp-card__link svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; transition: transform var(--transition-fast); }
     .exp-card__link:hover { color: var(--color-primary-dark); }
     .exp-card__link:hover svg { transform: translateX(3px); }
+
+    /* ---- I numeri (grafico crescita %) ---- */
+    .numeri-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      padding: var(--space-8);
+      margin-top: 2.5rem;
+    }
+    .numeri-chart__summary {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.6rem 0.75rem;
+      margin-bottom: var(--space-6);
+    }
+    .numeri-chart__summary-value {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: var(--text-4xl);
+      color: var(--color-accent);
+      line-height: 1;
+    }
+    .numeri-chart__summary-label {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+    #numeri-chart .numeri-chart__svg { width: 100%; height: auto; display: block; overflow: visible; }
+    .numeri-chart__grid { stroke: var(--color-border); stroke-width: 1; stroke-dasharray: 4 5; }
+    .numeri-chart__axis-label {
+      font-family: var(--font-main);
+      font-size: 11px;
+      fill: var(--color-text-muted);
+    }
+    .numeri-bar-seg {
+      transform: scaleY(0);
+      transform-box: fill-box;
+      transform-origin: bottom;
+      transition: transform .8s cubic-bezier(.4,0,.2,1);
+    }
+    #numeri-chart.is-visible .numeri-bar-seg { transform: scaleY(1); }
+    .numeri-chart__total {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 13px;
+      fill: var(--color-primary-dark);
+      opacity: 0;
+      transition: opacity .5s ease;
+    }
+    .numeri-chart__year {
+      font-family: var(--font-main);
+      font-size: 12px;
+      fill: var(--color-text-muted);
+    }
+    #numeri-chart.is-visible .numeri-chart__total { opacity: 1; }
+    .numeri-chart__legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-5) var(--space-6);
+      margin-top: var(--space-7);
+      padding-top: var(--space-6);
+      border-top: 1px solid var(--color-border);
+    }
+    .numeri-chart__legend-item {
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+      font-size: var(--text-sm);
+      color: var(--color-text);
+      max-width: 220px;
+    }
+    .numeri-chart__legend-swatch {
+      flex-shrink: 0;
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      margin-top: 4px;
+    }
+    .numeri-chart__legend-roles {
+      color: var(--color-text-muted);
+      font-size: var(--text-xs);
+    }
+    @media (max-width: 640px) {
+      .numeri-card { padding: var(--space-5); }
+      .numeri-chart__summary-value { font-size: var(--text-3xl); }
+    }
   </style>
+  <!-- AVACY Cookie Consent (Paste your AVACY script tag here) -->
+  <!-- <script src="https://cdn.avacy.it/consent-banner/..." defer></script> -->
 </head>
 <body>
 
@@ -167,7 +369,6 @@
     <a href="qualita.html">Qualità</a>
     <a href="lavora-con-noi.html">Lavora con noi</a>
     <a href="contatti.html">Contatti</a>
-    <a href="faq.html">FAQ</a>
     <div class="lang-switcher mt-4">
       <a href="servizi.html" class="active">IT</a>
       <span>|</span>
@@ -217,107 +418,192 @@
   <section class="section section--bg" aria-labelledby="services-title">
     <div class="container">
       <span class="section-label section-label--primary reveal">I servizi</span>
-      <h2 id="services-title" class="reveal reveal-delay-1">Un supporto completo, dalla sicurezza alla qualità</h2>
-      <p class="reveal reveal-delay-2">Sei aree di intervento, un unico partner. Per ogni servizio trovate qui l'essenziale.</p>
+      <h2 id="services-title" class="reveal reveal-delay-1">Sei aree di intervento, un unico partner</h2>
+      <p class="reveal reveal-delay-2">Per ogni servizio trovate qui l'essenziale.</p>
 
-      <div class="svc-grid">
+      <div class="svc-tabs" id="svc-tabs">
 
-        <!-- Farmacovigilanza -->
-        <article class="card card--service svc-card reveal" id="farmacovigilanza">
-          <div class="card__header">
-            <div class="card__icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <!-- Nav tab -->
+        <div class="svc-tabs__nav" role="tablist" aria-label="Naviga i servizi">
+
+          <button class="svc-tabs__btn" role="tab" id="tab-farmacovigilanza" aria-selected="true" aria-controls="farmacovigilanza" data-panel="farmacovigilanza">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Farmacovigilanza
+          </button>
+
+          <button class="svc-tabs__btn" role="tab" id="tab-rapporti-periodici" aria-selected="false" aria-controls="rapporti-periodici" data-panel="rapporti-periodici">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            Rapporti periodici
+          </button>
+
+          <button class="svc-tabs__btn" role="tab" id="tab-informazione-medica" aria-selected="false" aria-controls="informazione-medica" data-panel="informazione-medica">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Medical Affairs
+          </button>
+
+          <button class="svc-tabs__btn" role="tab" id="tab-qualita" aria-selected="false" aria-controls="qualita" data-panel="qualita">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            Qualità e Compliance
+          </button>
+
+          <button class="svc-tabs__btn" role="tab" id="tab-materiali" aria-selected="false" aria-controls="materiali" data-panel="materiali">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            Materiali e Formazione
+          </button>
+
+          <button class="svc-tabs__btn" role="tab" id="tab-kaizen" aria-selected="false" aria-controls="kaizen" data-panel="kaizen">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            Consulenza Lean
+          </button>
+
+        </div><!-- /svc-tabs__nav -->
+
+        <!-- Pannelli -->
+        <div class="svc-tabs__panels">
+
+          <div class="svc-tabs__panel is-active" id="farmacovigilanza" role="tabpanel" aria-labelledby="tab-farmacovigilanza">
+            <div class="svc-panel__header">
+              <div class="svc-panel__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <h3 class="svc-panel__title">Farmacovigilanza</h3>
             </div>
-            <h3 class="card__title">Farmacovigilanza</h3>
+            <p class="svc-panel__text">Offriamo una gestione completa ed esternalizzata (full outsourcing) del sistema di farmacovigilanza per titolari AIC e Sponsor. Mettiamo a disposizione una struttura organizzativa solida, procedure di sicurezza collaudate e database validati, garantendo piena conformità alle linee guida GVP (Good Pharmacovigilance Practices) e un costante stato di inspection-readiness. Il nostro sistema di sicurezza ha già superato ispezioni delle autorità regolatorie (AIFA) senza rilievi critici.</p>
+            <dl class="svc-panel__list">
+              <dt>EU-QPPV &amp; Deputy QPPV</dt>
+              <dd>Copertura del ruolo a livello europeo ed italiano con reperibilità continua</dd>
+              <dt>Case Processing</dt>
+              <dd>Triage, Data entry/Quality control, codifica MedDRA, medical assessment e sottomissione di ICSR/SUSAR</dd>
+              <dt>Literature Search</dt>
+              <dd>Monitoraggio periodico e rigoroso della letteratura scientifica globale e locale (AIFA)</dd>
+              <dt>Signal Detection</dt>
+              <dd>Signal detection and management per il monitoraggio continuo del profilo beneficio/rischio</dd>
+              <dt>PSMF</dt>
+              <dd>Strutturazione, redazione e manutenzione del Pharmacovigilance System Master File</dd>
+              <dt>Database di Sicurezza</dt>
+              <dd>Uso di database di sicurezza validato (ICH E2B R3) conforme a GVP e GAMP 5</dd>
+              <dt>Governance e SOP</dt>
+              <dd>Processi regolati da SOP specifiche</dd>
+            </dl>
           </div>
-          <p class="card__text">Gestione completa del sistema di farmacovigilanza per titolari AIC nell'Unione Europea, dalla nomina dell'EU-QPPV alla submission degli ICSR a EudraVigilance.</p>
-          <ul class="card__list">
-            <li>EU-QPPV e Deputy QPPV</li>
-            <li>ICSR / SAE / SUSAR, dal triage alla submission</li>
-            <li>PSMF ed EudraVigilance</li>
-            <li>XEVMPD / Art. 57</li>
-          </ul>
-        </article>
 
-        <!-- Rapporti periodici -->
-        <article class="card card--service svc-card reveal reveal-delay-1" id="rapporti-periodici">
-          <div class="card__header">
-            <div class="card__icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <div class="svc-tabs__panel" id="rapporti-periodici" role="tabpanel" aria-labelledby="tab-rapporti-periodici">
+            <div class="svc-panel__header">
+              <div class="svc-panel__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              </div>
+              <h3 class="svc-panel__title">Rapporti periodici</h3>
             </div>
-            <h3 class="card__title">Rapporti periodici</h3>
+            <p class="svc-panel__text">Redazione dei rapporti periodici di sicurezza e gestione delle submission a EMA e AIFA, nel pieno rispetto delle scadenze regolatorie.</p>
+            <dl class="svc-panel__list">
+              <dt>PSUR / PBRER e DSUR</dt>
+              <dd>Redazione e sottomissione dei rapporti periodici di sicurezza per prodotti in commercio e in sviluppo clinico</dd>
+              <dt>Addendum Clinical Overview</dt>
+              <dd>Predisposizione dell'AdCO scientifico a supporto delle procedure di rinnovo quinquennale dell'AIC</dd>
+              <dt>Risk Management Plan</dt>
+              <dd>Redazione, aggiornamento e monitoraggio delle misure di minimizzazione del rischio (RMP)</dd>
+            </dl>
           </div>
-          <p class="card__text">Redazione dei rapporti periodici di sicurezza e gestione delle submission a EMA e AIFA, nel pieno rispetto delle scadenze regolatorie.</p>
-          <ul class="card__list">
-            <li>PSUR / PBRER e DSUR</li>
-            <li>Signal detection e management</li>
-            <li>Risk Management Plan</li>
-          </ul>
-        </article>
 
-        <!-- Medical Affairs -->
-        <article class="card card--service svc-card reveal reveal-delay-2" id="informazione-medica">
-          <div class="card__header">
-            <div class="card__icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <div class="svc-tabs__panel" id="informazione-medica" role="tabpanel" aria-labelledby="tab-informazione-medica">
+            <div class="svc-panel__header">
+              <div class="svc-panel__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <h3 class="svc-panel__title">Medical Affairs</h3>
             </div>
-            <h3 class="card__title">Medical Affairs</h3>
+            <p class="svc-panel__text">Servizio completo di Medical Affairs ai sensi del D.Lgs. 219/2006 art. 126.</p>
+            <dl class="svc-panel__list">
+              <dt>Servizio Scientifico</dt>
+              <dd>Supporto completo e consulenza al Responsabile del Servizio Scientifico ex art. 126 D.Lgs. 219/06</dd>
+              <dt>Medical Information</dt>
+              <dd>Gestione qualificata, tempestiva e tracciata delle richieste scientifico/mediche da medici, farmacisti e pazienti</dd>
+              <dt>Standard Response</dt>
+              <dd>Predisposizione e aggiornamento di Standard Response Letters per ottimizzare i flussi di risposta</dd>
+              <dt>Materiali Scientifici</dt>
+              <dd>Revisione e approvazione dei materiali scientifici e delle relative pubblicazioni</dd>
+            </dl>
           </div>
-          <p class="card__text">Servizio completo di Medical Affairs ai sensi del D.Lgs. 219/2006 art. 126: dalla risposta alle richieste degli operatori sanitari alla gestione del database MI.</p>
-          <ul class="card__list">
-            <li>Responsabile Servizio Scientifico</li>
-            <li>Gestione richieste e standard response letters</li>
-            <li>Formazione ISF su farmacovigilanza e normativa</li>
-          </ul>
-        </article>
 
-        <!-- Qualità e Compliance -->
-        <article class="card card--service svc-card reveal" id="qualita">
-          <div class="card__header">
-            <div class="card__icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          <div class="svc-tabs__panel" id="qualita" role="tabpanel" aria-labelledby="tab-qualita">
+            <div class="svc-panel__header">
+              <div class="svc-panel__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+              </div>
+              <h3 class="svc-panel__title">Qualità e Compliance</h3>
             </div>
-            <h3 class="card__title">Qualità e Compliance</h3>
+            <p class="svc-panel__text">Supporto per un sistema di farmacovigilanza documentato e audit-ready: procedure, gap analysis e assistenza durante audit e ispezioni GVP.</p>
+            <dl class="svc-panel__list">
+              <dt>Audit &amp; Ispezioni</dt>
+              <dd>Supporto nella preparazione a ispezioni regolatorie (AIFA/EMA) e conduzione di audit interni sul sistema qualità</dd>
+              <dt>SOP &amp; QMS</dt>
+              <dd>Redazione, revisione, strutturazione ed implementazione di Standard Operating Procedures e sistemi di qualità</dd>
+              <dt>Gap Analysis</dt>
+              <dd>Assessment completo dei processi di farmacovigilanza per rilevare aree di miglioramento e definire CAPA</dd>
+            </dl>
           </div>
-          <p class="card__text">Supporto per un sistema di farmacovigilanza documentato e audit-ready: procedure, gap analysis e assistenza durante audit e ispezioni GVP.</p>
-          <ul class="card__list">
-            <li>Redazione e revisione SOP</li>
-            <li>Gap analysis e inspection readiness</li>
-            <li>Formazione GVP del personale</li>
-          </ul>
-        </article>
 
-        <!-- Materiali e Formazione -->
-        <article class="card card--service svc-card reveal reveal-delay-1" id="materiali">
-          <div class="card__header">
-            <div class="card__icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          <div class="svc-tabs__panel" id="materiali" role="tabpanel" aria-labelledby="tab-materiali">
+            <div class="svc-panel__header">
+              <div class="svc-panel__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+              </div>
+              <h3 class="svc-panel__title">Materiali e Formazione</h3>
             </div>
-            <h3 class="card__title">Materiali e Formazione</h3>
+            <p class="svc-panel__text">Revisione scientifica e conformità normativa dei materiali promozionali, con percorsi di formazione dedicati agli informatori scientifici del farmaco.</p>
+            <dl class="svc-panel__list">
+              <dt>Materiale Promozionale</dt>
+              <dd>Certificazione scientifica e di conformità ex art. 113 D.Lgs. 219/06 di materiali promozionali, brochure e canali digitali</dd>
+              <dt>Deposito AIFA</dt>
+              <dd>Supporto alle procedure di notifica e deposito dei materiali promozionali presso l'autorità regolatoria</dd>
+              <dt>Formazione ISF</dt>
+              <dd>Training regolatorio e scientifico specifico per gli Informatori Scientifici del Farmaco (ISF)</dd>
+            </dl>
           </div>
-          <p class="card__text">Revisione scientifica e conformità normativa dei materiali promozionali, con percorsi di formazione dedicati agli informatori scientifici del farmaco.</p>
-          <ul class="card__list">
-            <li>Revisione scientifica dei materiali</li>
-            <li>Supporto certificazione AIFA</li>
-          </ul>
-        </article>
 
-        <!-- Consulenza Kaizen -->
-        <article class="card card--service svc-card reveal reveal-delay-2" id="kaizen">
-          <div class="card__header">
-            <div class="card__icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          <div class="svc-tabs__panel" id="kaizen" role="tabpanel" aria-labelledby="tab-kaizen">
+            <div class="svc-panel__header">
+              <div class="svc-panel__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              </div>
+              <h3 class="svc-panel__title">Consulenza Lean</h3>
             </div>
-            <h3 class="card__title">Consulenza Kaizen</h3>
+            <p class="svc-panel__text">Lean Thinking applicato ai processi di farmacovigilanza e alle attività regolatorie: meno sprechi, tempi ridotti e un sistema scalabile con la crescita del business.</p>
+            <dl class="svc-panel__list">
+              <dt>Formazione sull'approccio</dt>
+              <dd>Trasferiamo il metodo al team: cosa significa lavorare per processi, come si individua una causa radice, come si costruisce l'abitudine al miglioramento quotidiano</dd>
+              <dt>Affiancamento sul metodo</dt>
+              <dd>Seguiamo l'applicazione sul campo, non solo in aula: lavoriamo insieme sui casi reali finché il metodo diventa pratica autonoma</dd>
+              <dt>Strumenti su misura</dt>
+              <dd>Costruiamo supporti manuali o digitali — check-list, cruscotti, flussi automatizzati — calibrati sul processo specifico del cliente</dd>
+            </dl>
           </div>
-          <p class="card__text">Lean Thinking applicato ai processi di farmacovigilanza e alle attività regolatorie: meno sprechi, tempi ridotti e un sistema scalabile con la crescita del business.</p>
-          <ul class="card__list">
-            <li>Value Stream Mapping dei processi PV</li>
-            <li>Kaizen Events e workshop</li>
-            <li>Partecipazione collettiva al miglioramento</li>
-          </ul>
-        </article>
 
+        </div><!-- /svc-tabs__panels -->
+
+      </div><!-- /svc-tabs -->
+
+      <div class="text-center mt-8 reveal" style="margin-top: 3rem;">
+        <p style="font-size: var(--text-base); color: var(--color-text-muted); margin: 0;">
+          Non trovi quello che stai cercando? <a href="contatti.html" style="color: var(--color-primary); font-weight: 600; text-decoration: underline; transition: color var(--transition-fast);" onmouseover="this.style.color='var(--color-primary-dark)'" onmouseout="this.style.color='var(--color-primary)'">Fai una domanda al nostro team!</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SEZIONE 2a — I numeri
+       ============================================================ -->
+  <section class="section section--bg" aria-labelledby="numeri-title">
+    <div class="container">
+      <span class="section-label section-label--primary reveal">I numeri</span>
+      <h2 id="numeri-title" class="reveal reveal-delay-1">La crescita del team, area per area</h2>
+      <p class="reveal reveal-delay-2">Non solo persone in più: competenze in più. Il team cresce anno su anno in ogni area dell'organigramma, dalla farmacovigilanza operativa al medical affairs, fino alle funzioni di supporto.</p>
+
+      <div class="numeri-card reveal reveal-delay-3">
+        <div class="numeri-chart__summary" id="numeri-summary"></div>
+        <div id="numeri-chart" role="img" aria-label="Grafico della crescita del team per area di competenza, dal 2019 al 2026"></div>
+        <div class="numeri-chart__legend" id="numeri-legend"></div>
       </div>
     </div>
   </section>
@@ -429,7 +715,7 @@
         </p>
         <div class="cta-banner__actions reveal reveal-delay-3">
           <a href="contatti.html" class="btn btn--white btn--lg">Richiedi una consulenza gratuita</a>
-          <a href="faq.html" class="btn btn--outline-white btn--lg">Domande frequenti</a>
+          <a href="qualita.html" class="btn btn--outline-white btn--lg">La nostra qualità</a>
         </div>
       </div>
     </div>
@@ -450,7 +736,7 @@
         </div>
       </div>
       <div class="footer__col"><h5>Servizi</h5><nav class="footer__links"><a href="servizi.html#farmacovigilanza">Farmacovigilanza</a><a href="servizi.html#rapporti-periodici">Rapporti periodici</a><a href="servizi.html#informazione-medica">Informazione Medica</a><a href="servizi.html#qualita">Qualità e Compliance</a><a href="servizi.html#kaizen">Consulenza Kaizen</a></nav></div>
-      <div class="footer__col"><h5>Azienda</h5><nav class="footer__links"><a href="servizi.html#expertise">Le nostre competenze</a><a href="calendario.html">Calendario eventi</a><a href="blog.html">Blog</a><a href="lavora-con-noi.html">Lavora con noi</a><a href="faq.html">FAQ</a></nav></div>
+      <div class="footer__col"><h5>Azienda</h5><nav class="footer__links"><a href="index.html">Home</a><a href="servizi.html">Servizi</a><a href="qualita.html">Qualità</a><a href="lavora-con-noi.html">Lavora con noi</a><a href="contatti.html">Contatti</a></nav></div>
       <div class="footer__col"><h5>Contatti</h5><address style="font-style:normal;"><div class="footer__contact-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><a href="mailto:contactus@med-af-consulting.it">contactus@med-af-consulting.it</a></div><div class="footer__contact-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg><span>Corso Italia, 39 – Saronno (VA)</span></div></address></div>
     </div>
     <div class="footer__bottom">
@@ -460,15 +746,45 @@
   </div>
 </footer>
 
-<div class="cookie-banner" role="dialog" aria-label="Consenso cookie">
-  <p>Utilizziamo cookie tecnici necessari al funzionamento del sito. <a href="cookie.html">Cookie Policy</a>.</p>
-  <div class="cookie-banner__actions">
-    <button class="btn btn--outline-white btn--sm" data-cookie-decline>Rifiuta</button>
-    <button class="btn btn--white btn--sm" data-cookie-accept>Accetta</button>
-  </div>
-</div>
 
 <script>
+/* ---- Tab servizi ---- */
+(function () {
+  var tabs   = Array.from(document.querySelectorAll('.svc-tabs__btn'));
+  var panels = Array.from(document.querySelectorAll('.svc-tabs__panel'));
+  if (!tabs.length) return;
+
+  function activate(panelId) {
+    tabs.forEach(function (t) {
+      var active = t.dataset.panel === panelId;
+      t.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+    panels.forEach(function (p) {
+      p.classList.toggle('is-active', p.id === panelId);
+    });
+  }
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () { activate(tab.dataset.panel); });
+    /* Navigazione tastiera: frecce sinistra/destra */
+    tab.addEventListener('keydown', function (e) {
+      var idx = tabs.indexOf(tab);
+      if (e.key === 'ArrowRight') { tabs[(idx + 1) % tabs.length].focus(); e.preventDefault(); }
+      if (e.key === 'ArrowLeft')  { tabs[(idx - 1 + tabs.length) % tabs.length].focus(); e.preventDefault(); }
+    });
+  });
+
+  /* Deep-link: attiva il tab corretto se l'URL contiene un hash */
+  var hash = window.location.hash.slice(1);
+  var validIds = panels.map(function (p) { return p.id; });
+  if (hash && validIds.indexOf(hash) !== -1) {
+    activate(hash);
+    setTimeout(function () {
+      document.getElementById('svc-tabs').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  }
+})();
+
 /* Keyword cloud — parallax con lerp su mousemove */
 (function () {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -507,6 +823,8 @@
   }
 })();
 </script>
+<script src="js/numeri-data.js"></script>
+<script src="js/numeri-chart.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

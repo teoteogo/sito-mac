@@ -4,15 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Medical Affairs Consulting</title>
-  <meta name="description" content="We operate with integrity, transparency and rigour in every activity. Discover our Ethics Code and the principles guiding our work in the pharmaceutical sector.">
+  <meta name="description" content="We operate with integrity, transparency and rigour in every activity. Discover our quality principles, Ethics Code and Kaizen method.">
   <link rel="icon" type="image/x-icon" href="../img/icona_MAC.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Libre+Franklin:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/qualita.css">
   <link rel="alternate" hreflang="it" href="https://www.med-af-consulting.com/qualita.html">
   <link rel="alternate" hreflang="en" href="https://www.med-af-consulting.com/en/quality.html">
+  <!-- AVACY Cookie Consent (Paste your AVACY script tag here) -->
+  <!-- <script src="https://cdn.avacy.it/consent-banner/..." defer></script> -->
 </head>
 <body>
 
@@ -22,190 +25,410 @@
 <header>
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="navbar__inner">
-      <a href="index.html" class="navbar__logo" aria-label="MAC — Home">
+      <!-- Logo -->
+      <a href="index.html" class="navbar__logo" aria-label="Medical Affairs Consulting — Home">
         <img src="../img/mac-logo.png" alt="MAC — Medical Affairs Consulting" width="180" height="44">
       </a>
+
+      <!-- Desktop menu -->
       <ul class="navbar__menu" role="list">
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="quality.html" class="active">Quality</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="blog.html">Blog</a></li>
+        <li><a href="careers.html">Careers</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+
+      <!-- Right actions -->
       <div class="navbar__actions">
-        <div class="lang-switcher">
-          <a href="../qualita.html">IT</a>
-          <span>|</span>
-          <a href="quality.html" class="active">EN</a>
+        <div class="lang-switcher" aria-label="Select language">
+          <a href="../qualita.html" lang="it">IT</a>
+          <span aria-hidden="true">|</span>
+          <a href="quality.html" class="active" lang="en">EN</a>
         </div>
         <a href="contact.html" class="btn btn--primary">Contact us</a>
       </div>
+
+      <!-- Mobile hamburger -->
       <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
-  <div class="navbar__mobile">
+
+  <!-- Mobile menu -->
+  <div class="navbar__mobile" role="dialog" aria-label="Mobile menu">
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
     <a href="quality.html" class="active">Quality</a>
-    <a href="events.html">Events</a>
-    <a href="blog.html">Blog</a>
+    <a href="careers.html">Careers</a>
     <a href="contact.html">Contact</a>
-    <a href="faq.html">FAQ</a>
-    <div class="lang-switcher mt-4"><a href="../qualita.html">IT</a><span>|</span><a href="quality.html" class="active">EN</a></div>
+    <div class="lang-switcher mt-4">
+      <a href="../qualita.html">IT</a>
+      <span>|</span>
+      <a href="quality.html" class="active">EN</a>
+    </div>
     <a href="contact.html" class="btn btn--primary">Contact us</a>
   </div>
 </header>
 
 <main>
+
   <!-- PAGE HEADER -->
-  <section class="page-header">
+  <section class="page-header" style="background: linear-gradient(135deg, rgba(13,46,85,.75) 0%, rgba(26,80,116,.65) 60%, rgba(38,112,158,.55) 100%), url('../img/bussola.jpg') center/cover no-repeat;">
     <div class="container">
       <span class="section-label section-label--primary reveal">Ethics &amp; Compliance</span>
-      <h1 class="reveal reveal-delay-1">Quality &amp; Ethics Code</h1>
-      <p class="reveal reveal-delay-2">We operate with integrity, transparency and rigour in every activity. The principles guiding our work are not mere statements of intent — they are the concrete foundation of every professional relationship we build.</p>
+      <h1 class="reveal reveal-delay-1">Quality and Ethics Code</h1>
+      <p class="reveal reveal-delay-2">We operate with integrity, transparency and rigour in every activity. The principles guiding our work are not mere statements of intent: they are the concrete foundation of every professional relationship we build.</p>
     </div>
   </section>
 
-  <!-- INTRO -->
-  <section class="section section--bg" aria-labelledby="intro-en-title">
-    <div class="container" style="max-width:860px;">
-      <div class="text-center mb-8">
-        <span class="section-label section-label--primary reveal">Our commitment</span>
-        <h2 class="reveal reveal-delay-1" id="intro-en-title">Ethics and Compliance Code</h2>
-        <div class="section-divider reveal reveal-delay-2" style="margin:1.5rem auto;"></div>
-      </div>
-      <div class="reveal reveal-delay-2">
-        <p style="font-size:1.0625rem;line-height:1.8;color:var(--color-text);">
-          Our consulting firm operates in support of pharmaceutical companies with the aim of creating value in full compliance with rules, ethics and quality standards required by a highly regulated sector.
-        </p>
-      </div>
-    </div>
-  </section>
 
-  <!-- ETHICS CODE — SECTIONS -->
-  <section class="section" aria-label="Ethics Code sections">
+  <!-- 1. QUALITY ACROSS FOUR DIMENSIONS -->
+  <section class="section" aria-labelledby="pillars-title">
     <div class="container">
-      <div class="grid-2" style="gap:2rem;align-items:start;">
+      <span class="section-label section-label--primary reveal">Our founding principles</span>
+      <h2 class="section-title reveal reveal-delay-1" id="pillars-title">Quality across four dimensions</h2>
+      <div class="pillars-grid" style="margin-top:2.5rem;">
 
-        <!-- 1. Regulatory Compliance -->
-        <div class="card reveal">
-          <div class="card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-            </svg>
+        <div class="pillar reveal">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
           </div>
-          <h3 class="card__title">Regulatory Compliance</h3>
-          <p class="card__text">We are committed to respecting and promoting applicable Good Practices (GxP), national and international regulations of the pharmaceutical sector, and quality, traceability and control standards.</p>
-          <p class="card__text">Our consulting activities are aimed at supporting clients in complying with regulatory requirements, inspections and applicable legal obligations, avoiding approaches that could compromise their compliance.</p>
+          <h3>Quality</h3>
+          <p>Methodological rigour, technical expertise and a focus on delivering real value to the client in every advisory activity.</p>
         </div>
 
-        <!-- 2. Integrity -->
-        <div class="card reveal reveal-delay-1">
-          <div class="card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
+        <div class="pillar reveal reveal-delay-1">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
           </div>
-          <h3 class="card__title">Integrity, Anti-Corruption and Transparency</h3>
-          <p class="card__text">The Company promotes a culture of integrity, fairness and transparency in all its activities. Every professional and commercial relationship is managed ethically, documented and in compliance with applicable regulations.</p>
-          <p class="card__text">The Company does not tolerate behaviour that could compromise the independence, credibility or reputation of itself or its clients. Adequate measures are adopted to prevent improper practices, conflicts of interest, favouritism and any form of behaviour not in line with the principles of fairness and legality.</p>
+          <h3>Accuracy</h3>
+          <p>Analyses, assessments and recommendations based exclusively on reliable, verifiable data.</p>
         </div>
 
-        <!-- 3. Professional Independence -->
-        <div class="card reveal">
-          <div class="card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <circle cx="12" cy="8" r="4"></circle>
-              <path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"></path>
-            </svg>
+        <div class="pillar reveal reveal-delay-2">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 000 4h6a2 2 0 000-4M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
           </div>
-          <h3 class="card__title">Professional Independence</h3>
-          <p class="card__text">We operate independently from our clients, avoiding conflicts of interest that could compromise the objectivity of our analyses and recommendations.</p>
+          <h3>Traceability</h3>
+          <p>Clear, reconstructible and auditable processes and documentation. Every decision is justified and documented.</p>
         </div>
 
-        <!-- 4. Client Relationships -->
-        <div class="card reveal reveal-delay-1">
-          <div class="card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>
+        <div class="pillar reveal reveal-delay-3">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
           </div>
-          <h3 class="card__title">Client Relationships</h3>
-          <p class="card__text">Relationships with clients are based on the principles of collaboration, transparency, reliability and mutual accountability. The Company operates as a professional partner, providing expertise, methodologies and best practices to support continuous improvement of processes, quality and regulatory compliance.</p>
-          <p class="card__text">Consulting activities are carried out on the basis of information, data and statements provided by the client. The Company does not carry out operational activities or direct control over client processes, unless otherwise agreed contractually. The implementation of recommendations and compliance with regulations remain the client's responsibility.</p>
+          <h3>Accountability</h3>
+          <p>Full awareness of the impact of our activities on clients and on the pharmaceutical sector.</p>
         </div>
 
-        <!-- 5. Confidentiality -->
-        <div class="card reveal">
-          <div class="card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-            </svg>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 2. ETHICS CODE — concise version -->
+  <section class="section section--bg" id="ethics-code" aria-labelledby="ethics-title">
+    <div class="container">
+      <div class="etica-intro-row">
+        <div>
+          <span class="section-label section-label--primary reveal">Ethics Code</span>
+          <h2 class="section-title reveal reveal-delay-1" id="ethics-title">The principles that guide our work</h2>
+        </div>
+        <p class="etica-tagline reveal reveal-delay-2">An ethics code is not a document: it is how we operate every day, in every professional relationship, with clients, partners and institutions.</p>
+      </div>
+
+      <div class="etica-grid reveal">
+
+        <div class="etica-item">
+          <div class="etica-item-top">
+            <span class="etica-num">01</span>
+            <h3>Regulatory compliance</h3>
           </div>
-          <h3 class="card__title">Confidentiality and Data Protection</h3>
-          <p class="card__text">We protect clients' technical, scientific and commercial information with the utmost confidentiality. Personal and corporate data are processed in compliance with current data protection regulations, including the provisions of the European GDPR Regulation, adopting adequate technical and organisational measures to ensure their security, integrity and confidentiality.</p>
+          <p>We uphold and promote Good Practices (GxP) and national and international sector regulations, supporting clients in meeting every regulatory obligation.</p>
         </div>
 
-        <!-- 6. Quality and Responsibility -->
-        <div class="card reveal reveal-delay-1">
-          <div class="card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-            </svg>
+        <div class="etica-item">
+          <div class="etica-item-top">
+            <span class="etica-num">02</span>
+            <h3>Integrity and anti-corruption</h3>
           </div>
-          <h3 class="card__title">Quality and Responsibility</h3>
-          <p class="card__text">Our consulting activities are guided by four fundamental principles:</p>
-          <ul class="service-list" style="margin-top:.75rem;">
+          <p>Every relationship is managed ethically, is documented and remains fully compliant. We do not tolerate conflicts of interest, favouritism or any practice that could compromise our credibility.</p>
+        </div>
+
+        <div class="etica-item">
+          <div class="etica-item-top">
+            <span class="etica-num">03</span>
+            <h3>Professional independence</h3>
+          </div>
+          <p>We operate independently from our clients, always safeguarding the objectivity of our analyses and recommendations. Independence is the core value of our advisory work.</p>
+        </div>
+
+        <div class="etica-item">
+          <div class="etica-item-top">
+            <span class="etica-num">04</span>
+            <h3>Client relationships</h3>
+          </div>
+          <p>Collaboration, reliability and mutual accountability: we act as a professional partner. Implementation of our recommendations and regulatory compliance remain the client's responsibility.</p>
+        </div>
+
+        <div class="etica-item">
+          <div class="etica-item-top">
+            <span class="etica-num">05</span>
+            <h3>Confidentiality and GDPR</h3>
+          </div>
+          <p>We protect clients' technical, scientific and commercial information with the utmost confidentiality, in full compliance with the European GDPR Regulation.</p>
+        </div>
+
+        <div class="etica-item">
+          <div class="etica-item-top">
+            <span class="etica-num">06</span>
+            <h3>Partners and suppliers</h3>
+          </div>
+          <p>We build partnerships founded on legality, quality and mutual respect, with the aim of creating a network that shares high professional and ethical standards across the pharmaceutical sector.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 3. THE KAIZEN METHOD -->
+  <section class="section" id="kaizen" aria-labelledby="kaizen-title">
+    <div class="container">
+      <div class="kaizen-layout">
+
+        <div class="kaizen-text">
+          <span class="section-label section-label--primary reveal">A culture of improvement</span>
+          <h2 class="section-title reveal reveal-delay-1" id="kaizen-title">The Kaizen method: growing every day</h2>
+          <p class="section-intro reveal reveal-delay-2">At MAC, continuous improvement is not a goal — it is a daily process. Every team member actively contributes to the evolution of our methods, tools and corporate culture.</p>
+          <p class="reveal reveal-delay-2" style="font-size:.9rem;color:var(--color-text-muted);line-height:1.75;">We regularly publish updates and reflections on how we apply Lean Thinking within the pharmaceutical context. These pieces convey the concrete values that guide our operational choices every day.</p>
+          <a class="kaizen-blog-link reveal reveal-delay-3" href="blog.html">
+            Read our Kaizen updates
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="kaizen-visual reveal reveal-delay-1">
+          <div class="kaizen-steps">
+
+            <div class="kaizen-step">
+              <div class="kaizen-step-dot">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
+              </div>
+              <div class="kaizen-step-content">
+                <h4>Observe</h4>
+                <p>Analysis of the current process without preconceptions, with a critical and open mindset.</p>
+              </div>
+            </div>
+
+            <div class="kaizen-step">
+              <div class="kaizen-step-dot">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <div class="kaizen-step-content">
+                <h4>Measure</h4>
+                <p>Gathering concrete data to understand where and to what extent the process can improve.</p>
+              </div>
+            </div>
+
+            <div class="kaizen-step">
+              <div class="kaizen-step-dot">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+              </div>
+              <div class="kaizen-step-content">
+                <h4>Propose</h4>
+                <p>Generating shared improvement ideas that are small in scope and immediately actionable.</p>
+              </div>
+            </div>
+
+            <div class="kaizen-step">
+              <div class="kaizen-step-dot">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+              </div>
+              <div class="kaizen-step-content">
+                <h4>Standardise and repeat</h4>
+                <p>Consolidating what works, turning it into the standard, and starting again: the cycle never ends.</p>
+              </div>
+            </div>
+
+          </div>
+          <div class="kaizen-kpi-row">
+            <div class="kaizen-kpi">
+              <span class="k-num">+300</span>
+              <span class="k-lbl">Ideas / year</span>
+            </div>
+            <div class="kaizen-kpi">
+              <span class="k-num">Since 2001</span>
+              <span class="k-lbl">Continuously growing</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 4. CERTIFICATIONS AND COMPLIANCE -->
+  <section class="section section--bg" id="certifications" aria-labelledby="cert-title">
+    <div class="container">
+      <span class="section-label section-label--primary reveal">Certifications</span>
+      <h2 class="section-title reveal reveal-delay-1" id="cert-title">Recognitions and compliance</h2>
+      <p class="section-intro reveal reveal-delay-2">Our Quality Management System (QMS) is structured to ensure regulatory compliance, full traceability and data security. We operate in accordance with Good Pharmacovigilance Practices (GVP) and applicable European and national directives, underpinned by a rigorous and robust procedural framework.</p>
+
+      <div class="sop-framework reveal reveal-delay-3" style="margin-top: 3rem; margin-bottom: 3.5rem; background: var(--color-bg-white); padding: 2.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm);">
+        <h3 style="font-family: var(--font-heading); font-size: var(--text-lg); color: var(--color-primary-dark); margin-bottom: 1.5rem; border-bottom: 2px solid var(--color-primary-light); padding-bottom: 0.75rem;">Our core Standard Operating Procedures (SOPs)</h3>
+        <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: 1.5rem; line-height: 1.6;">Below are the most significant procedural pillars that govern our daily activities and ensure data quality and regulatory compliance:</p>
+        <ul class="privacy-points" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem 2rem; list-style: none; padding: 0;">
+          <li style="font-size: var(--text-sm); line-height: 1.5; display: flex; align-items: flex-start; gap: 0.75rem;">
+            <span class="check"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>Personnel Management and Continuous Training</strong></span>
+          </li>
+          <li style="font-size: var(--text-sm); line-height: 1.5; display: flex; align-items: flex-start; gap: 0.75rem;">
+            <span class="check"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>Case Management and Processing</strong></span>
+          </li>
+          <li style="font-size: var(--text-sm); line-height: 1.5; display: flex; align-items: flex-start; gap: 0.75rem;">
+            <span class="check"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>Literature Surveillance</strong></span>
+          </li>
+          <li style="font-size: var(--text-sm); line-height: 1.5; display: flex; align-items: flex-start; gap: 0.75rem;">
+            <span class="check"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>IT System Validation (GAMP 5 compliant)</strong></span>
+          </li>
+          <li style="font-size: var(--text-sm); line-height: 1.5; display: flex; align-items: flex-start; gap: 0.75rem;">
+            <span class="check"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>Business Continuity &amp; Disaster Recovery (24/7 availability)</strong></span>
+          </li>
+          <li style="font-size: var(--text-sm); line-height: 1.5; display: flex; align-items: flex-start; gap: 0.75rem;">
+            <span class="check"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>Personal Data Protection (GDPR)</strong></span>
+          </li>
+          <li style="font-size: var(--text-sm); line-height: 1.5; display: flex; align-items: flex-start; gap: 0.75rem;">
+            <span class="check"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>Compliance Control and Management Review</strong></span>
+          </li>
+          <li style="font-size: var(--text-sm); line-height: 1.5; display: flex; align-items: flex-start; gap: 0.75rem;">
+            <span class="check"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>Change Management (Change Process)</strong></span>
+          </li>
+          <li style="font-size: var(--text-sm); line-height: 1.5; display: flex; align-items: flex-start; gap: 0.75rem;">
+            <span class="check"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>Drafting and Implementation of Risk Management Plans (RMP)</strong></span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="cert-grid">
+
+        <div class="cert-card reveal">
+          <div class="cert-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h4>ISO 9001</h4>
+          <p>Quality management system</p>
+          <span class="cert-badge">Coming soon</span>
+        </div>
+
+        <div class="cert-card reveal reveal-delay-1">
+          <div class="cert-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          </div>
+          <h4>GDPR Compliance</h4>
+          <p>EU personal data protection</p>
+          <span class="cert-badge active">Operational</span>
+        </div>
+
+        <div class="cert-card reveal reveal-delay-2">
+          <div class="cert-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+          </div>
+          <h4>GVP Compliance</h4>
+          <p>Good Pharmacovigilance Practices</p>
+          <span class="cert-badge active">Operational</span>
+        </div>
+
+        <div class="cert-card reveal reveal-delay-3">
+          <div class="cert-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"></path></svg>
+          </div>
+          <h4>IT Compliance</h4>
+          <p>MFA, backup, VPN and secure SharePoint</p>
+          <span class="cert-badge active">Operational</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 5. PRIVACY & GDPR -->
+  <section class="section" id="privacy" aria-labelledby="privacy-title">
+    <div class="container">
+      <div class="privacy-layout">
+        <div>
+          <span class="section-label section-label--primary reveal">Privacy &amp; GDPR</span>
+          <h2 class="section-title reveal reveal-delay-1" id="privacy-title">Your data, protected with care</h2>
+          <p class="section-intro reveal reveal-delay-2" style="margin-bottom:1rem;">We handle personal and corporate data with the utmost confidentiality, in full compliance with the European GDPR Regulation and applicable legislation.</p>
+          <ul class="privacy-points reveal reveal-delay-2">
             <li>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span><strong>Quality</strong> — methodological rigour, technical expertise and attention to real value for the client</span>
+              <span class="check"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Appropriate technical and organisational measures to ensure data security and integrity
             </li>
             <li>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span><strong>Accuracy</strong> — analyses, assessments and recommendations based on reliable and verifiable data</span>
+              <span class="check"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Clients' technical, scientific and commercial information protected under contractual confidentiality
             </li>
             <li>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span><strong>Traceability</strong> — clear, reconstructible and controllable processes and documentation</span>
+              <span class="check"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+              No data shared with unauthorised third parties
             </li>
             <li>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span><strong>Responsibility</strong> — awareness of the impact of our activities on clients and the sector</span>
+              <span class="check"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Right of access, rectification and erasure guaranteed to every data subject
             </li>
           </ul>
         </div>
-
-        <!-- 7. Partners and Suppliers — full width -->
-        <div class="card reveal" style="grid-column:1/-1;">
-          <div class="card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-            </svg>
-          </div>
-          <h3 class="card__title">Partner and Supplier Relationships</h3>
-          <p class="card__text" style="max-width:100%;">The Company builds its relationships with partners and suppliers on the principles of legality, quality, transparency and responsibility. Collaborations are based on fairness, reliability and mutual respect, with the aim of creating a network of parties that share high professional, ethical and compliance standards, particularly in the context of the pharmaceutical sector.</p>
+        <div class="privacy-docs reveal reveal-delay-1">
+          <a class="doc-link" href="../privacy.html">
+            <div class="doc-link-left">
+              <div class="doc-link-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              </div>
+              <div>
+                <h4>Privacy Notice</h4>
+                <span>How we handle your data</span>
+              </div>
+            </div>
+            <svg class="doc-link-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a class="doc-link" href="../cookie.html">
+            <div class="doc-link-left">
+              <div class="doc-link-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0 0v-8m0 0l-3-3m3 3l3-3"/></svg>
+              </div>
+              <div>
+                <h4>Cookie Policy</h4>
+                <span>Information on our use of cookies</span>
+              </div>
+            </div>
+            <svg class="doc-link-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
-
       </div>
     </div>
   </section>
 
+
   <!-- CTA -->
-  <section class="cta-banner" aria-labelledby="quality-cta-en-title">
+  <section class="cta-banner" aria-labelledby="quality-cta-title">
     <div class="container">
       <div class="cta-banner__inner">
         <span class="section-label reveal">Let's work together</span>
-        <h2 class="reveal reveal-delay-1" id="quality-cta-en-title">Want to know more about how we operate?</h2>
-        <p class="reveal reveal-delay-2">We are at your disposal for any questions about our quality standards and regulatory compliance.</p>
+        <h2 class="reveal reveal-delay-1" id="quality-cta-title">Want to know more about how we operate?</h2>
+        <p class="reveal reveal-delay-2">We are available to answer any questions about our quality standards and regulatory compliance.</p>
         <div class="cta-banner__actions reveal reveal-delay-3">
           <a href="contact.html" class="btn btn--white btn--lg">Contact us</a>
           <a href="services.html" class="btn btn--outline-white btn--lg">Our services</a>
@@ -213,22 +436,33 @@
       </div>
     </div>
   </section>
+
 </main>
 
 <!-- FOOTER -->
 <footer class="footer">
   <div class="container">
     <div class="footer__top">
-      <div class="footer__brand"><a href="index.html"><img src="../img/mac-logo.png" alt="MAC" width="160" height="38" style="filter:brightness(0) invert(1)"></a><p>Your trusted partner for pharmacovigilance, medical information and Kaizen consulting. Since 2001.</p><div class="footer__social"><a href="https://www.linkedin.com/company/med-af-consulting" target="_blank" rel="noopener" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a><a href="https://www.instagram.com/medafconsulting/" target="_blank" rel="noopener" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a></div></div>
+      <div class="footer__brand">
+        <a href="index.html"><img src="../img/mac-logo.png" alt="MAC" width="160" height="38" style="filter:brightness(0) invert(1)"></a>
+        <p>Your trusted partner for pharmacovigilance, medical information and Kaizen consulting. Since 2001.</p>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/company/med-af-consulting" target="_blank" rel="noopener" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+          <a href="https://www.instagram.com/medafconsulting/" target="_blank" rel="noopener" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+        </div>
+      </div>
       <div class="footer__col"><h5>Services</h5><nav class="footer__links"><a href="services.html#pharmacovigilance">Pharmacovigilance</a><a href="services.html#periodic-reports">Periodic reports</a><a href="services.html#medical-information">Medical Information</a><a href="services.html#quality">Quality &amp; Compliance</a><a href="services.html#kaizen">Kaizen Consulting</a></nav></div>
-      <div class="footer__col"><h5>Company</h5><nav class="footer__links"><a href="quality.html">Quality &amp; Ethics Code</a><a href="events.html">Events</a><a href="blog.html">Blog</a><a href="careers.html">Careers</a><a href="faq.html">FAQ</a></nav></div>
-      <div class="footer__col"><h5>Contact</h5><address style="font-style:normal;"><div class="footer__contact-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><a href="mailto:contactus@med-af-consulting.it">contactus@med-af-consulting.it</a></div><div class="footer__contact-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg><span>Corso Italia, 39 – Saronno (VA) Italy</span></div></address></div>
+      <div class="footer__col"><h5>Company</h5><nav class="footer__links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="quality.html">Quality</a><a href="careers.html">Careers</a><a href="contact.html">Contact</a></nav></div>
+      <div class="footer__col"><h5>Contact</h5><address style="font-style:normal;"><div class="footer__contact-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><a href="mailto:contactus@med-af-consulting.it">contactus@med-af-consulting.it</a></div><div class="footer__contact-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg><span>Corso Italia, 39 – Saronno (VA), Italy</span></div></address></div>
     </div>
-    <div class="footer__bottom"><p>© 2026 Medical Affairs Consulting Srl — All rights reserved</p><nav class="footer__bottom-links"><a href="../privacy.html">Privacy Policy</a><a href="../cookie.html">Cookie Policy</a><a href="../qualita.html" lang="it">Italiano</a></nav></div>
+    <div class="footer__bottom">
+      <p>© 2026 Medical Affairs Consulting Srl — VAT No. [pending] — All rights reserved</p>
+      <nav class="footer__bottom-links"><a href="../privacy.html">Privacy Policy</a><a href="../cookie.html">Cookie Policy</a><a href="../qualita.html" lang="it">Italiano</a></nav>
+    </div>
   </div>
 </footer>
 
-<div class="cookie-banner" role="dialog"><p>We use technically necessary cookies. <a href="../cookie.html">Cookie Policy</a>.</p><div class="cookie-banner__actions"><button class="btn btn--outline-white btn--sm" data-cookie-decline>Decline</button><button class="btn btn--white btn--sm" data-cookie-accept>Accept</button></div></div>
+
 <script src="../js/main.js"></script>
 </body>
 </html>

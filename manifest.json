@@ -2,10 +2,10 @@
   "name": "MAC — Medical Affairs Consulting",
   "short_name": "MAC",
   "description": "Farmacvigilanza, Medical Information e Kaizen consulting per l'industria farmaceutica.",
-  "start_url": "/calendario.html",
+  "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#F7F7F5",
-  "theme_color": "#26709E",
+  "background_color": "#F4F7F9",
+  "theme_color": "#2F76A2",
   "orientation": "portrait-primary",
   "icons": [
     {
