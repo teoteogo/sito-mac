@@ -263,3 +263,31 @@
 
 .hero__title .text-primary { white-space: nowrap; }
 @media (max-width: 480px) { .hero__title .text-primary { white-space: normal; } }
+
+/* ── Client map (home) ───────────────────────────────────────────────────── */
+.client-facts { list-style: none; padding: 0; margin: var(--space-8) 0 0; display: grid; gap: var(--space-5); }
+.client-facts li { display: grid; grid-template-columns: 5.5rem 1fr; gap: var(--space-4); align-items: center; }
+.client-facts strong { font-family: var(--font-heading, inherit); font-size: var(--text-3xl, 2rem); font-weight: 800; line-height: 1; color: var(--color-primary); }
+.client-facts strong.accent { color: var(--color-accent); }
+.client-facts span { color: var(--color-text-muted); max-width: 40ch; }
+.client-map { margin: 0; background: var(--color-bg-white); border: 1px solid var(--color-border); border-radius: 20px; padding: var(--space-6); }
+.client-map svg { display: block; width: 100%; height: auto; max-width: 560px; margin: 0 auto; }
+.cm-halo { fill: var(--color-primary-light); opacity: .6; }
+.cm-links line { stroke: #9DBED3; stroke-width: 2; stroke-dasharray: 7 6; }
+.cm-hub { fill: #12314A; }
+.cm-mah { fill: var(--color-primary); }
+.cm-sponsor { fill: var(--color-accent); }
+.cm-both { stroke: var(--color-accent); stroke-width: 7; }
+.client-map text { text-anchor: middle; font-family: inherit; }
+.cm-hub-name { fill: #fff; font-size: 26px; font-weight: 800; }
+.cm-hub-place { fill: #C9DCE8; font-size: 15px; }
+.cm-code { fill: #fff; font-size: 20px; font-weight: 800; }
+.cm-label { fill: #12314A; font-size: 15px; font-weight: 700; }
+.client-map__legend { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-6); justify-content: center; margin-top: var(--space-4); font-size: var(--text-sm); color: var(--color-text-muted); }
+.cm-dot { display: inline-block; width: .8em; height: .8em; border-radius: 50%; margin-right: .5em; }
+.cm-dot--mah { background: var(--color-primary); }
+.cm-dot--sponsor { background: var(--color-accent); }
+@media (max-width: 600px) {
+  .client-map { padding: var(--space-4); }
+  .cm-label, .cm-hub-place { font-size: 19px; }
+}

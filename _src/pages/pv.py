@@ -6,8 +6,8 @@ def render(c):
 
     rows = [
         (t('A qualified person, resident and operating in the EU/EEA.', 'Una persona qualificata che risiede e opera in UE/SEE.'),
-         t(f'We provide the EU-QPPV and a deputy, and the local pharmacovigilance contact for Italy {c.draft("paesi coperti dall EU-QPPV e dal referente locale")}.',
-           f'Mettiamo a disposizione EU-QPPV e deputy, e il referente locale di farmacovigilanza per l\'Italia {c.draft("paesi coperti dall EU-QPPV e dal referente locale")}.')),
+         t(f'We provide the EU-QPPV and a deputy, for marketing authorisation holders in Italy, Germany and Switzerland, and the local pharmacovigilance contact for Italy.',
+           f'Mettiamo a disposizione EU-QPPV e deputy, per titolari AIC in Italia, Germania e Svizzera, e il referente locale di farmacovigilanza per l\'Italia.')),
         (t('A PSMF that describes the system as it is.', 'Un PSMF che descrive il sistema com\'è.'),
          t('We write it, keep it current and record deviations in it.',
            'Lo redigiamo, lo teniamo aggiornato e vi registriamo le deviazioni.')),
@@ -18,11 +18,11 @@ def render(c):
          t('Weekly searches in PubMed and Embase, and screening of the EMA medical literature monitoring (MLM) output.',
            'Ricerche settimanali su PubMed ed Embase e screening dei risultati del servizio MLM di EMA.')),
         (t('Periodic safety update reports and risk management plans.', 'PSUR e piani di gestione del rischio.'),
-         t(f'About {n.reports} aggregate reports a year for EU and non-EU authorities; PSURs in PBRER format.',
-           f'Circa {n.reports} report aggregati l\'anno per autorità UE ed extra-UE; PSUR in formato PBRER.')),
+         t(f'More than {n.reports} aggregate reports a year for EU and non-EU authorities; PSURs in PBRER format.',
+           f'Oltre {n.reports} report aggregati l\'anno per autorità UE ed extra-UE; PSUR in formato PBRER.')),
         (t('Signals detected, validated and documented.', 'Segnali rilevati, validati e documentati.'),
-         t(f'About {n.signal_sessions} signal detection sessions a year in EVDAS, with medical review.',
-           f'Circa {n.signal_sessions} sessioni di signal detection l\'anno su EVDAS, con revisione medica.')),
+         t(f'More than {n.signal_sessions} signal detection sessions a year in EVDAS, with medical review.',
+           f'Oltre {n.signal_sessions} sessioni di signal detection l\'anno su EVDAS, con revisione medica.')),
         (t('Product data kept up to date.', 'Dati di prodotto aggiornati.'),
          t('Article 57 data in XEVMPD, and the transition to the EMA Product Management Service (PMS).',
            'Dati art. 57 in XEVMPD e transizione al Product Management Service (PMS) di EMA.')),
@@ -58,8 +58,8 @@ def render(c):
     body = c.page_header(
         t('The PV System', 'Il sistema PV'),
         t('A complete pharmacovigilance system, run for you', 'Un sistema di farmacovigilanza completo, gestito per voi'),
-        t(f'For {n.word("full_systems")} marketing authorisation holders we are the entire pharmacovigilance system. Legal responsibility stays with the marketing authorisation holder (MAH), as the law requires. Who does what is written into the contract and the pharmacovigilance system master file (PSMF).',
-          f'Per {n.word("full_systems")} titolari AIC siamo l\'intero sistema di farmacovigilanza. La responsabilità legale resta del titolare AIC, come prevede la normativa. Chi fa cosa è scritto nel contratto e nel PSMF.'),
+        t(f'For {n.word("full_systems")} marketing authorisation holders we are the entire pharmacovigilance system. Legal responsibility stays with the marketing authorisation holder (MAH), as the law requires. Who does what is written into the contract and the pharmacovigilance system master file (PSMF). {c.draft("numero di titolari AIC con sistema completo: non compare nella company presentation")}',
+          f'Per {n.word("full_systems")} titolari AIC siamo l\'intero sistema di farmacovigilanza. La responsabilità legale resta del titolare AIC, come prevede la normativa. Chi fa cosa è scritto nel contratto e nel PSMF. {c.draft("numero di titolari AIC con sistema completo: non compare nella company presentation")}'),
     ) + f"""
 
   <section class="section" aria-labelledby="oblig-title">

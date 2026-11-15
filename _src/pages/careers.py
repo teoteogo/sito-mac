@@ -9,7 +9,7 @@ def render(c):
          t('Each role has a training plan, with documented steps from first case to independent work.',
            'Ogni ruolo ha un piano di formazione, con tappe documentate dal primo caso al lavoro in autonomia.')),
         (t('A defined competency path', 'Un percorso di competenze definito'),
-         t('You know what is expected at each level, from data entry to senior drug safety officer.',
+         t('You know what is expected at each level, from data entry officer to senior drug safety officer.',
            'Sai cosa è richiesto a ogni livello, dal data entry al drug safety officer senior.')),
         (t('Work that matters', 'Un lavoro che conta'),
          t('Every case you handle contributes to the safe use of medicines.',
@@ -22,15 +22,24 @@ def render(c):
           </div>""" for a, b in values)
 
     profiles = [
-        (t('Quality Assurance, pharmacovigilance', 'Quality Assurance di farmacovigilanza'),
-         t('5+ years of experience.', 'Almeno 5 anni di esperienza.')),
-        (t('Medical Expert', 'Medical Expert'),
-         t('Degree in medicine, 2+ years of experience.', 'Laurea in medicina, almeno 2 anni di esperienza.')),
-        (t('Drug Safety Officer, senior and junior', 'Drug Safety Officer, senior e junior'), ''),
-        (t('Data Entry Operator', 'Data Entry Operator'), ''),
+        (t('Quality Assurance, pharmacovigilance (senior)', 'Quality Assurance di farmacovigilanza (senior)'),
+         t('5+ years in pharmacovigilance QA. Excellent knowledge of EU/EEA pharmacovigilance legislation.',
+           'Almeno 5 anni in QA di farmacovigilanza. Ottima conoscenza della normativa UE/SEE di farmacovigilanza.')),
+        (t('Medical Expert (senior)', 'Medical Expert (senior)'),
+         t('Degree in medicine. 2+ years of medical activities in pharmacovigilance.',
+           'Laurea in medicina. Almeno 2 anni di attività mediche in farmacovigilanza.')),
+        (t('Drug Safety Officer (senior)', 'Drug Safety Officer (senior)'),
+         t('Pharmacist or biologist. 2+ years in pharmacovigilance.',
+           'Farmacista o biologo. Almeno 2 anni in farmacovigilanza.')),
+        (t('Drug Safety Officer (junior)', 'Drug Safety Officer (junior)'),
+         t('Pharmacist or biologist. 6 months to 2 years in pharmacovigilance.',
+           'Farmacista o biologo. Da 6 mesi a 2 anni in farmacovigilanza.')),
+        (t('Data Entry Officer', 'Data Entry Officer'),
+         t('Pharmacist or biologist. Up to 6 months in pharmacovigilance or in processing individual case safety reports (ICSRs).',
+           'Farmacista o biologo. Fino a 6 mesi in farmacovigilanza o nella gestione degli ICSR.')),
     ]
     prof = "".join(f"""
-          <div class="point point--draft reveal">
+          <div class="point reveal">
             <h3 class="point__title">{a}</h3>
             {f'<p class="point__text">{b}</p>' if b else ''}
           </div>""" for a, b in profiles)
@@ -57,9 +66,10 @@ def render(c):
       <span class="section-label section-label--primary reveal">{t('Profiles', 'Profili')}</span>
       <h2 class="reveal reveal-delay-1" id="profiles">{t('The roles on our team', 'I ruoli del nostro team')}</h2>
       <div class="section-divider reveal reveal-delay-2"></div>
-      <p class="section-note reveal">{c.draft('profili e requisiti da completare sulla slide 5 della company presentation')}</p>
-      <div class="point-grid point-grid--2">{prof}
+      <div class="point-grid point-grid--3">{prof}
       </div>
+      <p class="section-note reveal">{t('For every role: a scientific or clinical degree, knowledge of EU/EEA pharmacovigilance legislation, MS Office and, for senior roles, good English.',
+                                        'Per ogni ruolo: laurea scientifica o clinica, conoscenza della normativa UE/SEE di farmacovigilanza, MS Office e, per i ruoli senior, un buon inglese.')}</p>
     </div>
   </section>
 

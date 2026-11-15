@@ -55,7 +55,7 @@ def render(c):
           <p class="stats-bar__label">{t(f'PSUSA findings in {n.psusa_months} months', f'finding PSUSA in {n.psusa_months} mesi')}</p>
         </div>
       </div>
-      <p class="stats-bar__note">{t(f'Figures for {n.year}.', f'Dati {n.year}.')} {c.draft('tutti i numeri del sito, da ricontrollare sulla company presentation 2026')}</p>
+      <p class="stats-bar__note">{t(f'Figures for {n.year}.', f'Dati {n.year}.')}</p>
     </div>
   </section>
 
@@ -120,15 +120,15 @@ def render(c):
           <div class="why-card__icon">{I['shield']}</div>
           <h3 class="why-card__title">{t('Your data, kept separate and protected', 'I vostri dati, separati e protetti')}</h3>
           <p class="why-card__text">{t(
-              'A dedicated environment for each client, access through VPN with multi-factor authentication, safety databases validated to GAMP 5.',
-              'Un ambiente dedicato per ogni cliente, accesso tramite VPN con autenticazione a più fattori, database di sicurezza validati GAMP 5.')}</p>
+              'Access to each client project is granted by role and project training, through VPN with multi-factor authentication. Safety databases are validated to GAMP 5.',
+              'L\'accesso a ogni progetto cliente è concesso per ruolo e formazione sul progetto, tramite VPN con autenticazione a più fattori. I database di sicurezza sono validati GAMP 5.')}</p>
         </div>
         <div class="why-card reveal reveal-delay-3">
           <div class="why-card__icon">{I['clipboard']}</div>
           <h3 class="why-card__title">{t('A record you can check', 'Risultati verificabili')}</h3>
           <p class="why-card__text">{t(
-              f'No PSUSA findings in {n.psusa_months} months. AIFA inspections closed without critical findings {c.draft("numero e anni delle ispezioni AIFA; formulazione unica dell esito ispettivo")}. Key clients with us for more than {n.client_years} years.',
-              f'Nessun finding PSUSA in {n.psusa_months} mesi. Ispezioni AIFA concluse senza rilievi critici {c.draft("numero e anni delle ispezioni AIFA; formulazione unica dell esito ispettivo")}. Clienti principali con noi da oltre {n.client_years} anni.')}</p>
+              f'No PSUSA findings in {n.psusa_months} months. Key clients with us for more than {n.client_years} years.',
+              f'Nessun finding PSUSA in {n.psusa_months} mesi. Clienti principali con noi da oltre {n.client_years} anni.')}</p>
         </div>
       </div>
     </div>
@@ -185,6 +185,52 @@ def render(c):
     </div>
   </section>
 
+  <!-- CLIENTS -->
+  <section class="section" id="clients" aria-labelledby="clients-title">
+    <div class="container">
+      <div class="split">
+        <div>
+          <span class="section-label section-label--primary reveal">{t('Our clients', 'I nostri clienti')}</span>
+          <h2 class="reveal reveal-delay-1" id="clients-title">{t('Who we work for', 'Per chi lavoriamo')}</h2>
+          <div class="section-divider reveal reveal-delay-2"></div>
+          <ul class="client-facts reveal reveal-delay-2">
+            <li><strong>{n.mah}</strong><span>{t('marketing authorisation holders in Italy, Germany and Spain', 'titolari AIC in Italia, Germania e Spagna')}</span></li>
+            <li><strong class="accent">{n.sponsors}</strong><span>{t('clinical trial sponsors in Italy and Switzerland', 'sponsor di sperimentazioni cliniche in Italia e Svizzera')}</span></li>
+            <li><strong>{n.top10}/10</strong><span>{t(f'{n.word("top10", cap=True)} of the 10 largest Italian pharmaceutical groups are our clients', f'{n.word("top10", cap=True)} dei primi 10 gruppi farmaceutici italiani sono nostri clienti')}</span></li>
+          </ul>
+        </div>
+        <figure class="client-map reveal reveal-delay-2">
+          <svg viewBox="0 0 560 400" role="img" aria-labelledby="client-map-title">
+            <title id="client-map-title">{t(f'MAC, in Saronno, works for marketing authorisation holders in Italy, Germany and Spain and for clinical trial sponsors in Italy and Switzerland ({n.year}).',
+                                              f'MAC, a Saronno, lavora per titolari AIC in Italia, Germania e Spagna e per sponsor di sperimentazioni cliniche in Italia e Svizzera ({n.year}).')}</title>
+            <circle class="cm-halo" cx="300" cy="205" r="185"/>
+            <g class="cm-links">
+              <line x1="300" y1="205" x2="372" y2="62"/>
+              <line x1="300" y1="205" x2="168" y2="122"/>
+              <line x1="300" y1="205" x2="88" y2="288"/>
+              <line x1="300" y1="205" x2="412" y2="306"/>
+            </g>
+            <circle class="cm-hub" cx="300" cy="205" r="56"/>
+            <text class="cm-hub-name" x="300" y="203">MAC</text>
+            <text class="cm-hub-place" x="300" y="228">Saronno</text>
+            <circle class="cm-mah" cx="372" cy="62" r="36"/><text class="cm-code" x="372" y="71">DE</text>
+            <text class="cm-label" x="372" y="122">{t('Germany', 'Germania')}</text>
+            <circle class="cm-sponsor" cx="168" cy="122" r="36"/><text class="cm-code" x="168" y="131">CH</text>
+            <text class="cm-label" x="168" y="182">{t('Switzerland', 'Svizzera')}</text>
+            <circle class="cm-mah" cx="88" cy="288" r="36"/><text class="cm-code" x="88" y="297">ES</text>
+            <text class="cm-label" x="88" y="348">{t('Spain', 'Spagna')}</text>
+            <circle class="cm-mah cm-both" cx="412" cy="306" r="34"/><text class="cm-code" x="412" y="315">IT</text>
+            <text class="cm-label" x="412" y="368">{t('Italy', 'Italia')}</text>
+          </svg>
+          <figcaption class="client-map__legend">
+            <span><i class="cm-dot cm-dot--mah"></i>{t('MAH clients', 'Titolari AIC')}</span>
+            <span><i class="cm-dot cm-dot--sponsor"></i>{t('Clinical trial sponsors', 'Sponsor di sperimentazioni')}</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <!-- THE YEAR IN FIGURES -->
   <section class="section section--bg" aria-labelledby="figures-title">
     <div class="container">
@@ -199,11 +245,11 @@ def render(c):
           <p class="why-card__text">{t('cases managed end to end', 'casi gestiti end-to-end')}</p>
         </div>
         <div class="why-card text-center reveal reveal-delay-1">
-          <div class="stats-bar__number">~{n.reports}</div>
+          <div class="stats-bar__number">{n.reports}+</div>
           <p class="why-card__text">{t('aggregate reports', 'report aggregati')}</p>
         </div>
         <div class="why-card text-center reveal reveal-delay-2">
-          <div class="stats-bar__number">~{n.signal_sessions}</div>
+          <div class="stats-bar__number">{n.signal_sessions}+</div>
           <p class="why-card__text">{t('signal detection sessions', 'sessioni di signal detection')}</p>
         </div>
         <div class="why-card text-center reveal reveal-delay-3">

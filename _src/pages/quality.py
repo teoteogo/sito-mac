@@ -53,15 +53,9 @@ def render(c):
           </li>""" for i, (a, b) in enumerate(improve, 1))
 
     security = points([
-        (t('Patient data', 'Dati dei pazienti'),
-         t('Health data in safety reports are special category data. Access is limited by role, and we collect and keep only what pharmacovigilance rules require.',
-           'I dati sanitari nelle segnalazioni sono categorie particolari di dati. L\'accesso è limitato per ruolo; raccogliamo e conserviamo solo ciò che le regole di farmacovigilanza richiedono.')),
-        (t('Masking in EudraVigilance submissions', 'Mascheramento negli invii a EudraVigilance'),
-         t(f'Reports sent to EudraVigilance follow the EMA policy on masking personal data (GVP Module VI Addendum II, July 2025) {c.draft("adozione in procedura dell Addendum II sul mascheramento dei dati personali")}.',
-           f'Le segnalazioni inviate a EudraVigilance seguono la policy EMA sul mascheramento dei dati personali (GVP Module VI Addendum II, luglio 2025) {c.draft("adozione in procedura dell Addendum II sul mascheramento dei dati personali")}.')),
-        (t('One environment per client', 'Un ambiente per cliente'),
-         t('Each client\'s documents and data sit in a separate workspace.',
-           'Documenti e dati di ogni cliente sono in uno spazio di lavoro separato.')),
+        (t('Access by role and project', 'Accesso per ruolo e per progetto'),
+         t('Access to each client project is granted by role and after project-specific training. Project authorisations are mapped.',
+           'L\'accesso a ogni progetto cliente è concesso per ruolo e dopo la formazione specifica sul progetto. Le autorizzazioni ai progetti sono mappate.')),
         (t('Controlled access', 'Accesso controllato'),
          t('VPN with multi-factor authentication.', 'VPN con autenticazione a più fattori.')),
         (t('Validated systems', 'Sistemi validati'),

@@ -45,8 +45,8 @@ def render(c):
         </div>
         <div class="reveal reveal-delay-2">
           <p>{t(
-              f'MAC was founded in 2001 by Dr Stefano Franchini, a physician who had worked as Medical Advisor and Drug Safety Unit Manager at Zambon Group {c.draft("fondatore unico (Dr. Franchini) oppure tre fondatori, come nella bozza dei testi")}.',
-              f'MAC è stata fondata nel 2001 dal Dr. Stefano Franchini, medico, già Medical Advisor e Drug Safety Unit Manager in Zambon Group {c.draft("fondatore unico (Dr. Franchini) oppure tre fondatori, come nella bozza dei testi")}.')}</p>
+              f'MAC was founded in 2001 by Dr Stefano Franchini, a physician specialised in sports medicine, formerly a medical executive at IRCCS Don Gnocchi and Drug Safety Unit Manager at Zambon Group.',
+              f'MAC è stata fondata nel 2001 dal Dr. Stefano Franchini, medico specialista in medicina dello sport, già dirigente medico all\'IRCCS Don Gnocchi e Drug Safety Unit Manager in Zambon Group.')}</p>
           <p>{t(
               'The idea was simple: give pharmaceutical companies an outsourcing partner with the same scientific discipline they expect of themselves. The company has grown steadily since then, and our key clients have been with us for more than ten years.',
               'L\'idea era semplice: offrire alle aziende farmaceutiche un partner di outsourcing con lo stesso rigore scientifico che chiedono a sé stesse. Da allora l\'azienda è cresciuta con continuità, e i clienti principali sono con noi da oltre dieci anni.')}</p>

@@ -503,8 +503,8 @@ def drafts_report(report, footer_notes):
             out += ["", f"## {labels[key]} (`{FILES[key]['en']}` · `it/{FILES[key]['it']}`)", ""]
             out += [f"- [ ] {n}" for n in notes]
     out += ["", "## Numeri", "",
-            "- [ ] Tutti i valori di `data/numeri.json` vanno ricontrollati sulla company presentation 2026",
-            "      (oggi sono quelli riportati dall'audit del 25 ottobre 2026).", ""]
+            "- [x] Valori di `data/numeri.json` verificati sulla company presentation 2026.",
+            "- [ ] `full_systems` (titolari AIC con sistema completo) non compare nella presentazione: da confermare.", ""]
     return "\n".join(out)
 
 

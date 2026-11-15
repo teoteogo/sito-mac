@@ -70,6 +70,15 @@ zero parte quando chiunque lavori per il titolare, fornitori compresi, riceve le
 minime; letteratura almeno settimanale; SUSAR 7/15 giorni solo nelle sperimentazioni; i singoli
 SAE non si notificano all'autorità; il QPPV lo nomina il titolare, MAC mette a disposizione la persona.
 
+## Fatti confermati dal titolare (15 novembre 2026)
+
+- MAC **non ha mai ricevuto ispezioni AIFA**: nessuna frase sull'esito di ispezioni.
+- Fondatore unico: Dr. Stefano Franchini (non tre fondatori).
+- Numeri di sintesi con il “+” (15,000+, 50+, 100+), non “~”.
+- Sicurezza dei dati: non si parla di “un ambiente per cliente”; l'accesso ai progetti è per ruolo
+  e formazione sul progetto, con autorizzazioni mappate. Niente riquadri “Patient data” e “Masking”.
+- Numeri verificati sulla company presentation 2026, tranne `full_systems` (ancora bozza).
+
 ## Materiali di riferimento
 
 Audit del sito (25 ottobre 2026), documento “Sito MAC — struttura, gerarchia e testi”

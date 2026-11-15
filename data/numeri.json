@@ -1,5 +1,5 @@
 {
-  "_note": "Single source for every figure on the site (EN and IT). Read by _src/build.py. Source: MAC Company Presentation 2026, as reported by the audit of 25 October 2026 — recheck on the presentation before publication.",
+  "_note": "Single source for every figure on the site (EN and IT). Read by _src/build.py. Source: MAC Company Presentation 2026, checked against the presentation on 15 November 2026. full_systems is not in the presentation: to be confirmed.",
   "year": 2026,
   "mah": 12,
   "sponsors": 2,
