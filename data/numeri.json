@@ -1,0 +1,16 @@
+{
+  "_note": "Single source for every figure on the site (EN and IT). Read by _src/build.py. Source: MAC Company Presentation 2026, as reported by the audit of 25 October 2026 — recheck on the presentation before publication.",
+  "year": 2026,
+  "mah": 12,
+  "sponsors": 2,
+  "top10": 5,
+  "full_systems": 3,
+  "cases": 15000,
+  "reports": 50,
+  "signal_sessions": 100,
+  "team": 27,
+  "retention": 83,
+  "growth": 23,
+  "psusa_months": 24,
+  "client_years": 10
+}

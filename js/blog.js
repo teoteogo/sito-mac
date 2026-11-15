@@ -4,8 +4,9 @@
  * gestisce i filtri per rubrica
  */
 
-const IS_EN_BLOG = window.location.pathname.includes('/en/');
-const BLOG_URL = IS_EN_BLOG ? '../data/blog.json' : 'data/blog.json';
+const IS_EN_BLOG = document.documentElement.lang !== 'it';
+const ASSET_PREFIX = IS_EN_BLOG ? '' : '../';
+const BLOG_URL = ASSET_PREFIX + 'data/blog.json';
 
 /* ============================================================
    Formattazione data
@@ -23,15 +24,15 @@ function formatDataBlog(dateStr) {
    Generazione card blog HTML
    ============================================================ */
 function creaCardBlog(post) {
-  const titolo = IS_EN_BLOG ? (post.titolo_en || post.titolo) : post.titolo;
-  const descrizione = IS_EN_BLOG ? (post.descrizione_en || post.descrizione) : post.descrizione;
+  const titolo = IS_EN_BLOG ? (post.titolo_en || post.titolo) : (post.titolo || post.titolo_en);
+  const descrizione = IS_EN_BLOG ? (post.descrizione_en || post.descrizione) : (post.descrizione || post.descrizione_en);
   const dataFormatted = formatDataBlog(post.data);
   const rubrica = post.rubrica;
 
   // Immagine o placeholder
   let imgHTML;
   if (post.immagine) {
-    imgHTML = `<img src="${IS_EN_BLOG ? '../' + post.immagine : post.immagine}"
+    imgHTML = `<img src="${ASSET_PREFIX + post.immagine}"
                     alt="${titolo}"
                     class="blog-card__image"
                     loading="lazy">`;
@@ -74,7 +75,7 @@ function creaCardBlog(post) {
     `);
   }
 
-  const labelLeggi = IS_EN_BLOG ? 'Read post' : 'Leggi il post';
+  const labelLeggi = IS_EN_BLOG ? 'Read the article' : 'Leggi l\'articolo';
 
   return `
     <article class="blog-card reveal" data-rubrica="${rubrica}">
@@ -113,7 +114,7 @@ function initFiltriBlog(rubriche) {
   const container = document.querySelector('.filters');
   if (!container) return;
 
-  const labelTutte = IS_EN_BLOG ? 'All' : 'Tutte le rubriche';
+  const labelTutte = IS_EN_BLOG ? 'All columns' : 'Tutte le rubriche';
   const rubricheUniche = [...new Set(rubriche)];
 
   container.innerHTML = `
