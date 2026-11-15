@@ -10,6 +10,7 @@ so menu, footer, figures (data/numeri.json) and draft markers come from one sour
 Generated HTML is committed: GitHub Pages serves the repository as it is.
 """
 import datetime
+import hashlib
 import html
 import importlib
 import json
@@ -18,6 +19,13 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+
+
+def ver(path):
+    """Asset path with a content hash, so browsers never show a stale CSS or JS file."""
+    h = hashlib.md5((ROOT / path).read_bytes()).hexdigest()[:8]
+    return f"{path}?v={h}"
+
 SRC = ROOT / "_src"
 sys.path.insert(0, str(SRC))
 
@@ -242,9 +250,9 @@ def head(c, page):
 
   <link rel="icon" type="image/x-icon" href="{c.a}img/icona_MAC.ico">
   <link rel="stylesheet" href="{c.a}css/fonts.css">
-  <link rel="stylesheet" href="{c.a}css/style.css">
-  <link rel="stylesheet" href="{c.a}css/animations.css">
-  <link rel="stylesheet" href="{c.a}css/pages.css">{jsonld}
+  <link rel="stylesheet" href="{c.a}{ver('css/style.css')}">
+  <link rel="stylesheet" href="{c.a}{ver('css/animations.css')}">
+  <link rel="stylesheet" href="{c.a}{ver('css/pages.css')}">{jsonld}
   <!-- Avacy Cookie Consent -->
   <script id='oil-configuration' type='application/configuration' data-remote-config='https://mac.avacy-cdn.com/config/mac/65ab896f-76fb-4433-afff-9be727943f87/banner.json'></script>
   <script src='https://mac.avacy-cdn.com/current/dist/oilstub.min.js'></script>
@@ -383,7 +391,7 @@ def render_page(c, page):
     if page_drafts:
         ribbon = (f'\n<div class="draft-ribbon" role="note"><strong>Bozza di lavoro</strong> · '
                   f'{len(page_drafts)} {"punto" if len(page_drafts) == 1 else "punti"} da confermare in questa pagina</div>')
-    scripts = "".join(f'\n<script src="{c.a}{s}"></script>' for s in ["js/main.js"] + page.get("scripts", []))
+    scripts = "".join(f'\n<script src="{c.a}{ver(s)}"></script>' for s in ["js/main.js"] + page.get("scripts", []))
     return (head(c, page) + navbar(c) + f'\n<main id="main">{body}\n</main>\n' + foot
             + ribbon + scripts + "\n</body>\n</html>\n")
 
