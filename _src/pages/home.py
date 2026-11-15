@@ -156,10 +156,10 @@ def render(c):
         <li class="method-manifesto__item reveal reveal-delay-2">
           <span class="method-manifesto__number">02</span>
           <div class="method-manifesto__body">
-            <h3 class="method-manifesto__title">{t('Processes', 'Processi')}</h3>
+            <h3 class="method-manifesto__title">{t('Processes and project management', 'Processi e project management')}</h3>
             <p class="method-manifesto__text">{t(
-                'A documented procedure for every activity. A live dashboard shows each submission deadline, so every due date has an owner and workloads stay balanced.',
-                'Una procedura documentata per ogni attività. Un cruscotto in tempo reale mostra ogni scadenza di sottomissione: ogni termine ha un responsabile e i carichi restano bilanciati.')}</p>
+                'A documented procedure for every activity. Each client is run as a project: a dedicated team and a plan with every submission deadline. A live dashboard shows who owns each due date and how work is distributed. We hold regular alignment meetings, with you and within the team, daily or weekly according to a risk assessment.',
+                'Una procedura documentata per ogni attività. Ogni cliente è gestito come un progetto: un team dedicato e un piano con ogni scadenza di trasmissione. Un cruscotto in tempo reale mostra chi è responsabile di ogni termine e come è distribuito il lavoro. Facciamo riunioni regolari di allineamento, con voi e all\'interno del team, quotidiane o settimanali in base a una valutazione del rischio.')}</p>
           </div>
         </li>
         <li class="method-manifesto__item reveal reveal-delay-3">
